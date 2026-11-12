@@ -1356,6 +1356,7 @@
         heading.textContent = section.title;
         article.append(meta, heading);
         const opts = section.article_options && typeof section.article_options === "object" ? section.article_options : {};
+        meta.textContent = ["COMMUNITY ARTICLE", opts.show_author === false ? "" : section.author_label, opts.show_date === false ? "" : date, opts.reading_time || ""].filter(Boolean).join(" · ");
         const accent = /^#[0-9a-f]{6}$/i.test(opts.accent || "") ? opts.accent : "";
         if (accent) { article.style.borderColor = accent; heading.style.color = accent; }
         if (opts.subtitle) { const subtitle = document.createElement("p"); subtitle.className = "lead"; subtitle.textContent = opts.subtitle; article.appendChild(subtitle); }
@@ -1370,10 +1371,13 @@
         if (opts.background === "paper") { article.style.background = "#e9e2d4"; article.style.color = "#252525"; }
         if (opts.reading_time) { const read = document.createElement("div"); read.className = "community-meta"; read.textContent = opts.reading_time; article.appendChild(read); }
 
-        String(section.body).split("\n\n").forEach((paragraphText) => {
+        String(section.body).split("\n\n").forEach((paragraphText, paragraphIndex) => {
           if (!paragraphText.trim()) return;
           const paragraph = document.createElement("p");
           paragraph.textContent = paragraphText;
+          if (paragraphIndex === 0 && opts.dropcap === "dropcap") paragraph.style.cssText = "font-size:1.08em";
+          if (opts.divider === "line" && paragraphIndex < String(section.body).split("\n\n").filter(Boolean).length - 1) paragraph.style.borderBottom = "1px solid var(--line)";
+          if (opts.divider === "space") paragraph.style.marginBottom = "2em";
           article.appendChild(paragraph);
         });
 
