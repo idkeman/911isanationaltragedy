@@ -1,45 +1,715 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101820">
-<meta name="description" content="A documented account of the abuse, criminal proceedings, institutional failures, and unresolved questions surrounding Jeffrey Epstein.">
-<title>Jeffrey Epstein — A Closer Look</title>
-<style>
-:root{--bg:#101820;--panel:#17232d;--panel2:#1d2b36;--ink:#f4f1eb;--muted:#b8c1c8;--line:#34434e;--accent:#d7a76b;--blue:#8eb4c5;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}a:hover{color:#e0f2f8}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#101820ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:.1em;font-size:.82rem;color:var(--ink);text-decoration:none;white-space:nowrap}.navlinks{display:flex;gap:17px;align-items:center}.navlinks a{font-size:.82rem;color:var(--muted);text-decoration:none}.navlinks a:hover{color:var(--ink)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:8px}
-.hero{padding:108px 0 88px;background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);border-bottom:1px solid var(--line)}.eyebrow,.kicker{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem}.hero h1{font-size:clamp(3.1rem,8vw,6.8rem);line-height:.96;letter-spacing:-.065em;max-width:980px;margin:22px 0}.hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:#d0d8dd;max-width:790px}.hero .note{font-size:.9rem;color:var(--muted);border-left:2px solid var(--accent);padding-left:16px;margin-top:32px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none;font-weight:750;border:1px solid var(--accent);color:#1b2024;background:var(--accent)}.btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-section{padding:76px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;letter-spacing:-.045em;margin:12px 0 18px}h3{font-size:1.17rem;line-height:1.35;margin:0 0 9px}.lead{font-size:1.12rem;color:#d0d8dd;max-width:870px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.stat,.card,.source,.fact{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.stat strong{display:block;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;color:var(--accent)}.stat span,.muted{color:var(--muted);font-size:.91rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:27px}.card p,.source p,.fact p{color:var(--muted);margin:7px 0 0}.timeline{margin-top:30px;border-left:1px solid #65727b;padding-left:26px}.event{position:relative;padding:0 0 27px}.event:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);left:-31px;top:10px}.time{font-size:.78rem;color:var(--accent);font-weight:850;letter-spacing:.08em}.event p{margin:4px 0 0;color:var(--muted)}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}.callout{border-left:3px solid var(--accent);padding:17px 21px;background:var(--panel);margin:25px 0;color:#d5dce0}.callout strong{color:var(--ink)}.tag{display:inline-block;font-size:.72rem;color:var(--accent);border:1px solid #806a4e;border-radius:30px;padding:2px 9px;margin-bottom:10px}
-details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin:12px 0}summary{cursor:pointer;padding:17px 20px;font-weight:750;list-style:none;display:flex;justify-content:space-between;gap:15px;line-height:1.45}summary:after{content:"＋";color:var(--accent)}details[open] summary:after{content:"−"}details .answer{padding:0 20px 20px;color:var(--muted)}.answer p{margin:8px 0}.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}.source a{font-weight:750}.source p{font-size:.88rem}.small{font-size:.83rem;color:var(--muted)}.section-intro{max-width:850px}.table-wrap{overflow-x:auto;margin:22px 0}table{border-collapse:collapse;width:100%;min-width:620px;background:var(--panel);border:1px solid var(--line)}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--accent);font-size:.83rem}td{color:var(--muted);font-size:.91rem}footer{padding:34px 0;color:var(--muted);font-size:.85rem}
-@media(max-width:850px){.navlinks{gap:10px}.navlinks a{font-size:.75rem}.two-col{grid-template-columns:1fr}}
-@media(max-width:700px){.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.hero{padding:76px 0 64px}.stats,.grid,.sources{grid-template-columns:1fr}section{padding:56px 0}.wrap{width:min(var(--max),calc(100% - 30px))}}
-
-.page-head{padding:54px 0 36px;background:linear-gradient(135deg,#101820,#1d2b36);border-bottom:1px solid var(--line)}
-.page-head h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0}
-.page-head p{max-width:850px;color:#d0d8dd;font-size:1.08rem}
-.back{display:inline-block;margin-bottom:22px;color:var(--blue);font-weight:750;text-decoration:none}
-main>section{padding-top:50px}
-@media(max-width:700px){.page-head{padding:36px 0 28px}}
-</style>
-</head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="index.html">A CLOSER LOOK / INDEPENDENT TOPIC</a><button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><nav class="navlinks" id="navlinks"><a href="index.html">Main history hub</a><a href="#topic">This topic</a><a href="#sources">Sources</a></nav></div></header>
-<div class="page-head"><div class="wrap"><a class="back" href="index.html">← Back to the main history hub</a><div class="eyebrow">Independent topic · Evidence · Context</div><h1>Jeffrey Epstein</h1><p>A documented account of the abuse, criminal proceedings, institutional failures, and unresolved questions surrounding Jeffrey Epstein.</p></div></div>
-<main id="topic">
-<section id="epstein"><div class="wrap"><div class="kicker">13 / Crime, power, and institutional accountability</div><h2>Jeffrey Epstein: abuse, influence, and failures of accountability.</h2><p class="lead">Jeffrey Epstein was a wealthy American financier whose relationships with prominent people and access to powerful circles drew intense scrutiny. The central historical record, however, is the sexual exploitation of underage girls, the institutional failures that allowed it to continue, and the questions left unresolved when he died in federal custody in 2019.</p>
-<div class="stats"><div class="stat"><strong>2008</strong><span>Florida guilty plea to state offenses involving minors</span></div><div class="stat"><strong>2019</strong><span>Federal sex-trafficking indictment in New York</span></div><div class="stat"><strong>14</strong><span>Youngest age alleged for victims in the 2019 indictment</span></div></div>
-<h3 style="margin-top:30px">A timeline of the case</h3><div class="timeline"><div class="event"><div class="time">2005–2006 · Florida investigation</div><p>A complaint by a young girl and her family led Palm Beach police to investigate allegations that Epstein sexually abused minors. The investigation expanded and drew federal attention.</p></div><div class="event"><div class="time">2007–2008 · Federal non-prosecution agreement and state plea</div><p>Federal prosecutors in South Florida reached a non-prosecution agreement. In June 2008, Epstein pleaded guilty in Florida state court to offenses including procuring a minor for prostitution. He received an 18-month sentence and served a substantially limited period in custody under a work-release arrangement. The agreement and the way victims were treated became major sources of criticism and litigation.</p></div><div class="event"><div class="time">2018 · Renewed public scrutiny</div><p>Investigative reporting brought renewed attention to the earlier deal and the accounts of survivors, prompting wider public and institutional scrutiny.</p></div><div class="event"><div class="time">July 2019 · Federal indictment</div><p>Federal prosecutors in New York charged Epstein with sex trafficking of minors and conspiracy. The indictment alleged that he recruited and abused dozens of girls, some as young as 14, in New York and Florida between 2002 and 2005. These were allegations in a pending criminal case, not a trial verdict.</p></div><div class="event"><div class="time">August 10, 2019 · Death in federal custody</div><p>Epstein was found unresponsive in his cell at the Metropolitan Correctional Center in Manhattan and was pronounced dead. The New York City medical examiner ruled the death a suicide. The federal criminal case against him was later dismissed because he had died before trial; the dismissal was not an acquittal or a trial finding.</p></div><div class="event"><div class="time">2021–2022 · Ghislaine Maxwell trial</div><p>Ghislaine Maxwell was convicted in federal court of helping recruit and groom underage girls for Epstein's abuse. Her conviction and sentence are separate from the untried 2019 charges against Epstein.</p></div></div>
-<div class="grid"><article class="card"><span class="tag">The abuse</span><h3>How the recruitment system worked</h3><p>The 2019 indictment described a pattern in which underage girls were recruited to visit Epstein's residences for paid “massages” that became sexual abuse. Prosecutors alleged that some victims were paid to recruit other girls. Survivors' accounts and court records describe how money, manipulation, and unequal power were used to exploit vulnerable minors.</p></article><article class="card"><span class="tag">The 2008 deal</span><h3>Why the plea agreement was controversial</h3><p>The federal non-prosecution agreement in Florida shielded Epstein from federal prosecution in that district at the time and included protections for potential co-conspirators. The secrecy of the agreement and the failure to adequately inform victims became central issues. The Justice Department's later review criticized the handling of the case and the treatment of victims, while distinguishing poor judgment from findings of professional misconduct.</p></article><article class="card"><span class="tag">Associates and evidence</span><h3>What a name in a record does—and does not—prove</h3><p>Epstein had social, business, and philanthropic connections with many wealthy and influential people. A contact-book entry, photograph, flight log, or mention in a court document does not by itself establish that a person participated in abuse or knew about crimes. Claims about specific individuals require evidence tied to their own conduct, not guilt by association.</p></article><article class="card"><span class="tag">Unresolved questions</span><h3>What remains disputed or unknown?</h3><p>Epstein's death ended the chance for a criminal trial in the 2019 federal case. Investigations, civil litigation, and document releases have added information, but they do not answer every question about who enabled him or what every associate knew. Claims about a definitive “client list” should be treated cautiously; a single authenticated list establishing criminal clients has not been publicly established.</p></article></div>
-<div class="callout"><strong>Keep the record precise:</strong> Epstein pleaded guilty to Florida state offenses in 2008. In 2019 he was federally indicted but died before trial, so those federal charges were never adjudicated. Maxwell was separately convicted. These are different legal outcomes and should not be blended together.</div>
-<div class="media-resources"><h3>Visual archive: court records and official documents</h3><p class="muted">The most useful primary materials are legal filings and government records. They can contain descriptions of sexual abuse; the links below lead to official records and archives rather than graphic imagery.</p><div class="grid"><article class="card"><span class="tag">Indictment</span><h3>U.S. Department of Justice: 2019 indictment</h3><p>The federal indictment outlining the sex-trafficking and conspiracy charges and the allegations made by prosecutors.</p><p><a href="https://www.justice.gov/d9/press-releases/attachments/2019/07/09/u.s._v._jeffrey_epstein_indictment.pdf" target="_blank" rel="noopener">Read the indictment (PDF) ↗</a></p></article><article class="card"><span class="tag">Government records</span><h3>DOJ Epstein document disclosures</h3><p>Department of Justice collections of court records and released documents, with redactions intended to protect victims and legally protected information.</p><p><a href="https://www.justice.gov/epstein/doj-disclosures" target="_blank" rel="noopener">Browse DOJ disclosures ↗</a></p></article><article class="card"><span class="tag">Official review</span><h3>DOJ review of the 2006–2008 investigation</h3><p>The Justice Department's Office of Professional Responsibility report examines the investigation, the non-prosecution agreement, and interactions with victims.</p><p><a href="https://www.justice.gov/opa/press-release/file/1336416/dl" target="_blank" rel="noopener">Read the DOJ report (PDF) ↗</a></p></article></div></div>
-<p class="small">Victims' privacy matters. This page does not reproduce identifying details, intimate images, or unverified allegations about third parties. The existence of a relationship with Epstein is not, on its own, proof of criminal conduct.</p></div></section>
-<section id="sources"><div class="wrap"><div class="kicker">Sources / Read the record</div><h2>Sources and further reading.</h2><p class="lead">This page maintains its own source list. These materials support the topic covered here and are separate from the sources for the September 11 case.</p><div class="sources"><div class="source"><a href="https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors" target="_blank" rel="noopener">U.S. Attorney’s Office, SDNY — 2019 federal indictment announcement</a><p>Official summary of the federal charges and allegations concerning underage victims.</p></div><div class="source"><a href="https://www.justice.gov/usao-sdny/pr/statement-manhattan-us-attorney-death-defendant-jeffrey-epstein" target="_blank" rel="noopener">U.S. Attorney’s Office, SDNY — statement on Epstein’s death</a><p>Contemporaneous statement confirming Epstein died while awaiting trial.</p></div><div class="source"><a href="https://www.justice.gov/opa/press-release/file/1336416/dl" target="_blank" rel="noopener">U.S. Department of Justice — Office of Professional Responsibility review</a><p>Review of the 2006–2008 investigation, non-prosecution agreement, and treatment of victims.</p></div><div class="source"><a href="https://www.justice.gov/epstein/doj-disclosures" target="_blank" rel="noopener">U.S. Department of Justice — Epstein disclosures</a><p>Official document collections, including court records and released investigative materials.</p></div><div class="source"><a href="https://www.justice.gov/d9/press-releases/attachments/2019/07/09/u.s._v._jeffrey_epstein_indictment.pdf" target="_blank" rel="noopener">U.S. Department of Justice — 2019 indictment (PDF)</a><p>The federal indictment setting out prosecutors’ allegations.</p></div></div></div></section>
-</main>
-<footer><div class="wrap">A CLOSER LOOK · Independent educational topic page. Not affiliated with a government agency or official institution.</div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="A documented account of the abuse, criminal proceedings, institutional failures, and unresolved questions surrounding Jeffrey Epstein.">
+    <title>
+      Jeffrey Epstein — A Closer Look
+    </title>
+    <style>
+      :root {
+        --bg:#101820;
+        --panel:#17232d;
+        --panel2:#1d2b36;
+        --ink:#f4f1eb;
+        --muted:#b8c1c8;
+        --line:#34434e;
+        --accent:#d7a76b;
+        --blue:#8eb4c5;
+        --max:1160px
+      }
+      * {
+        box-sizing:border-box
+      }
+      html {
+        scroll-behavior:smooth;
+        scroll-padding-top:85px
+      }
+      body {
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+      }
+      a {
+        color:var(--blue);
+        text-underline-offset:3px
+      }
+      a:hover {
+        color:#e0f2f8
+      }
+      .wrap {
+        width:min(var(--max),calc(100% - 42px));
+        margin:auto
+      }
+      header {
+        position:sticky;
+        top:0;
+        z-index:20;
+        background:#101820ed;
+        border-bottom:1px solid var(--line);
+        backdrop-filter:blur(12px)
+      }
+      .nav {
+        min-height:68px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px
+      }
+      .brand {
+        font-weight:850;
+        letter-spacing:.1em;
+        font-size:.82rem;
+        color:var(--ink);
+        text-decoration:none;
+        white-space:nowrap
+      }
+      .navlinks {
+        display:flex;
+        gap:17px;
+        align-items:center
+      }
+      .navlinks a {
+        font-size:.82rem;
+        color:var(--muted);
+        text-decoration:none
+      }
+      .navlinks a:hover {
+        color:var(--ink)
+      }
+      .menu {
+        display:none;
+        background:none;
+        border:1px solid var(--line);
+        color:var(--ink);
+        padding:8px 12px;
+        border-radius:8px
+      }
+      .hero {
+        padding:108px 0 88px;
+        background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);
+        border-bottom:1px solid var(--line)
+      }
+      .eyebrow,.kicker {
+        color:var(--accent);
+        font-weight:800;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        font-size:.74rem
+      }
+      .hero h1 {
+        font-size:clamp(3.1rem,8vw,6.8rem);
+        line-height:.96;
+        letter-spacing:-.065em;
+        max-width:980px;
+        margin:22px 0
+      }
+      .hero p {
+        font-size:clamp(1.08rem,2vw,1.28rem);
+        color:#d0d8dd;
+        max-width:790px
+      }
+      .hero .note {
+        font-size:.9rem;
+        color:var(--muted);
+        border-left:2px solid var(--accent);
+        padding-left:16px;
+        margin-top:32px
+      }
+      .actions {
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+        margin-top:28px
+      }
+      .btn {
+        display:inline-block;
+        padding:11px 17px;
+        border-radius:7px;
+        text-decoration:none;
+        font-weight:750;
+        border:1px solid var(--accent);
+        color:#1b2024;
+        background:var(--accent)
+      }
+      .btn.secondary {
+        background:transparent;
+        color:var(--ink);
+        border-color:var(--line)
+      }
+      section {
+        padding:76px 0;
+        border-bottom:1px solid var(--line)
+      }
+      h2 {
+        font-size:clamp(2rem,4vw,3.25rem);
+        line-height:1.08;
+        letter-spacing:-.045em;
+        margin:12px 0 18px
+      }
+      h3 {
+        font-size:1.17rem;
+        line-height:1.35;
+        margin:0 0 9px
+      }
+      .lead {
+        font-size:1.12rem;
+        color:#d0d8dd;
+        max-width:870px
+      }
+      .stats {
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        margin-top:32px
+      }
+      .stat,.card,.source,.fact {
+        padding:22px;
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:10px
+      }
+      .stat strong {
+        display:block;
+        font-size:clamp(2rem,4vw,3rem);
+        letter-spacing:-.05em;
+        color:var(--accent)
+      }
+      .stat span,.muted {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      .grid {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:15px;
+        margin-top:27px
+      }
+      .card p,.source p,.fact p {
+        color:var(--muted);
+        margin:7px 0 0
+      }
+      .timeline {
+        margin-top:30px;
+        border-left:1px solid #65727b;
+        padding-left:26px
+      }
+      .event {
+        position:relative;
+        padding:0 0 27px
+      }
+      .event:before {
+        content:"";
+        position:absolute;
+        width:9px;
+        height:9px;
+        border-radius:50%;
+        background:var(--accent);
+        left:-31px;
+        top:10px
+      }
+      .time {
+        font-size:.78rem;
+        color:var(--accent);
+        font-weight:850;
+        letter-spacing:.08em
+      }
+      .event p {
+        margin:4px 0 0;
+        color:var(--muted)
+      }
+      .two-col {
+        display:grid;
+        grid-template-columns:1.1fr .9fr;
+        gap:30px;
+        align-items:start
+      }
+      .callout {
+        border-left:3px solid var(--accent);
+        padding:17px 21px;
+        background:var(--panel);
+        margin:25px 0;
+        color:#d5dce0
+      }
+      .callout strong {
+        color:var(--ink)
+      }
+      .tag {
+        display:inline-block;
+        font-size:.72rem;
+        color:var(--accent);
+        border:1px solid #806a4e;
+        border-radius:30px;
+        padding:2px 9px;
+        margin-bottom:10px
+      }
+      details {
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:9px;
+        margin:12px 0
+      }
+      summary {
+        cursor:pointer;
+        padding:17px 20px;
+        font-weight:750;
+        list-style:none;
+        display:flex;
+        justify-content:space-between;
+        gap:15px;
+        line-height:1.45
+      }
+      summary:after {
+        content:"＋";
+        color:var(--accent)
+      }
+      details[open] summary:after {
+        content:"−"
+      }
+      details .answer {
+        padding:0 20px 20px;
+        color:var(--muted)
+      }
+      .answer p {
+        margin:8px 0
+      }
+      .sources {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+        margin-top:26px
+      }
+      .source a {
+        font-weight:750
+      }
+      .source p {
+        font-size:.88rem
+      }
+      .small {
+        font-size:.83rem;
+        color:var(--muted)
+      }
+      .section-intro {
+        max-width:850px
+      }
+      .table-wrap {
+        overflow-x:auto;
+        margin:22px 0
+      }
+      table {
+        border-collapse:collapse;
+        width:100%;
+        min-width:620px;
+        background:var(--panel);
+        border:1px solid var(--line)
+      }
+      th,td {
+        text-align:left;
+        padding:13px 15px;
+        border-bottom:1px solid var(--line);
+        vertical-align:top
+      }
+      th {
+        color:var(--accent);
+        font-size:.83rem
+      }
+      td {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      footer {
+        padding:34px 0;
+        color:var(--muted);
+        font-size:.85rem
+      }
+      @media(max-width:850px) {
+        .navlinks {
+          gap:10px
+        }
+        .navlinks a {
+          font-size:.75rem
+        }
+        .two-col {
+          grid-template-columns:1fr
+        }
+      }
+      @media(max-width:700px) {
+        .navlinks {
+          display:none;
+          position:absolute;
+          top:68px;
+          left:0;
+          right:0;
+          background:var(--bg);
+          padding:18px 22px;
+          border-bottom:1px solid var(--line);
+          flex-direction:column;
+          align-items:flex-start
+        }
+        .navlinks.open {
+          display:flex
+        }
+        .menu {
+          display:block
+        }
+        .hero {
+          padding:76px 0 64px
+        }
+        .stats,.grid,.sources {
+          grid-template-columns:1fr
+        }
+        section {
+          padding:56px 0
+        }
+        .wrap {
+          width:min(var(--max),calc(100% - 30px))
+        }
+      }
+      .page-head {
+        padding:54px 0 36px;
+        background:linear-gradient(135deg,#101820,#1d2b36);
+        border-bottom:1px solid var(--line)
+      }
+      .page-head h1 {
+        font-size:clamp(2.5rem,6vw,4.5rem);
+        line-height:1.02;
+        letter-spacing:-.055em;
+        margin:12px 0
+      }
+      .page-head p {
+        max-width:850px;
+        color:#d0d8dd;
+        font-size:1.08rem
+      }
+      .back {
+        display:inline-block;
+        margin-bottom:22px;
+        color:var(--blue);
+        font-weight:750;
+        text-decoration:none
+      }
+      main>section {
+        padding-top:50px
+      }
+      @media(max-width:700px) {
+        .page-head {
+          padding:36px 0 28px
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          A CLOSER LOOK / INDEPENDENT TOPIC
+        </a>
+        <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">
+          Menu
+        </button>
+        <nav class="navlinks" id="navlinks">
+          <a href="index.html">
+            Main history hub
+          </a>
+          <a href="#topic">
+            This topic
+          </a>
+          <a href="#sources">
+            Sources
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div class="page-head">
+      <div class="wrap">
+        <a class="back" href="index.html">
+          ← Back to the main history hub
+        </a>
+        <div class="eyebrow">
+          Independent topic · Evidence · Context
+        </div>
+        <h1>
+          Jeffrey Epstein
+        </h1>
+        <p>
+          A documented account of the abuse, criminal proceedings, institutional failures, and unresolved questions surrounding Jeffrey Epstein.
+        </p>
+      </div>
+    </div>
+    <main id="topic">
+      <section id="epstein">
+        <div class="wrap">
+          <div class="kicker">
+            13 / Crime, power, and institutional accountability
+          </div>
+          <h2>
+            Jeffrey Epstein: abuse, influence, and failures of accountability.
+          </h2>
+          <p class="lead">
+            Jeffrey Epstein was a wealthy American financier whose relationships with prominent people and access to powerful circles drew intense scrutiny. The central historical record, however, is the sexual exploitation of underage girls, the institutional failures that allowed it to continue, and the questions left unresolved when he died in federal custody in 2019.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong>
+                2008
+              </strong>
+              <span>
+                Florida guilty plea to state offenses involving minors
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                2019
+              </strong>
+              <span>
+                Federal sex-trafficking indictment in New York
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                14
+              </strong>
+              <span>
+                Youngest age alleged for victims in the 2019 indictment
+              </span>
+            </div>
+          </div>
+          <h3 style="margin-top:30px">
+            A timeline of the case
+          </h3>
+          <div class="timeline">
+            <div class="event">
+              <div class="time">
+                2005–2006 · Florida investigation
+              </div>
+              <p>
+                A complaint by a young girl and her family led Palm Beach police to investigate allegations that Epstein sexually abused minors. The investigation expanded and drew federal attention.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                2007–2008 · Federal non-prosecution agreement and state plea
+              </div>
+              <p>
+                Federal prosecutors in South Florida reached a non-prosecution agreement. In June 2008, Epstein pleaded guilty in Florida state court to offenses including procuring a minor for prostitution. He received an 18-month sentence and served a substantially limited period in custody under a work-release arrangement. The agreement and the way victims were treated became major sources of criticism and litigation.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                2018 · Renewed public scrutiny
+              </div>
+              <p>
+                Investigative reporting brought renewed attention to the earlier deal and the accounts of survivors, prompting wider public and institutional scrutiny.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                July 2019 · Federal indictment
+              </div>
+              <p>
+                Federal prosecutors in New York charged Epstein with sex trafficking of minors and conspiracy. The indictment alleged that he recruited and abused dozens of girls, some as young as 14, in New York and Florida between 2002 and 2005. These were allegations in a pending criminal case, not a trial verdict.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                August 10, 2019 · Death in federal custody
+              </div>
+              <p>
+                Epstein was found unresponsive in his cell at the Metropolitan Correctional Center in Manhattan and was pronounced dead. The New York City medical examiner ruled the death a suicide. The federal criminal case against him was later dismissed because he had died before trial; the dismissal was not an acquittal or a trial finding.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                2021–2022 · Ghislaine Maxwell trial
+              </div>
+              <p>
+                Ghislaine Maxwell was convicted in federal court of helping recruit and groom underage girls for Epstein's abuse. Her conviction and sentence are separate from the untried 2019 charges against Epstein.
+              </p>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <span class="tag">
+                The abuse
+              </span>
+              <h3>
+                How the recruitment system worked
+              </h3>
+              <p>
+                The 2019 indictment described a pattern in which underage girls were recruited to visit Epstein's residences for paid “massages” that became sexual abuse. Prosecutors alleged that some victims were paid to recruit other girls. Survivors' accounts and court records describe how money, manipulation, and unequal power were used to exploit vulnerable minors.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag">
+                The 2008 deal
+              </span>
+              <h3>
+                Why the plea agreement was controversial
+              </h3>
+              <p>
+                The federal non-prosecution agreement in Florida shielded Epstein from federal prosecution in that district at the time and included protections for potential co-conspirators. The secrecy of the agreement and the failure to adequately inform victims became central issues. The Justice Department's later review criticized the handling of the case and the treatment of victims, while distinguishing poor judgment from findings of professional misconduct.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag">
+                Associates and evidence
+              </span>
+              <h3>
+                What a name in a record does—and does not—prove
+              </h3>
+              <p>
+                Epstein had social, business, and philanthropic connections with many wealthy and influential people. A contact-book entry, photograph, flight log, or mention in a court document does not by itself establish that a person participated in abuse or knew about crimes. Claims about specific individuals require evidence tied to their own conduct, not guilt by association.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag">
+                Unresolved questions
+              </span>
+              <h3>
+                What remains disputed or unknown?
+              </h3>
+              <p>
+                Epstein's death ended the chance for a criminal trial in the 2019 federal case. Investigations, civil litigation, and document releases have added information, but they do not answer every question about who enabled him or what every associate knew. Claims about a definitive “client list” should be treated cautiously; a single authenticated list establishing criminal clients has not been publicly established.
+              </p>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>
+              Keep the record precise:
+            </strong>
+            Epstein pleaded guilty to Florida state offenses in 2008. In 2019 he was federally indicted but died before trial, so those federal charges were never adjudicated. Maxwell was separately convicted. These are different legal outcomes and should not be blended together.
+          </div>
+          <div class="media-resources">
+            <h3>
+              Visual archive: court records and official documents
+            </h3>
+            <p class="muted">
+              The most useful primary materials are legal filings and government records. They can contain descriptions of sexual abuse; the links below lead to official records and archives rather than graphic imagery.
+            </p>
+            <div class="grid">
+              <article class="card">
+                <span class="tag">
+                  Indictment
+                </span>
+                <h3>
+                  U.S. Department of Justice: 2019 indictment
+                </h3>
+                <p>
+                  The federal indictment outlining the sex-trafficking and conspiracy charges and the allegations made by prosecutors.
+                </p>
+                <p>
+                  <a href="https://www.justice.gov/d9/press-releases/attachments/2019/07/09/u.s._v._jeffrey_epstein_indictment.pdf" target="_blank" rel="noopener">
+                    Read the indictment (PDF) ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Government records
+                </span>
+                <h3>
+                  DOJ Epstein document disclosures
+                </h3>
+                <p>
+                  Department of Justice collections of court records and released documents, with redactions intended to protect victims and legally protected information.
+                </p>
+                <p>
+                  <a href="https://www.justice.gov/epstein/doj-disclosures" target="_blank" rel="noopener">
+                    Browse DOJ disclosures ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Official review
+                </span>
+                <h3>
+                  DOJ review of the 2006–2008 investigation
+                </h3>
+                <p>
+                  The Justice Department's Office of Professional Responsibility report examines the investigation, the non-prosecution agreement, and interactions with victims.
+                </p>
+                <p>
+                  <a href="https://www.justice.gov/opa/press-release/file/1336416/dl" target="_blank" rel="noopener">
+                    Read the DOJ report (PDF) ↗
+                  </a>
+                </p>
+              </article>
+            </div>
+          </div>
+          <p class="small">
+            Victims' privacy matters. This page does not reproduce identifying details, intimate images, or unverified allegations about third parties. The existence of a relationship with Epstein is not, on its own, proof of criminal conduct.
+          </p>
+        </div>
+      </section>
+      <section id="sources">
+        <div class="wrap">
+          <div class="kicker">
+            Sources / Read the record
+          </div>
+          <h2>
+            Sources and further reading.
+          </h2>
+          <p class="lead">
+            This page maintains its own source list. These materials support the topic covered here and are separate from the sources for the September 11 case.
+          </p>
+          <div class="sources">
+            <div class="source">
+              <a href="https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors" target="_blank" rel="noopener">
+                U.S. Attorney’s Office, SDNY — 2019 federal indictment announcement
+              </a>
+              <p>
+                Official summary of the federal charges and allegations concerning underage victims.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.justice.gov/usao-sdny/pr/statement-manhattan-us-attorney-death-defendant-jeffrey-epstein" target="_blank" rel="noopener">
+                U.S. Attorney’s Office, SDNY — statement on Epstein’s death
+              </a>
+              <p>
+                Contemporaneous statement confirming Epstein died while awaiting trial.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.justice.gov/opa/press-release/file/1336416/dl" target="_blank" rel="noopener">
+                U.S. Department of Justice — Office of Professional Responsibility review
+              </a>
+              <p>
+                Review of the 2006–2008 investigation, non-prosecution agreement, and treatment of victims.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.justice.gov/epstein/doj-disclosures" target="_blank" rel="noopener">
+                U.S. Department of Justice — Epstein disclosures
+              </a>
+              <p>
+                Official document collections, including court records and released investigative materials.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.justice.gov/d9/press-releases/attachments/2019/07/09/u.s._v._jeffrey_epstein_indictment.pdf" target="_blank" rel="noopener">
+                U.S. Department of Justice — 2019 indictment (PDF)
+              </a>
+              <p>
+                The federal indictment setting out prosecutors’ allegations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        A CLOSER LOOK · Independent educational topic page. Not affiliated with a government agency or official institution.
+      </div>
+    </footer>
+    <script>
+      const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
-</script>
-</body></html>
+    </script>
+  </body>
+</html>
