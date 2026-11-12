@@ -368,6 +368,34 @@
           width:min(var(--max),calc(100% - 30px))
         }
       }
+    
+      .encyclopedia-note {
+        margin: 22px 0 28px;
+        padding: 17px 20px;
+        background: #1b2933;
+        border: 1px solid #40515d;
+        border-left: 3px solid var(--accent);
+        border-radius: 8px;
+      }
+      .encyclopedia-note .reference-label {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--accent);
+        font-size: .72rem;
+        font-weight: 850;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      .encyclopedia-note p {
+        margin: 0;
+        color: #d0d8dd;
+        font-size: .94rem;
+      }
+      .encyclopedia-note .reference-topics {
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: .82rem;
+      }
     </style>
   </head>
   <body>
@@ -460,6 +488,12 @@
           <p class="lead">
             On the morning of September 11, 2001, 19 members of the terrorist organization al-Qaeda hijacked four passenger aircraft in the United States. The hijackers deliberately flew three of them into major targets. The fourth crashed in Pennsylvania after passengers and crew fought back. The attacks killed 2,977 victims, not counting the 19 hijackers.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · What happened</span>
+            <p>A concise account of the attacks, the four hijacked flights, the targets, and the people killed. The immediate death toll is distinct from later illnesses and other long-term effects.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Four hijacked aircraft · New York, the Pentagon, and Pennsylvania · Immediate casualties</p>
+          </aside>
+
           <div class="stats">
             <div class="stat">
               <strong>
@@ -625,6 +659,12 @@
           <p class="lead">
             All times below are Eastern Daylight Time. Exact minute references can differ slightly between sources because the timeline was reconstructed from flight, telephone, radio, and witness records. The sequence is well established.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Morning chronology</span>
+            <p>A chronological reconstruction of the morning using flight records, communications, witness accounts, and official investigations. Times are Eastern Daylight Time.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Flight departures · Aircraft impacts · Collapses and national response</p>
+          </aside>
+
           <div class="timeline">
             <div class="event">
               <div class="time">
@@ -767,6 +807,12 @@
           <p class="lead">
             The 9/11 attacks were planned by al-Qaeda, a transnational terrorist organization led by Osama bin Laden. Understanding the perpetrators' goals does not excuse them; it explains the historical context in which the operation developed.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Al-Qaeda and planning</span>
+            <p>Explains al-Qaeda's leadership, planning, stated aims, recruitment, and target selection. Describing the perpetrators' ideology is historical context, not justification.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Al-Qaeda · Osama bin Laden · Planning and target selection</p>
+          </aside>
+
           <div class="two-col">
             <div>
               <h3>
@@ -827,6 +873,12 @@
           <p class="lead">
             The attacks were an unprecedented emergency for the people caught in them and for the institutions trying to respond. The response included extraordinary acts of courage, but also serious coordination and communication problems.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Emergency response</span>
+            <p>Documents the actions of firefighters, police, medical personnel, flight crews, passengers, and civilians, alongside the communication and coordination limits they faced.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Fire and rescue operations · Civilian actions · Communication failures</p>
+          </aside>
+
           <div class="grid">
             <article class="card">
               <h3>
@@ -889,6 +941,12 @@
           <p class="lead">
             The collapses are among the most studied structural failures in modern history. The National Institute of Standards and Technology (NIST) conducted extensive investigations into the Twin Towers and World Trade Center 7. The three buildings did not fail in exactly the same way.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Structural investigations</span>
+            <p>Summarizes the engineering investigations into the Twin Towers and WTC 7, including impact damage, fire, structural behavior, and the limits of what investigations establish.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Aircraft impact damage · Fire and structural failure · NIST investigations</p>
+          </aside>
+
           <div class="card">
             <span class="tag">
               WTC 1 and WTC 2
@@ -957,6 +1015,12 @@
           <p class="lead">
             The consequences of 9/11 unfolded over years. Some were direct and measurable; others were political, social, or personal. A balanced account should neither minimize them nor treat every later development as an inevitable or justified result of the attacks.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Long-term consequences</span>
+            <p>Separates the public-health, military, legal, economic, security, and cultural consequences that unfolded after the attacks. Later policy choices are not all direct or inevitable effects.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Public health · Wars and policy · Security, economy, and memory</p>
+          </aside>
+
           <div class="grid">
             <article class="card">
               <h3>
@@ -1051,6 +1115,12 @@
           <p class="lead">
             These topics are often discussed in oversimplified ways. Expand each answer for the evidence, the relevant distinction, and what should not be inferred from it.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Claims and evidence</span>
+            <p>Answers recurring claims by defining terms, checking evidence, and separating established findings from disputed interpretations or unsupported assertions.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Casualty figures · Building investigations · Evidence versus speculation</p>
+          </aside>
+
           <details>
             <summary>
               “9/11 was not as bad as people say.”
@@ -1221,6 +1291,12 @@
           <p class="lead" style="margin-top:28px">
             When evaluating a claim, ask: Who is making it? What evidence is offered? Is the source close to the event? Does the claim distinguish fact from inference? Does it acknowledge evidence that complicates its position? Are its statistics clearly defined and dated?
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Historical method</span>
+            <p>A practical guide to evaluating historical claims: identify the source, evidence, method, date, uncertainty, and difference between observation and interpretation.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> Primary evidence · Expert analysis · Policy interpretation</p>
+          </aside>
+
         </div>
       </section>
       <section id="sources">
@@ -1234,6 +1310,12 @@
           <p class="lead">
             The links below are a starting point for reading the underlying record rather than relying on summaries or social-media posts. The site draws most heavily on the 9/11 Commission, NIST, CDC/NIOSH, and memorial institutions.
           </p>
+          <aside class="encyclopedia-note" aria-label="Section quick reference">
+            <span class="reference-label">Quick reference · Primary records</span>
+            <p>A research starting point built around primary records, official investigations, public-health data, and memorial archives. Check publication dates and read original documents where possible.</p>
+            <p class="reference-topics"><strong>Key subjects:</strong> 9/11 Commission · NIST reports · CDC/NIOSH and memorial archives</p>
+          </aside>
+
           <div class="sources">
             <div class="source">
               <a href="https://www.9-11commission.gov/report/" target="_blank" rel="noopener">
