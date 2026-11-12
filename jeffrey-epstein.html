@@ -1073,14 +1073,21 @@
         if (opts.text_size === "large") article.style.fontSize = "1.12em";
         if (opts.alignment === "center") article.style.textAlign = "center";
         if (opts.layout === "compact") article.style.maxWidth = "760px";
+        if (opts.layout === "magazine") { article.style.maxWidth = "820px"; article.style.fontFamily = "Georgia,serif"; }
         if (opts.background === "paper") { article.style.background = "#e9e2d4"; article.style.color = "#252525"; }
         if (opts.reading_time) { const read = document.createElement("div"); read.className = "community-meta"; read.textContent = opts.reading_time; article.appendChild(read); }
 
         String(section.body).split("\n\n").forEach((paragraphText, paragraphIndex) => {
           if (!paragraphText.trim()) return;
           const paragraph = document.createElement("p");
-          paragraph.textContent = paragraphText;
-          if (paragraphIndex === 0 && opts.dropcap === "dropcap") paragraph.style.cssText = "font-size:1.08em";
+          if (paragraphIndex === 0 && opts.dropcap === "dropcap" && paragraphText.length) {
+            const firstLetter = document.createElement("span");
+            firstLetter.textContent = paragraphText.charAt(0);
+            firstLetter.style.cssText = "float:left;font-size:3.2em;line-height:.85;padding-right:7px;color:" + (accent || "var(--accent)");
+            paragraph.append(firstLetter, document.createTextNode(paragraphText.slice(1)));
+          } else {
+            paragraph.textContent = paragraphText;
+          }
           if (opts.divider === "line" && paragraphIndex < String(section.body).split("\n\n").filter(Boolean).length - 1) paragraph.style.borderBottom = "1px solid var(--line)";
           if (opts.divider === "space") paragraph.style.marginBottom = "2em";
           article.appendChild(paragraph);
