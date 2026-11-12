@@ -1,37 +1,930 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101820"><meta name="description" content="The December 7, 1941 attack, Japanese strategy, American preparedness, the Pacific War, and the policies that followed."><title>Pearl Harbor — A Closer Look</title>
-<style>
-:root{--bg:#101820;--panel:#17232d;--panel2:#1d2b36;--ink:#f4f1eb;--muted:#b8c1c8;--line:#34434e;--accent:#d7a76b;--blue:#8eb4c5;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}a:hover{color:#e0f2f8}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#101820ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:.1em;font-size:.82rem;color:var(--ink);text-decoration:none;white-space:nowrap}.navlinks{display:flex;gap:17px;align-items:center}.navlinks a{font-size:.82rem;color:var(--muted);text-decoration:none}.navlinks a:hover{color:var(--ink)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:8px}
-.hero{padding:108px 0 88px;background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);border-bottom:1px solid var(--line)}.eyebrow,.kicker{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem}.hero h1{font-size:clamp(3.1rem,8vw,6.8rem);line-height:.96;letter-spacing:-.065em;max-width:980px;margin:22px 0}.hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:#d0d8dd;max-width:790px}.hero .note{font-size:.9rem;color:var(--muted);border-left:2px solid var(--accent);padding-left:16px;margin-top:32px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none;font-weight:750;border:1px solid var(--accent);color:#1b2024;background:var(--accent)}.btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-section{padding:76px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;letter-spacing:-.045em;margin:12px 0 18px}h3{font-size:1.17rem;line-height:1.35;margin:0 0 9px}.lead{font-size:1.12rem;color:#d0d8dd;max-width:870px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.stat,.card,.source,.fact{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.stat strong{display:block;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;color:var(--accent)}.stat span,.muted{color:var(--muted);font-size:.91rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:27px}.card p,.source p,.fact p{color:var(--muted);margin:7px 0 0}.timeline{margin-top:30px;border-left:1px solid #65727b;padding-left:26px}.event{position:relative;padding:0 0 27px}.event:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);left:-31px;top:10px}.time{font-size:.78rem;color:var(--accent);font-weight:850;letter-spacing:.08em}.event p{margin:4px 0 0;color:var(--muted)}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}.callout{border-left:3px solid var(--accent);padding:17px 21px;background:var(--panel);margin:25px 0;color:#d5dce0}.callout strong{color:var(--ink)}.tag{display:inline-block;font-size:.72rem;color:var(--accent);border:1px solid #806a4e;border-radius:30px;padding:2px 9px;margin-bottom:10px}
-details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin:12px 0}summary{cursor:pointer;padding:17px 20px;font-weight:750;list-style:none;display:flex;justify-content:space-between;gap:15px;line-height:1.45}summary:after{content:"＋";color:var(--accent)}details[open] summary:after{content:"−"}details .answer{padding:0 20px 20px;color:var(--muted)}.answer p{margin:8px 0}.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}.source a{font-weight:750}.source p{font-size:.88rem}.small{font-size:.83rem;color:var(--muted)}.section-intro{max-width:850px}.table-wrap{overflow-x:auto;margin:22px 0}table{border-collapse:collapse;width:100%;min-width:620px;background:var(--panel);border:1px solid var(--line)}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--accent);font-size:.83rem}td{color:var(--muted);font-size:.91rem}footer{padding:34px 0;color:var(--muted);font-size:.85rem}
-@media(max-width:850px){.navlinks{gap:10px}.navlinks a{font-size:.75rem}.two-col{grid-template-columns:1fr}}
-@media(max-width:700px){.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.hero{padding:76px 0 64px}.stats,.grid,.sources{grid-template-columns:1fr}section{padding:56px 0}.wrap{width:min(var(--max),calc(100% - 30px))}}
-
-.page-head{padding:54px 0 36px;background:linear-gradient(135deg,#101820,#1d2b36);border-bottom:1px solid var(--line)}
-.page-head h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0}
-.page-head p{max-width:850px;color:#d0d8dd;font-size:1.08rem}
-.back{display:inline-block;margin-bottom:22px;color:var(--blue);font-weight:750;text-decoration:none}
-main>section{padding-top:50px}
-@media(max-width:700px){.page-head{padding:36px 0 28px}}
-</style></head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="index.html">A CLOSER LOOK / INDEPENDENT TOPIC</a><button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><nav class="navlinks" id="navlinks"><a href="index.html">9/11 history page</a><a href="#topic">This topic</a><a href="#sources">Sources</a></nav></div></header>
-<div class="page-head"><div class="wrap"><a class="back" href="index.html">← Back to the main history hub</a><div class="eyebrow">Independent history topic · Evidence · Context</div><h1>Pearl Harbor</h1><p>The December 7, 1941 attack, Japanese strategy, American preparedness, the Pacific War, and the policies that followed.</p></div></div>
-<main id="topic"><section id="pearl-harbor"><div class="wrap"><div class="kicker">02 / A second turning point</div><h2>Pearl Harbor: the attack that brought America into World War II.</h2><p class="lead">On December 7, 1941, the Imperial Japanese Navy launched a surprise air attack against the U.S. Pacific Fleet and nearby military facilities on Oahu, Hawaii. It was a major military disaster and a defining moment in American history. Understanding Pearl Harbor means looking beyond the famous images: the strategy behind the attack, what was damaged and what survived, the failures in warning and readiness, and the policies that followed.</p><div class="stats"><div class="stat"><strong>2,390</strong><span>American military and civilian deaths recorded by the National Park Service</span></div><div class="stat"><strong>353</strong><span>Japanese aircraft involved in the two-wave attack</span></div><div class="stat"><strong>188</strong><span>U.S. aircraft destroyed, according to Naval History and Heritage Command</span></div></div><div class="media-resources" aria-label="Pearl Harbor images and videos"><h3>Visual archive: historic photographs and survivor footage</h3><p class="muted">These museum and government collections include photographs from the attack, ship damage, memorial sites, and recorded accounts from people who experienced the event.</p><div class="grid"><article class="card"><span class="tag">Historic photos</span><h3>National Park Service: Pearl Harbor photo gallery</h3><p>Historic photographs of the attack, USS Arizona, USS Nevada, USS West Virginia, and other ships.</p><p><a href="https://www.nps.gov/perl/learn/photosmultimedia/photogallery.htm" target="_blank" rel="noopener">Browse historic photographs ↗</a></p></article><article class="card"><span class="tag">Video + oral history</span><h3>National Park Service: Video archive</h3><p>Survivor interviews, underwater footage of USS Arizona, commemorations, and ranger-led history videos.</p><p><a href="https://www.nps.gov/perl/learn/photosmultimedia/video-archive.htm" target="_blank" rel="noopener">Watch the NPS video archive ↗</a></p></article><article class="card"><span class="tag">Original footage</span><h3>National Archives: Attack footage</h3><p>Film captured during the Japanese attack, including an explosion aboard USS Arizona. Published by the U.S. National Archives.</p><p><a href="https://www.youtube.com/watch?v=WvhJboFYFX4" target="_blank" rel="noopener">Watch archival Pearl Harbor footage ↗</a></p></article><article class="card"><span class="tag">Photograph</span><h3>Attack on Pearl Harbor</h3><p>An NPS archival photograph taken by a Japanese naval aviator, showing torpedo tracks heading toward Battleship Row.</p><p><a href="https://npgallery.nps.gov/AssetDetail/40927e59-e244-62f2-fbf6-e8450867ebd2" target="_blank" rel="noopener">View the original NPS photograph ↗</a></p></article></div></div><div class="callout"><strong>Purpose:</strong> This section does not argue Pearl Harbor was harmless or insignificant. It separates the immediate attack from the wider war and examines later decisions using evidence.</div>
-<h3>What was attacked?</h3><p class="muted">Pearl Harbor was the principal U.S. Pacific Fleet base. Japanese forces also struck nearby airfields and military installations on Oahu. Aircraft were attacked on the ground to limit the ability of American forces to mount an immediate defense. The target was not simply a harbor; it was the U.S. military position in the Pacific.</p><div class="grid"><article class="card"><h3>Naval base and Battleship Row</h3><p>Japanese aircraft attacked battleships and other vessels. USS Arizona suffered a catastrophic magazine explosion and sank. USS Oklahoma capsized. Other ships were sunk, beached, or damaged, but many were later repaired and returned to service.</p></article><article class="card"><h3>Airfields and aircraft</h3><p>Attacks on airfields destroyed or damaged large numbers of American aircraft, many while parked. This reduced the immediate ability of U.S. forces to contest the incoming attack.</p></article><article class="card"><h3>Military personnel and civilians</h3><p>The dead included sailors, soldiers, Marines, and civilians. Some civilians were killed by Japanese attacks; others were struck by American anti-aircraft fire or falling ordnance. The National Park Service lists 49 civilian deaths among 2,390 total deaths.</p></article><article class="card"><h3>A wider Pacific offensive</h3><p>Pearl Harbor was part of a coordinated Japanese offensive across the Pacific and Southeast Asia. Japanese forces also attacked the Philippines, Guam, Wake Island, Malaya, and Hong Kong. Focusing only on Pearl Harbor obscures the wider operation.</p></article></div>
-<h3>The attack in numbers</h3><p class="muted">The National Park Service's Pearl Harbor National Memorial gives a total of 2,390 American deaths: 2,341 service members and 49 civilians. Other summaries sometimes give slightly different totals because they use different dates or categories. This page uses the NPS figure and identifies what it counts. Naval History and Heritage Command records 353 Japanese aircraft launched from six carriers in two waves and 188 American aircraft destroyed.</p>
-<h3>A timeline of December 7, 1941</h3><p class="muted">Times are Hawaii local time. Exact minute-by-minute descriptions vary slightly between records, but the broad sequence is well established.</p><div class="timeline"><div class="event"><div class="time">BEFORE DAWN</div><h3>Japanese strike force approaches</h3><p>A carrier force operating under radio silence launches aircraft from north of Hawaii, including fighters, torpedo aircraft, dive bombers, and level bombers.</p></div><div class="event"><div class="time">ABOUT 6:45 A.M.</div><h3>A Japanese midget submarine is engaged</h3><p>U.S. forces detect and attack a small Japanese submarine near the harbor entrance. This warning does not lead to a timely island-wide alert.</p></div><div class="event"><div class="time">ABOUT 7:02 A.M.</div><h3>Radar detects incoming aircraft</h3><p>Army radar operators detect a large formation approaching Oahu. The report is discounted because personnel believe it may be an expected group of American B-17 bombers.</p></div><div class="event"><div class="time">7:55 A.M.</div><h3>First wave strikes</h3><p>Japanese aircraft attack Pearl Harbor, airfields, and military installations. Torpedo and dive bombers hit ships while other aircraft attack planes and facilities on land.</p></div><div class="event"><div class="time">ABOUT 8:10 A.M.</div><h3>USS Arizona explodes</h3><p>A bomb triggers a catastrophic explosion in the battleship's forward magazines. Arizona sinks with heavy loss of life.</p></div><div class="event"><div class="time">ABOUT 8:40 A.M.</div><h3>Second wave attacks</h3><p>A second group of Japanese aircraft attacks ships and military facilities. American defenders continue firing anti-aircraft weapons and attempting to get aircraft airborne.</p></div><div class="event"><div class="time">ABOUT 9:45 A.M.</div><h3>The air attack ends</h3><p>Japanese aircraft withdraw. Rescue, medical treatment, damage assessment, and recovery operations continue.</p></div><div class="event"><div class="time">DECEMBER 8</div><h3>Congress declares war on Japan</h3><p>President Franklin D. Roosevelt addresses Congress. The United States declares war on Japan.</p></div><div class="event"><div class="time">DECEMBER 11</div><h3>Germany and Italy declare war</h3><p>Japan's European Axis partners declare war on the United States. Congress then declares war on Germany and Italy.</p></div></div>
-<h3>Why did Japan attack?</h3><p class="muted">During the 1930s, Imperial Japan expanded its control in East Asia, including Manchuria and much of China. The United States opposed Japanese expansion and imposed economic restrictions, including limits on strategic materials and an oil embargo. Japanese leaders viewed these restrictions as a serious threat to their ability to sustain military campaigns. Rather than abandon expansion, Japan chose a broad offensive across the Pacific and Southeast Asia.</p><p class="muted">Japanese planners hoped to weaken the U.S. Pacific Fleet long enough to seize territory and resources, consolidate their position, and force the United States to accept a negotiated settlement. Admiral Isoroku Yamamoto was a leading advocate of the carrier strike. The attack required long-range navigation, secrecy, coordination among six carriers, and careful planning for torpedo attacks in a shallow harbor.</p><p class="muted">Japan achieved tactical surprise and inflicted severe damage. However, the American aircraft carriers were at sea and escaped damage. Fuel storage, repair facilities, and the submarine base also survived. Many damaged ships were salvaged and returned to service. The attack unified American public opinion behind entering the war, an outcome contrary to Japan's hope of discouraging prolonged U.S. involvement.</p>
-<h3>Warning signs and preparedness failures</h3><p class="muted">The United States was not completely unaware of the possibility of conflict with Japan. Diplomatic tensions were severe, intelligence intercepts showed relations deteriorating, radar operators detected an approaching formation, and a Japanese midget submarine was engaged near the harbor. But a general warning of war was not the same as a precise, actionable warning that Pearl Harbor would be attacked at dawn on December 7. The radar report was misinterpreted as a likely arrival of friendly B-17 bombers; the submarine report did not trigger an effective alert. Later investigations identified failures in intelligence evaluation, communication, command decisions, and readiness.</p><p class="muted">Multiple investigations followed, including the Roberts Commission and later Army, Navy, and congressional inquiries. The Joint Committee on the Investigation of the Pearl Harbor Attack examined events and circumstances before and after the attack, including whether American officials and commanders had failed in their duties. The record is extensive and includes disagreements about responsibility and how intelligence should have been interpreted.</p><div class="callout"><strong>How to assess the warning question:</strong> Ask what information existed, who received it, when it arrived, how it was interpreted, and what action was realistically possible. “There were warnings” and “officials knew the exact plan” are not equivalent statements.</div>
-<h3>What happened afterward?</h3><div class="grid"><article class="card"><h3>Entry into World War II</h3><p>Congress declared war on Japan on December 8. Germany and Italy declared war on the United States on December 11, and Congress responded with declarations of war against them. America entered both the Pacific and European theaters.</p></article><article class="card"><h3>Military mobilization</h3><p>The United States expanded its armed forces, shipbuilding, aircraft production, logistics, and training. Factories shifted toward producing ships, planes, vehicles, weapons, and supplies; rationing and bond drives changed life on the home front.</p></article><article class="card"><h3>The Pacific War</h3><p>Japan's early offensives captured territory across the Pacific and Southeast Asia. The Allies fought a prolonged campaign involving naval battles, island operations, submarine warfare, air campaigns, and ground combat until Japan surrendered in 1945.</p></article><article class="card"><h3>Japanese American incarceration</h3><p>Wartime fear and racism helped drive the forced removal and incarceration of approximately 120,000 people of Japanese ancestry, most of them U.S. citizens or long-term residents. The policy targeted people based on ancestry rather than individualized proof of disloyalty and is now widely recognized as a grave violation of civil liberties.</p></article><article class="card"><h3>Hawaii under martial law</h3><p>Hawaii was placed under martial law after the attack. Military authorities exercised broad control over civilian life, including curfews, censorship, and restrictions on movement. Martial law continued until 1944.</p></article><article class="card"><h3>The end of the war</h3><p>Japan surrendered in August 1945 after years of fighting, the Soviet Union's entry into the war against Japan, and the atomic bombings of Hiroshima and Nagasaki. The formal surrender was signed on September 2, 1945. These events raise distinct strategic and moral questions beyond the reasons for the Pearl Harbor attack.</p></article></div>
-<h3>Common claims and questions</h3><details><summary>“Pearl Harbor destroyed the entire U.S. Pacific Fleet.”</summary><div class="answer"><p>No. The attack inflicted severe damage, especially on battleships in port, and destroyed many aircraft. But the carriers were at sea, key repair and fuel infrastructure survived, and many damaged ships were returned to service. The fleet suffered a major blow, not total destruction.</p></div></details><details><summary>“The United States had absolutely no warning.”</summary><div class="answer"><p>There were warnings of worsening relations and specific indicators on the morning of the attack. However, these did not provide a clear, correctly interpreted warning that a carrier strike was imminent at Pearl Harbor. The failure involved how warnings were evaluated, communicated, and acted upon.</p></div></details><details><summary>“The government knew the exact attack was coming and deliberately allowed it.”</summary><div class="answer"><p>Investigations found serious intelligence and command failures. But evidence of warnings, intercepted messages, or poor decisions is not proof that senior officials knew the exact plan and intentionally permitted it. That stronger allegation requires direct evidence, not inference alone.</p></div></details><details><summary>“Pearl Harbor was a complete Japanese strategic victory.”</summary><div class="answer"><p>Japan achieved surprise and inflicted devastating immediate losses. But it did not eliminate U.S. carrier power, destroy key base infrastructure, or prevent American mobilization. It also galvanized public support for war. A tactical victory can fail to deliver the strategic result its planners wanted.</p></div></details><details><summary>“Japanese American incarceration was necessary because of the attack.”</summary><div class="answer"><p>The attack created fear, but fear does not establish collective guilt. Mass incarceration targeted people of Japanese ancestry without individualized evidence that they posed a security threat. It affected U.S. citizens and is widely recognized as a serious violation of civil liberties.</p></div></details><details><summary>“The attack alone explains every American decision during World War II.”</summary><div class="answer"><p>Pearl Harbor explains the immediate U.S. declaration of war against Japan, but it does not automatically justify every military operation or domestic policy that followed. Strategy, incarceration, bombing, and the use of atomic weapons each require their own historical and ethical analysis.</p></div></details><div class="callout"><strong>The central lesson:</strong> Pearl Harbor was a devastating attack and a major turning point, but it did not destroy all American naval power, make every later policy inevitable, or remove the need to scrutinize government decisions. Accurate history can acknowledge the attack's gravity while examining the failures and limits of the response.</div>
-</div></section>\n
-<section id="sources"><div class="wrap"><div class="kicker">Sources / Read the record</div><h2>Sources and further reading.</h2><p class="lead">This page has a dedicated bibliography focused only on this historical subject. The sources below are not shared with the September 11 page.</p><div class="sources"><div class="source"><a href="https://www.archives.gov/legislative/features/pearl-harbor" target="_blank" rel="noopener">National Archives — Attack on Pearl Harbor</a><p>Archival overview, casualty and equipment losses, declaration of war, and congressional investigation.</p></div><div class="source"><a href="https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1941/pearl-harbor.html" target="_blank" rel="noopener">Naval History and Heritage Command — Pearl Harbor</a><p>Detailed account of the attack waves, ship and aircraft losses, casualties, and what survived.</p></div><div class="source"><a href="https://www.nps.gov/perl/learn/historyculture/people.htm" target="_blank" rel="noopener">National Park Service — People and Casualties</a><p>Casualty categories and memorial information, including civilian deaths.</p></div><div class="source"><a href="https://www.nps.gov/wwii/learn/historyculture/pearl-harbor.htm" target="_blank" rel="noopener">National Park Service — Pearl Harbor and World War II</a><p>Japanese strategic aims, surviving carriers and infrastructure, and the attack's consequences.</p></div><div class="source"><a href="https://encyclopedia.ushmm.org/content/en/article/pearl-harbor" target="_blank" rel="noopener">U.S. Holocaust Memorial Museum — Pearl Harbor</a><p>Background on Japanese expansion, the Pacific offensive, and U.S. entry into World War II.</p></div></div></div></section>
-</main>
-<footer><div class="wrap">A CLOSER LOOK · Independent educational history page. Not an official government or institutional publication.</div></footer>
-<script>const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));</script>
-</body></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="The December 7, 1941 attack, Japanese strategy, American preparedness, the Pacific War, and the policies that followed.">
+    <title>
+      Pearl Harbor — A Closer Look
+    </title>
+    <style>
+      :root {
+        --bg:#101820;
+        --panel:#17232d;
+        --panel2:#1d2b36;
+        --ink:#f4f1eb;
+        --muted:#b8c1c8;
+        --line:#34434e;
+        --accent:#d7a76b;
+        --blue:#8eb4c5;
+        --max:1160px
+      }
+      * {
+        box-sizing:border-box
+      }
+      html {
+        scroll-behavior:smooth;
+        scroll-padding-top:85px
+      }
+      body {
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+      }
+      a {
+        color:var(--blue);
+        text-underline-offset:3px
+      }
+      a:hover {
+        color:#e0f2f8
+      }
+      .wrap {
+        width:min(var(--max),calc(100% - 42px));
+        margin:auto
+      }
+      header {
+        position:sticky;
+        top:0;
+        z-index:20;
+        background:#101820ed;
+        border-bottom:1px solid var(--line);
+        backdrop-filter:blur(12px)
+      }
+      .nav {
+        min-height:68px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px
+      }
+      .brand {
+        font-weight:850;
+        letter-spacing:.1em;
+        font-size:.82rem;
+        color:var(--ink);
+        text-decoration:none;
+        white-space:nowrap
+      }
+      .navlinks {
+        display:flex;
+        gap:17px;
+        align-items:center
+      }
+      .navlinks a {
+        font-size:.82rem;
+        color:var(--muted);
+        text-decoration:none
+      }
+      .navlinks a:hover {
+        color:var(--ink)
+      }
+      .menu {
+        display:none;
+        background:none;
+        border:1px solid var(--line);
+        color:var(--ink);
+        padding:8px 12px;
+        border-radius:8px
+      }
+      .hero {
+        padding:108px 0 88px;
+        background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);
+        border-bottom:1px solid var(--line)
+      }
+      .eyebrow,.kicker {
+        color:var(--accent);
+        font-weight:800;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        font-size:.74rem
+      }
+      .hero h1 {
+        font-size:clamp(3.1rem,8vw,6.8rem);
+        line-height:.96;
+        letter-spacing:-.065em;
+        max-width:980px;
+        margin:22px 0
+      }
+      .hero p {
+        font-size:clamp(1.08rem,2vw,1.28rem);
+        color:#d0d8dd;
+        max-width:790px
+      }
+      .hero .note {
+        font-size:.9rem;
+        color:var(--muted);
+        border-left:2px solid var(--accent);
+        padding-left:16px;
+        margin-top:32px
+      }
+      .actions {
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+        margin-top:28px
+      }
+      .btn {
+        display:inline-block;
+        padding:11px 17px;
+        border-radius:7px;
+        text-decoration:none;
+        font-weight:750;
+        border:1px solid var(--accent);
+        color:#1b2024;
+        background:var(--accent)
+      }
+      .btn.secondary {
+        background:transparent;
+        color:var(--ink);
+        border-color:var(--line)
+      }
+      section {
+        padding:76px 0;
+        border-bottom:1px solid var(--line)
+      }
+      h2 {
+        font-size:clamp(2rem,4vw,3.25rem);
+        line-height:1.08;
+        letter-spacing:-.045em;
+        margin:12px 0 18px
+      }
+      h3 {
+        font-size:1.17rem;
+        line-height:1.35;
+        margin:0 0 9px
+      }
+      .lead {
+        font-size:1.12rem;
+        color:#d0d8dd;
+        max-width:870px
+      }
+      .stats {
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        margin-top:32px
+      }
+      .stat,.card,.source,.fact {
+        padding:22px;
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:10px
+      }
+      .stat strong {
+        display:block;
+        font-size:clamp(2rem,4vw,3rem);
+        letter-spacing:-.05em;
+        color:var(--accent)
+      }
+      .stat span,.muted {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      .grid {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:15px;
+        margin-top:27px
+      }
+      .card p,.source p,.fact p {
+        color:var(--muted);
+        margin:7px 0 0
+      }
+      .timeline {
+        margin-top:30px;
+        border-left:1px solid #65727b;
+        padding-left:26px
+      }
+      .event {
+        position:relative;
+        padding:0 0 27px
+      }
+      .event:before {
+        content:"";
+        position:absolute;
+        width:9px;
+        height:9px;
+        border-radius:50%;
+        background:var(--accent);
+        left:-31px;
+        top:10px
+      }
+      .time {
+        font-size:.78rem;
+        color:var(--accent);
+        font-weight:850;
+        letter-spacing:.08em
+      }
+      .event p {
+        margin:4px 0 0;
+        color:var(--muted)
+      }
+      .two-col {
+        display:grid;
+        grid-template-columns:1.1fr .9fr;
+        gap:30px;
+        align-items:start
+      }
+      .callout {
+        border-left:3px solid var(--accent);
+        padding:17px 21px;
+        background:var(--panel);
+        margin:25px 0;
+        color:#d5dce0
+      }
+      .callout strong {
+        color:var(--ink)
+      }
+      .tag {
+        display:inline-block;
+        font-size:.72rem;
+        color:var(--accent);
+        border:1px solid #806a4e;
+        border-radius:30px;
+        padding:2px 9px;
+        margin-bottom:10px
+      }
+      details {
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:9px;
+        margin:12px 0
+      }
+      summary {
+        cursor:pointer;
+        padding:17px 20px;
+        font-weight:750;
+        list-style:none;
+        display:flex;
+        justify-content:space-between;
+        gap:15px;
+        line-height:1.45
+      }
+      summary:after {
+        content:"＋";
+        color:var(--accent)
+      }
+      details[open] summary:after {
+        content:"−"
+      }
+      details .answer {
+        padding:0 20px 20px;
+        color:var(--muted)
+      }
+      .answer p {
+        margin:8px 0
+      }
+      .sources {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+        margin-top:26px
+      }
+      .source a {
+        font-weight:750
+      }
+      .source p {
+        font-size:.88rem
+      }
+      .small {
+        font-size:.83rem;
+        color:var(--muted)
+      }
+      .section-intro {
+        max-width:850px
+      }
+      .table-wrap {
+        overflow-x:auto;
+        margin:22px 0
+      }
+      table {
+        border-collapse:collapse;
+        width:100%;
+        min-width:620px;
+        background:var(--panel);
+        border:1px solid var(--line)
+      }
+      th,td {
+        text-align:left;
+        padding:13px 15px;
+        border-bottom:1px solid var(--line);
+        vertical-align:top
+      }
+      th {
+        color:var(--accent);
+        font-size:.83rem
+      }
+      td {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      footer {
+        padding:34px 0;
+        color:var(--muted);
+        font-size:.85rem
+      }
+      @media(max-width:850px) {
+        .navlinks {
+          gap:10px
+        }
+        .navlinks a {
+          font-size:.75rem
+        }
+        .two-col {
+          grid-template-columns:1fr
+        }
+      }
+      @media(max-width:700px) {
+        .navlinks {
+          display:none;
+          position:absolute;
+          top:68px;
+          left:0;
+          right:0;
+          background:var(--bg);
+          padding:18px 22px;
+          border-bottom:1px solid var(--line);
+          flex-direction:column;
+          align-items:flex-start
+        }
+        .navlinks.open {
+          display:flex
+        }
+        .menu {
+          display:block
+        }
+        .hero {
+          padding:76px 0 64px
+        }
+        .stats,.grid,.sources {
+          grid-template-columns:1fr
+        }
+        section {
+          padding:56px 0
+        }
+        .wrap {
+          width:min(var(--max),calc(100% - 30px))
+        }
+      }
+      .page-head {
+        padding:54px 0 36px;
+        background:linear-gradient(135deg,#101820,#1d2b36);
+        border-bottom:1px solid var(--line)
+      }
+      .page-head h1 {
+        font-size:clamp(2.5rem,6vw,4.5rem);
+        line-height:1.02;
+        letter-spacing:-.055em;
+        margin:12px 0
+      }
+      .page-head p {
+        max-width:850px;
+        color:#d0d8dd;
+        font-size:1.08rem
+      }
+      .back {
+        display:inline-block;
+        margin-bottom:22px;
+        color:var(--blue);
+        font-weight:750;
+        text-decoration:none
+      }
+      main>section {
+        padding-top:50px
+      }
+      @media(max-width:700px) {
+        .page-head {
+          padding:36px 0 28px
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          A CLOSER LOOK / INDEPENDENT TOPIC
+        </a>
+        <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">
+          Menu
+        </button>
+        <nav class="navlinks" id="navlinks">
+          <a href="index.html">
+            9/11 history page
+          </a>
+          <a href="#topic">
+            This topic
+          </a>
+          <a href="#sources">
+            Sources
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div class="page-head">
+      <div class="wrap">
+        <a class="back" href="index.html">
+          ← Back to the main history hub
+        </a>
+        <div class="eyebrow">
+          Independent history topic · Evidence · Context
+        </div>
+        <h1>
+          Pearl Harbor
+        </h1>
+        <p>
+          The December 7, 1941 attack, Japanese strategy, American preparedness, the Pacific War, and the policies that followed.
+        </p>
+      </div>
+    </div>
+    <main id="topic">
+      <section id="pearl-harbor">
+        <div class="wrap">
+          <div class="kicker">
+            02 / A second turning point
+          </div>
+          <h2>
+            Pearl Harbor: the attack that brought America into World War II.
+          </h2>
+          <p class="lead">
+            On December 7, 1941, the Imperial Japanese Navy launched a surprise air attack against the U.S. Pacific Fleet and nearby military facilities on Oahu, Hawaii. It was a major military disaster and a defining moment in American history. Understanding Pearl Harbor means looking beyond the famous images: the strategy behind the attack, what was damaged and what survived, the failures in warning and readiness, and the policies that followed.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong>
+                2,390
+              </strong>
+              <span>
+                American military and civilian deaths recorded by the National Park Service
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                353
+              </strong>
+              <span>
+                Japanese aircraft involved in the two-wave attack
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                188
+              </strong>
+              <span>
+                U.S. aircraft destroyed, according to Naval History and Heritage Command
+              </span>
+            </div>
+          </div>
+          <div class="media-resources" aria-label="Pearl Harbor images and videos">
+            <h3>
+              Visual archive: historic photographs and survivor footage
+            </h3>
+            <p class="muted">
+              These museum and government collections include photographs from the attack, ship damage, memorial sites, and recorded accounts from people who experienced the event.
+            </p>
+            <div class="grid">
+              <article class="card">
+                <span class="tag">
+                  Historic photos
+                </span>
+                <h3>
+                  National Park Service: Pearl Harbor photo gallery
+                </h3>
+                <p>
+                  Historic photographs of the attack, USS Arizona, USS Nevada, USS West Virginia, and other ships.
+                </p>
+                <p>
+                  <a href="https://www.nps.gov/perl/learn/photosmultimedia/photogallery.htm" target="_blank" rel="noopener">
+                    Browse historic photographs ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Video + oral history
+                </span>
+                <h3>
+                  National Park Service: Video archive
+                </h3>
+                <p>
+                  Survivor interviews, underwater footage of USS Arizona, commemorations, and ranger-led history videos.
+                </p>
+                <p>
+                  <a href="https://www.nps.gov/perl/learn/photosmultimedia/video-archive.htm" target="_blank" rel="noopener">
+                    Watch the NPS video archive ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Original footage
+                </span>
+                <h3>
+                  National Archives: Attack footage
+                </h3>
+                <p>
+                  Film captured during the Japanese attack, including an explosion aboard USS Arizona. Published by the U.S. National Archives.
+                </p>
+                <p>
+                  <a href="https://www.youtube.com/watch?v=WvhJboFYFX4" target="_blank" rel="noopener">
+                    Watch archival Pearl Harbor footage ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Photograph
+                </span>
+                <h3>
+                  Attack on Pearl Harbor
+                </h3>
+                <p>
+                  An NPS archival photograph taken by a Japanese naval aviator, showing torpedo tracks heading toward Battleship Row.
+                </p>
+                <p>
+                  <a href="https://npgallery.nps.gov/AssetDetail/40927e59-e244-62f2-fbf6-e8450867ebd2" target="_blank" rel="noopener">
+                    View the original NPS photograph ↗
+                  </a>
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>
+              Purpose:
+            </strong>
+            This section does not argue Pearl Harbor was harmless or insignificant. It separates the immediate attack from the wider war and examines later decisions using evidence.
+          </div>
+          <h3>
+            What was attacked?
+          </h3>
+          <p class="muted">
+            Pearl Harbor was the principal U.S. Pacific Fleet base. Japanese forces also struck nearby airfields and military installations on Oahu. Aircraft were attacked on the ground to limit the ability of American forces to mount an immediate defense. The target was not simply a harbor; it was the U.S. military position in the Pacific.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Naval base and Battleship Row
+              </h3>
+              <p>
+                Japanese aircraft attacked battleships and other vessels. USS Arizona suffered a catastrophic magazine explosion and sank. USS Oklahoma capsized. Other ships were sunk, beached, or damaged, but many were later repaired and returned to service.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Airfields and aircraft
+              </h3>
+              <p>
+                Attacks on airfields destroyed or damaged large numbers of American aircraft, many while parked. This reduced the immediate ability of U.S. forces to contest the incoming attack.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Military personnel and civilians
+              </h3>
+              <p>
+                The dead included sailors, soldiers, Marines, and civilians. Some civilians were killed by Japanese attacks; others were struck by American anti-aircraft fire or falling ordnance. The National Park Service lists 49 civilian deaths among 2,390 total deaths.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                A wider Pacific offensive
+              </h3>
+              <p>
+                Pearl Harbor was part of a coordinated Japanese offensive across the Pacific and Southeast Asia. Japanese forces also attacked the Philippines, Guam, Wake Island, Malaya, and Hong Kong. Focusing only on Pearl Harbor obscures the wider operation.
+              </p>
+            </article>
+          </div>
+          <h3>
+            The attack in numbers
+          </h3>
+          <p class="muted">
+            The National Park Service's Pearl Harbor National Memorial gives a total of 2,390 American deaths: 2,341 service members and 49 civilians. Other summaries sometimes give slightly different totals because they use different dates or categories. This page uses the NPS figure and identifies what it counts. Naval History and Heritage Command records 353 Japanese aircraft launched from six carriers in two waves and 188 American aircraft destroyed.
+          </p>
+          <h3>
+            A timeline of December 7, 1941
+          </h3>
+          <p class="muted">
+            Times are Hawaii local time. Exact minute-by-minute descriptions vary slightly between records, but the broad sequence is well established.
+          </p>
+          <div class="timeline">
+            <div class="event">
+              <div class="time">
+                BEFORE DAWN
+              </div>
+              <h3>
+                Japanese strike force approaches
+              </h3>
+              <p>
+                A carrier force operating under radio silence launches aircraft from north of Hawaii, including fighters, torpedo aircraft, dive bombers, and level bombers.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                ABOUT 6:45 A.M.
+              </div>
+              <h3>
+                A Japanese midget submarine is engaged
+              </h3>
+              <p>
+                U.S. forces detect and attack a small Japanese submarine near the harbor entrance. This warning does not lead to a timely island-wide alert.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                ABOUT 7:02 A.M.
+              </div>
+              <h3>
+                Radar detects incoming aircraft
+              </h3>
+              <p>
+                Army radar operators detect a large formation approaching Oahu. The report is discounted because personnel believe it may be an expected group of American B-17 bombers.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                7:55 A.M.
+              </div>
+              <h3>
+                First wave strikes
+              </h3>
+              <p>
+                Japanese aircraft attack Pearl Harbor, airfields, and military installations. Torpedo and dive bombers hit ships while other aircraft attack planes and facilities on land.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                ABOUT 8:10 A.M.
+              </div>
+              <h3>
+                USS Arizona explodes
+              </h3>
+              <p>
+                A bomb triggers a catastrophic explosion in the battleship's forward magazines. Arizona sinks with heavy loss of life.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                ABOUT 8:40 A.M.
+              </div>
+              <h3>
+                Second wave attacks
+              </h3>
+              <p>
+                A second group of Japanese aircraft attacks ships and military facilities. American defenders continue firing anti-aircraft weapons and attempting to get aircraft airborne.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                ABOUT 9:45 A.M.
+              </div>
+              <h3>
+                The air attack ends
+              </h3>
+              <p>
+                Japanese aircraft withdraw. Rescue, medical treatment, damage assessment, and recovery operations continue.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                DECEMBER 8
+              </div>
+              <h3>
+                Congress declares war on Japan
+              </h3>
+              <p>
+                President Franklin D. Roosevelt addresses Congress. The United States declares war on Japan.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                DECEMBER 11
+              </div>
+              <h3>
+                Germany and Italy declare war
+              </h3>
+              <p>
+                Japan's European Axis partners declare war on the United States. Congress then declares war on Germany and Italy.
+              </p>
+            </div>
+          </div>
+          <h3>
+            Why did Japan attack?
+          </h3>
+          <p class="muted">
+            During the 1930s, Imperial Japan expanded its control in East Asia, including Manchuria and much of China. The United States opposed Japanese expansion and imposed economic restrictions, including limits on strategic materials and an oil embargo. Japanese leaders viewed these restrictions as a serious threat to their ability to sustain military campaigns. Rather than abandon expansion, Japan chose a broad offensive across the Pacific and Southeast Asia.
+          </p>
+          <p class="muted">
+            Japanese planners hoped to weaken the U.S. Pacific Fleet long enough to seize territory and resources, consolidate their position, and force the United States to accept a negotiated settlement. Admiral Isoroku Yamamoto was a leading advocate of the carrier strike. The attack required long-range navigation, secrecy, coordination among six carriers, and careful planning for torpedo attacks in a shallow harbor.
+          </p>
+          <p class="muted">
+            Japan achieved tactical surprise and inflicted severe damage. However, the American aircraft carriers were at sea and escaped damage. Fuel storage, repair facilities, and the submarine base also survived. Many damaged ships were salvaged and returned to service. The attack unified American public opinion behind entering the war, an outcome contrary to Japan's hope of discouraging prolonged U.S. involvement.
+          </p>
+          <h3>
+            Warning signs and preparedness failures
+          </h3>
+          <p class="muted">
+            The United States was not completely unaware of the possibility of conflict with Japan. Diplomatic tensions were severe, intelligence intercepts showed relations deteriorating, radar operators detected an approaching formation, and a Japanese midget submarine was engaged near the harbor. But a general warning of war was not the same as a precise, actionable warning that Pearl Harbor would be attacked at dawn on December 7. The radar report was misinterpreted as a likely arrival of friendly B-17 bombers; the submarine report did not trigger an effective alert. Later investigations identified failures in intelligence evaluation, communication, command decisions, and readiness.
+          </p>
+          <p class="muted">
+            Multiple investigations followed, including the Roberts Commission and later Army, Navy, and congressional inquiries. The Joint Committee on the Investigation of the Pearl Harbor Attack examined events and circumstances before and after the attack, including whether American officials and commanders had failed in their duties. The record is extensive and includes disagreements about responsibility and how intelligence should have been interpreted.
+          </p>
+          <div class="callout">
+            <strong>
+              How to assess the warning question:
+            </strong>
+            Ask what information existed, who received it, when it arrived, how it was interpreted, and what action was realistically possible. “There were warnings” and “officials knew the exact plan” are not equivalent statements.
+          </div>
+          <h3>
+            What happened afterward?
+          </h3>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Entry into World War II
+              </h3>
+              <p>
+                Congress declared war on Japan on December 8. Germany and Italy declared war on the United States on December 11, and Congress responded with declarations of war against them. America entered both the Pacific and European theaters.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Military mobilization
+              </h3>
+              <p>
+                The United States expanded its armed forces, shipbuilding, aircraft production, logistics, and training. Factories shifted toward producing ships, planes, vehicles, weapons, and supplies; rationing and bond drives changed life on the home front.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                The Pacific War
+              </h3>
+              <p>
+                Japan's early offensives captured territory across the Pacific and Southeast Asia. The Allies fought a prolonged campaign involving naval battles, island operations, submarine warfare, air campaigns, and ground combat until Japan surrendered in 1945.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Japanese American incarceration
+              </h3>
+              <p>
+                Wartime fear and racism helped drive the forced removal and incarceration of approximately 120,000 people of Japanese ancestry, most of them U.S. citizens or long-term residents. The policy targeted people based on ancestry rather than individualized proof of disloyalty and is now widely recognized as a grave violation of civil liberties.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Hawaii under martial law
+              </h3>
+              <p>
+                Hawaii was placed under martial law after the attack. Military authorities exercised broad control over civilian life, including curfews, censorship, and restrictions on movement. Martial law continued until 1944.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                The end of the war
+              </h3>
+              <p>
+                Japan surrendered in August 1945 after years of fighting, the Soviet Union's entry into the war against Japan, and the atomic bombings of Hiroshima and Nagasaki. The formal surrender was signed on September 2, 1945. These events raise distinct strategic and moral questions beyond the reasons for the Pearl Harbor attack.
+              </p>
+            </article>
+          </div>
+          <h3>
+            Common claims and questions
+          </h3>
+          <details>
+            <summary>
+              “Pearl Harbor destroyed the entire U.S. Pacific Fleet.”
+            </summary>
+            <div class="answer">
+              <p>
+                No. The attack inflicted severe damage, especially on battleships in port, and destroyed many aircraft. But the carriers were at sea, key repair and fuel infrastructure survived, and many damaged ships were returned to service. The fleet suffered a major blow, not total destruction.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The United States had absolutely no warning.”
+            </summary>
+            <div class="answer">
+              <p>
+                There were warnings of worsening relations and specific indicators on the morning of the attack. However, these did not provide a clear, correctly interpreted warning that a carrier strike was imminent at Pearl Harbor. The failure involved how warnings were evaluated, communicated, and acted upon.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The government knew the exact attack was coming and deliberately allowed it.”
+            </summary>
+            <div class="answer">
+              <p>
+                Investigations found serious intelligence and command failures. But evidence of warnings, intercepted messages, or poor decisions is not proof that senior officials knew the exact plan and intentionally permitted it. That stronger allegation requires direct evidence, not inference alone.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “Pearl Harbor was a complete Japanese strategic victory.”
+            </summary>
+            <div class="answer">
+              <p>
+                Japan achieved surprise and inflicted devastating immediate losses. But it did not eliminate U.S. carrier power, destroy key base infrastructure, or prevent American mobilization. It also galvanized public support for war. A tactical victory can fail to deliver the strategic result its planners wanted.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “Japanese American incarceration was necessary because of the attack.”
+            </summary>
+            <div class="answer">
+              <p>
+                The attack created fear, but fear does not establish collective guilt. Mass incarceration targeted people of Japanese ancestry without individualized evidence that they posed a security threat. It affected U.S. citizens and is widely recognized as a serious violation of civil liberties.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The attack alone explains every American decision during World War II.”
+            </summary>
+            <div class="answer">
+              <p>
+                Pearl Harbor explains the immediate U.S. declaration of war against Japan, but it does not automatically justify every military operation or domestic policy that followed. Strategy, incarceration, bombing, and the use of atomic weapons each require their own historical and ethical analysis.
+              </p>
+            </div>
+          </details>
+          <div class="callout">
+            <strong>
+              The central lesson:
+            </strong>
+            Pearl Harbor was a devastating attack and a major turning point, but it did not destroy all American naval power, make every later policy inevitable, or remove the need to scrutinize government decisions. Accurate history can acknowledge the attack's gravity while examining the failures and limits of the response.
+          </div>
+        </div>
+      </section>
+      \n
+      <section id="sources">
+        <div class="wrap">
+          <div class="kicker">
+            Sources / Read the record
+          </div>
+          <h2>
+            Sources and further reading.
+          </h2>
+          <p class="lead">
+            This page has a dedicated bibliography focused only on this historical subject. The sources below are not shared with the September 11 page.
+          </p>
+          <div class="sources">
+            <div class="source">
+              <a href="https://www.archives.gov/legislative/features/pearl-harbor" target="_blank" rel="noopener">
+                National Archives — Attack on Pearl Harbor
+              </a>
+              <p>
+                Archival overview, casualty and equipment losses, declaration of war, and congressional investigation.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1941/pearl-harbor.html" target="_blank" rel="noopener">
+                Naval History and Heritage Command — Pearl Harbor
+              </a>
+              <p>
+                Detailed account of the attack waves, ship and aircraft losses, casualties, and what survived.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nps.gov/perl/learn/historyculture/people.htm" target="_blank" rel="noopener">
+                National Park Service — People and Casualties
+              </a>
+              <p>
+                Casualty categories and memorial information, including civilian deaths.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nps.gov/wwii/learn/historyculture/pearl-harbor.htm" target="_blank" rel="noopener">
+                National Park Service — Pearl Harbor and World War II
+              </a>
+              <p>
+                Japanese strategic aims, surviving carriers and infrastructure, and the attack's consequences.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://encyclopedia.ushmm.org/content/en/article/pearl-harbor" target="_blank" rel="noopener">
+                U.S. Holocaust Memorial Museum — Pearl Harbor
+              </a>
+              <p>
+                Background on Japanese expansion, the Pacific offensive, and U.S. entry into World War II.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        A CLOSER LOOK · Independent educational history page. Not an official government or institutional publication.
+      </div>
+    </footer>
+    <script>
+      const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+    </script>
+  </body>
+</html>
