@@ -409,6 +409,18 @@
       .encyclopedia-entry .entry-copy p:last-child {
         margin-bottom: 0;
       }
+    
+      .netlify-status {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 12px;
+      }
+      .netlify-status img {
+        display: block;
+        width: auto;
+        max-width: 190px;
+        height: 20px;
+      }
     </style>
   </head>
   <body>
@@ -1448,6 +1460,10 @@
           This page is not an official memorial, government publication, or substitute for the complete source reports.
         </span>
       </div>
+    
+        <a class="netlify-status" href="https://app.netlify.com/projects/911isanationaltragedy/deploys" target="_blank" rel="noopener" aria-label="View Netlify deployment status">
+          <img src="https://api.netlify.com/api/v1/badges/503bfb0a-5cf6-41b7-a642-a64d0e5c4c28/deploy-status" alt="Netlify Status">
+        </a>
     </footer>
     <script>
       const menu = document.getElementById('menu');
