@@ -924,16 +924,25 @@
         <p class="small">Published contributions appear publicly on this page. Use reliable sources, identify uncertainty, and keep submissions relevant to this topic. You can remove your own contributions later.</p>
 
         <div class="community-panel">
-          <form id="community-login-form" class="community-auth-grid">
-            <label class="community-field" for="community-email">
-              Email address
-              <input id="community-email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+          <form id="community-login-form" class="community-form-grid">
+            <div class="community-auth-grid">
+              <label class="community-field" for="community-email">
+                Email address
+                <input id="community-email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+              </label>
+              <label class="community-field" for="community-name">
+                Public display name (for new accounts)
+                <input id="community-name" type="text" maxlength="50" autocomplete="nickname" placeholder="Name shown with your section">
+              </label>
+            </div>
+            <label class="community-field" for="community-password">
+              Password
+              <input id="community-password" type="password" minlength="8" maxlength="72" autocomplete="current-password" placeholder="At least 8 characters" required>
             </label>
-            <label class="community-field" for="community-name">
-              Public display name
-              <input id="community-name" type="text" maxlength="50" autocomplete="nickname" placeholder="Name shown with your section" required>
-            </label>
-            <button class="community-button" id="community-login-button" type="submit">Email me a sign-in link</button>
+            <div class="community-auth-grid">
+              <button class="community-button" id="community-login-button" type="submit" value="signin">Sign in</button>
+              <button class="community-button secondary" id="community-signup-button" type="submit" value="signup">Create account</button>
+            </div>
           </form>
           <div class="community-account" id="community-account" hidden>
             <span id="community-account-label" class="small"></span>
@@ -1129,26 +1138,45 @@
 
       loginForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-        loginButton.disabled = true;
-        setStatus("Sending your sign-in link…");
-
+        const action = event.submitter?.value || "signin";
         const email = document.getElementById("community-email").value.trim();
+        const password = document.getElementById("community-password").value;
         const displayName = document.getElementById("community-name").value.trim();
-        const { error } = await supabase.auth.signInWithOtp({
-          email,
-          options: {
-            shouldCreateUser: true,
-            emailRedirectTo: location.href,
-            data: { display_name: displayName }
-          }
-        });
+        const signupButton = document.getElementById("community-signup-button");
+        loginButton.disabled = true;
+        signupButton.disabled = true;
+        setStatus(action === "signup" ? "Creating your account…" : "Signing in…");
 
-        if (error) {
-          setStatus("Could not send the sign-in link: " + error.message);
+        let result;
+        if (action === "signup") {
+          if (password.length < 8) {
+            setStatus("Use a password with at least 8 characters.");
+            loginButton.disabled = false;
+            signupButton.disabled = false;
+            return;
+          }
+          result = await supabase.auth.signUp({
+            email,
+            password,
+            options: { data: { display_name: displayName || "Community contributor" } }
+          });
         } else {
-          setStatus("Check your email for the sign-in link. Open it in this browser to unlock the section editor.");
+          result = await supabase.auth.signInWithPassword({ email, password });
         }
+
+        if (result.error) {
+          setStatus((action === "signup" ? "Could not create your account: " : "Could not sign in: ") + result.error.message);
+        } else if (action === "signup" && !result.data.session) {
+          setStatus("Supabase is still requiring email confirmation. Disable Confirm email in Supabase Authentication → Providers → Email, then create your account again.");
+        } else {
+          currentUser = result.data.user || result.data.session?.user || null;
+          updateAccountUI();
+          setStatus(action === "signup" ? "Account created. You're signed in—publish your section below." : "Signed in. You can publish a section now.");
+          await loadSections();
+        }
+
         loginButton.disabled = false;
+        signupButton.disabled = false;
       });
 
       document.getElementById("community-signout").addEventListener("click", async () => {
