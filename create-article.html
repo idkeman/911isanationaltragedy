@@ -35,7 +35,97 @@
 const SUPABASE_URL="https://dkwmkvruzebnqlmvwzhy.supabase.co";const SUPABASE_PUBLISHABLE_KEY="sb_publishable_Tur9X4MaQjH__4DnEtwAAQ_Xy9xVl5P";const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);const $=id=>document.getElementById(id);let currentUser=null;
 function safeUrl(value){try{const u=new URL(value);return ["https:","http:"].includes(u.protocol)?u.href:null}catch{return null}}function readingTime(text){return Math.max(1,Math.ceil(text.trim().split(/\s+/).filter(Boolean).length/220))}
 function options(){return {subtitle:$("subtitle").value.trim(),category:$("category").value.trim(),layout:$("layout").value,font:$("font").value,text_size:$("textSize").value,alignment:$("alignment").value,accent:$("accent").value,background:$("background").value,cover_image:safeUrl($("cover").value),image_position:$("imagePosition").value,video_url:safeUrl($("video").value),quote:$("quote").value.trim(),callout:$("callout").value.trim(),reading_time:$("readingTime").value==="auto"?readingTime($("body").value)+" min read":$("readingTime").value,dropcap:$("dropcap").value,divider:$("divider").value,show_date:$("showDate").value==="yes",show_author:$("showAuthor").value==="yes",sources_label:$("sourcesLabel").value}}
-function preview(){const o=options(),body=$("body").value;$("p-category").textContent=o.category||"COMMUNITY ARTICLE";$("p-title").textContent=$("title").value||"Your headline goes here";$("p-subtitle").textContent=o.subtitle;$("p-subtitle").hidden=!o.subtitle;$("p-meta").textContent=[o.show_author?($("author").value||"Community contributor"):"",o.reading_time,o.show_date?new Date().toLocaleDateString():""].filter(Boolean).join(" · ");$("p-body").replaceChildren();const content=document.createElement("div");content.className=[o.font==="serif"?"serif":"",o.text_size==="large"?"large":"",o.alignment==="center"?"center":"",o.layout==="magazine"?"magazine":"",o.layout==="compact"?"compact":"",o.layout==="wide"?"wide":"",o.background==="paper"?"paper":""].filter(Boolean).join(" ");body.split(/\n\s*\n/).filter(x=>x.trim()).forEach((line,i)=>{const p=document.createElement("p");p.textContent=line;if(i===0&&o.dropcap==="dropcap")p.classList.add("dropcap");content.appendChild(p)});$("p-body").appendChild(content);if(o.quote){const q=document.createElement("blockquote");q.className="preview-quote";q.textContent=o.quote;$("p-body").appendChild(q)}if(o.callout){const c=document.createElement("div");c.className="preview-callout";c.textContent=o.callout;$("p-body").appendChild(c)}const extras=$("p-extras");extras.replaceChildren();const sourceUrls=$("sources").value.split("\\n").map(x=>x.trim()).filter(Boolean);if(sourceUrls.length){const label=document.createElement("strong");label.textContent=o.sources_label;extras.appendChild(label);sourceUrls.forEach(value=>{const url=safeUrl(value);if(url){const link=document.createElement("a");link.href=url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=url;link.style.display="block";extras.appendChild(link)}})}if(o.video_url){const link=document.createElement("a");link.href=o.video_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Watch related video";link.style.display="block";extras.appendChild(link)}$("p-category").style.color=o.accent;$("p-title").style.color=o.accent;$("preview-shell").style.borderColor=o.accent;$("p-cover").style.display=o.cover_image?"block":"none";if(o.cover_image){$("p-cover").src=o.cover_image;$("p-cover").style.objectPosition=o.image_position}if(o.background==="paper"){$("p-body").style.background="#e9e2d4";$("p-body").style.color="#252525"}else{$("p-body").style.background="";$("p-body").style.color=""}}
+function preview() {
+  const o = options();
+  const body = $("body").value;
+  $("p-category").textContent = o.category || "COMMUNITY ARTICLE";
+  $("p-title").textContent = $("title").value || "Your headline goes here";
+  $("p-subtitle").textContent = o.subtitle;
+  $("p-subtitle").hidden = !o.subtitle;
+  $("p-meta").textContent = [
+    o.show_author ? ($("author").value || "Community contributor") : "",
+    o.reading_time,
+    o.show_date ? new Date().toLocaleDateString() : ""
+  ].filter(Boolean).join(" · ");
+
+  const classes = [
+    o.font === "serif" ? "serif" : "",
+    o.text_size === "large" ? "large" : "",
+    o.alignment === "center" ? "center" : "",
+    o.layout === "magazine" ? "magazine" : "",
+    o.layout === "compact" ? "compact" : "",
+    o.layout === "wide" ? "wide" : "",
+    o.background === "paper" ? "paper" : ""
+  ].filter(Boolean);
+  $("p-body").className = "preview-body " + classes.join(" ");
+  $("p-body").replaceChildren();
+  const content = document.createElement("div");
+  const paragraphs = body.split(/\n\s*\n/).filter(line => line.trim());
+  paragraphs.forEach((line, i) => {
+    const p = document.createElement("p");
+    p.textContent = line;
+    if (i === 0 && o.dropcap === "dropcap") p.classList.add("dropcap");
+    if (o.divider === "line" && i < paragraphs.length - 1) p.style.borderBottom = "1px solid var(--line)";
+    if (o.divider === "space") p.style.marginBottom = "2em";
+    content.appendChild(p);
+  });
+  $("p-body").appendChild(content);
+
+  if (o.quote) {
+    const quote = document.createElement("blockquote");
+    quote.className = "preview-quote";
+    quote.textContent = o.quote;
+    $("p-body").appendChild(quote);
+  }
+  if (o.callout) {
+    const callout = document.createElement("div");
+    callout.className = "preview-callout";
+    callout.textContent = o.callout;
+    $("p-body").appendChild(callout);
+  }
+
+  const extras = $("p-extras");
+  extras.replaceChildren();
+  const sourceUrls = $("sources").value.split(/\r?\n/).map(value => value.trim()).filter(Boolean);
+  if (sourceUrls.length) {
+    const label = document.createElement("strong");
+    label.textContent = o.sources_label;
+    extras.appendChild(label);
+    sourceUrls.forEach(value => {
+      const url = safeUrl(value);
+      if (!url) return;
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = url;
+      link.style.display = "block";
+      extras.appendChild(link);
+    });
+  }
+  if (o.video_url) {
+    const link = document.createElement("a");
+    link.href = o.video_url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Watch related video";
+    link.style.display = "block";
+    extras.appendChild(link);
+  }
+
+  $("p-category").style.color = o.accent;
+  $("p-title").style.color = o.accent;
+  $("preview-shell").style.borderColor = o.accent;
+  $("p-cover").style.display = o.cover_image ? "block" : "none";
+  if (o.cover_image) {
+    $("p-cover").src = o.cover_image;
+    $("p-cover").style.objectPosition = o.image_position;
+  } else {
+    $("p-cover").removeAttribute("src");
+  }
+  $("p-body").style.background = o.background === "paper" ? "#e9e2d4" : "";
+  $("p-body").style.color = o.background === "paper" ? "#252525" : "";
+}
 document.querySelectorAll("#article-form input,#article-form select,#article-form textarea").forEach(el=>el.addEventListener("input",preview));document.querySelectorAll("[data-insert]").forEach(btn=>btn.addEventListener("click",()=>{const f=$("body"),a=f.selectionStart,b=f.selectionEnd;f.setRangeText(btn.dataset.insert,a,b,"end");f.focus();preview()}));
 $("auth-form").addEventListener("submit",async e=>{e.preventDefault();const action=e.submitter?.value||"signin",email=$("email").value.trim(),password=$("password").value;if(action==="signup"&&password.length<8){$("auth-status").textContent="Use a password with at least 8 characters.";return}$("auth-status").textContent=action==="signup"?"Creating account…":"Signing in…";const result=action==="signup"?await supabase.auth.signUp({email,password,options:{data:{display_name:$("author").value.trim()||"Community contributor"}}}):await supabase.auth.signInWithPassword({email,password});if(result.error){$("auth-status").textContent=result.error.message;return}if(action==="signup"&&!result.data.session){$("auth-status").textContent="Supabase still requires email confirmation. Disable Confirm email in Supabase Authentication → Providers → Email.";return}currentUser=result.data.user||result.data.session?.user||null;updateAuth()});
 function updateAuth(){const signed=!!currentUser;$("signout").hidden=!signed;$("auth-status").textContent=signed?"Signed in. You can publish your article.":"Sign in or create an account to publish.";$("account-label").textContent=signed?"Signed in as "+(currentUser.user_metadata?.display_name||currentUser.email):"";if(signed&&!$("author").value)$("author").value=currentUser.user_metadata?.display_name||"Community contributor";preview()}
