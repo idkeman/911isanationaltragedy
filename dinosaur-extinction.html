@@ -452,6 +452,127 @@
         max-width: 190px;
         height: 20px;
       }
+    
+      .community-area {
+        background: linear-gradient(180deg, #121d26, #17232d);
+      }
+      .community-panel, .community-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px;
+      }
+      .community-panel {
+        margin: 25px 0;
+      }
+      .community-auth-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: end;
+      }
+      .community-field {
+        display: grid;
+        gap: 6px;
+        color: var(--muted);
+        font-size: .88rem;
+        font-weight: 700;
+      }
+      .community-field input, .community-field textarea {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #101820;
+        color: var(--ink);
+        font: inherit;
+        font-weight: 400;
+      }
+      .community-field textarea {
+        min-height: 145px;
+        resize: vertical;
+      }
+      .community-form-grid {
+        display: grid;
+        gap: 15px;
+      }
+      .community-button {
+        border: 1px solid var(--accent);
+        border-radius: 7px;
+        background: var(--accent);
+        color: #1b2024;
+        padding: 11px 16px;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .community-button.secondary {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      .community-button:disabled {
+        opacity: .55;
+        cursor: wait;
+      }
+      .community-status {
+        min-height: 1.5em;
+        color: var(--accent);
+        font-size: .9rem;
+        margin: 10px 0;
+      }
+      .community-account {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .community-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        margin-top: 24px;
+      }
+      .community-card h3 {
+        color: var(--ink);
+      }
+      .community-card p {
+        color: var(--muted);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      .community-meta {
+        color: var(--accent);
+        font-size: .78rem;
+        margin-bottom: 10px;
+      }
+      .community-sources {
+        border-top: 1px solid var(--line);
+        margin-top: 16px;
+        padding-top: 12px;
+        font-size: .86rem;
+      }
+      .community-sources a {
+        display: block;
+        margin-top: 6px;
+        overflow-wrap: anywhere;
+      }
+      .community-delete {
+        margin-top: 14px;
+        padding: 7px 10px;
+        border: 1px solid #805b5b;
+        border-radius: 6px;
+        color: #f0c0c0;
+        background: transparent;
+        cursor: pointer;
+      }
+      @media(max-width:700px) {
+        .community-auth-grid, .community-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -1088,6 +1209,54 @@
         </div>
       </section>
     </main>
+    
+    <section class="community-area" id="community-contributions">
+      <div class="wrap">
+        <div class="kicker">Community archive</div>
+        <h2>Build a section of your own.</h2>
+        <p class="lead">Add research, explanations, timelines, or perspectives to this topic. Sign in with an email link, write your section, add source links, and publish it for everyone to read.</p>
+        <p class="small">Published contributions appear publicly on this page. Use reliable sources, identify uncertainty, and keep submissions relevant to this topic. You can remove your own contributions later.</p>
+
+        <div class="community-panel">
+          <form id="community-login-form" class="community-auth-grid">
+            <label class="community-field" for="community-email">
+              Email address
+              <input id="community-email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+            </label>
+            <label class="community-field" for="community-name">
+              Public display name
+              <input id="community-name" type="text" maxlength="50" autocomplete="nickname" placeholder="Name shown with your section" required>
+            </label>
+            <button class="community-button" id="community-login-button" type="submit">Email me a sign-in link</button>
+          </form>
+          <div class="community-account" id="community-account" hidden>
+            <span id="community-account-label" class="small"></span>
+            <button class="community-button secondary" id="community-signout" type="button">Sign out</button>
+          </div>
+          <div class="community-status" id="community-status" role="status" aria-live="polite">Loading community contributions…</div>
+        </div>
+
+        <div class="community-panel" id="community-editor" hidden>
+          <h3>Publish a new section</h3>
+          <form id="community-section-form" class="community-form-grid">
+            <label class="community-field" for="community-author">Display name</label>
+            <input id="community-author" type="text" maxlength="50" required>
+            <label class="community-field" for="community-title">Section heading</label>
+            <input id="community-title" type="text" maxlength="120" minlength="3" placeholder="Give your section a clear title" required>
+            <label class="community-field" for="community-body">Section content</label>
+            <textarea id="community-body" maxlength="12000" minlength="20" placeholder="Write your section here. Separate paragraphs with a blank line." required></textarea>
+            <label class="community-field" for="community-sources">Sources (optional, one URL per line; up to 8)</label>
+            <textarea id="community-sources" rows="3" placeholder="https://example.com/research"></textarea>
+            <div>
+              <button class="community-button" id="community-publish-button" type="submit">Publish to this page</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="community-grid" id="community-list" aria-live="polite"></div>
+      </div>
+    </section>
+
     <footer>
       <div class="wrap">
         A CLOSER LOOK · Independent educational history page. Not an official government or institutional publication.
@@ -1113,5 +1282,255 @@
         });
       });
     </script>
+  
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/+esm";
+
+      const SUPABASE_URL = "https://dkwmkvruzebnqlmvwzhy.supabase.co";
+      const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_Tur9X4MaQjH__4DnEtwAAQ_Xy9xVl5P";
+      const PAGE_SLUG = location.pathname.split("/").pop() || "index.html";
+      const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+      const loginForm = document.getElementById("community-login-form");
+      const loginButton = document.getElementById("community-login-button");
+      const accountPanel = document.getElementById("community-account");
+      const accountLabel = document.getElementById("community-account-label");
+      const editor = document.getElementById("community-editor");
+      const sectionForm = document.getElementById("community-section-form");
+      const publishButton = document.getElementById("community-publish-button");
+      const status = document.getElementById("community-status");
+      const list = document.getElementById("community-list");
+      let currentUser = null;
+
+      function setStatus(message) {
+        status.textContent = message;
+      }
+
+      function updateAccountUI() {
+        const signedIn = Boolean(currentUser);
+        loginForm.hidden = signedIn;
+        accountPanel.hidden = !signedIn;
+        editor.hidden = !signedIn;
+
+        if (signedIn) {
+          const name = currentUser.user_metadata?.display_name || "Community contributor";
+          accountLabel.textContent = "Signed in as " + name + ". Your contributions are published under this name.";
+          document.getElementById("community-author").value = name;
+        }
+      }
+
+      function safeHttpUrl(value) {
+        try {
+          const url = new URL(value);
+          return url.protocol === "https:" || url.protocol === "http:" ? url.href : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function renderSection(section) {
+        const article = document.createElement("article");
+        article.className = "community-card";
+
+        const meta = document.createElement("div");
+        meta.className = "community-meta";
+        const date = new Date(section.created_at).toLocaleDateString();
+        meta.textContent = "COMMUNITY CONTRIBUTION · " + section.author_label + " · " + date;
+
+        const heading = document.createElement("h3");
+        heading.textContent = section.title;
+        article.append(meta, heading);
+
+        String(section.body).split("\n\n").forEach((paragraphText) => {
+          if (!paragraphText.trim()) return;
+          const paragraph = document.createElement("p");
+          paragraph.textContent = paragraphText;
+          article.appendChild(paragraph);
+        });
+
+        const sources = Array.isArray(section.source_urls) ? section.source_urls : [];
+        const validSources = sources.map(safeHttpUrl).filter(Boolean);
+        if (validSources.length) {
+          const sourceBox = document.createElement("div");
+          sourceBox.className = "community-sources";
+          const label = document.createElement("strong");
+          label.textContent = "Sources";
+          sourceBox.appendChild(label);
+
+          validSources.forEach((url) => {
+            const link = document.createElement("a");
+            link.href = url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = url;
+            sourceBox.appendChild(link);
+          });
+          article.appendChild(sourceBox);
+        }
+
+        if (currentUser && section.owner_id === currentUser.id) {
+          const removeButton = document.createElement("button");
+          removeButton.type = "button";
+          removeButton.className = "community-delete";
+          removeButton.textContent = "Remove my section";
+          removeButton.addEventListener("click", async () => {
+            if (!confirm("Remove this published section?")) return;
+            removeButton.disabled = true;
+            const { error } = await supabase
+              .from("community_sections")
+              .delete()
+              .eq("id", section.id)
+              .eq("owner_id", currentUser.id);
+
+            if (error) {
+              setStatus("Could not remove the section: " + error.message);
+              removeButton.disabled = false;
+              return;
+            }
+            setStatus("Your section was removed.");
+            await loadSections();
+          });
+          article.appendChild(removeButton);
+        }
+
+        return article;
+      }
+
+      async function loadSections() {
+        const { data, error } = await supabase
+          .from("community_sections")
+          .select("id, page_slug, owner_id, author_label, title, body, source_urls, created_at")
+          .eq("page_slug", PAGE_SLUG)
+          .eq("published", true)
+          .order("created_at", { ascending: false });
+
+        if (error) {
+          setStatus("Community sections could not load. " + error.message);
+          return;
+        }
+
+        list.replaceChildren();
+        if (!data.length) {
+          const empty = document.createElement("p");
+          empty.className = "small";
+          empty.textContent = "No community sections have been published here yet. You can be the first.";
+          list.appendChild(empty);
+        } else {
+          data.forEach((section) => list.appendChild(renderSection(section)));
+        }
+        setStatus(data.length + (data.length === 1 ? " community section published on this page." : " community sections published on this page."));
+      }
+
+      loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        loginButton.disabled = true;
+        setStatus("Sending your sign-in link…");
+
+        const email = document.getElementById("community-email").value.trim();
+        const displayName = document.getElementById("community-name").value.trim();
+        const { error } = await supabase.auth.signInWithOtp({
+          email,
+          options: {
+            shouldCreateUser: true,
+            emailRedirectTo: location.href,
+            data: { display_name: displayName }
+          }
+        });
+
+        if (error) {
+          setStatus("Could not send the sign-in link: " + error.message);
+        } else {
+          setStatus("Check your email for the sign-in link. Open it in this browser to unlock the section editor.");
+        }
+        loginButton.disabled = false;
+      });
+
+      document.getElementById("community-signout").addEventListener("click", async () => {
+        const { error } = await supabase.auth.signOut();
+        if (error) setStatus("Could not sign out: " + error.message);
+      });
+
+      sectionForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!currentUser) {
+          setStatus("Sign in before publishing a section.");
+          return;
+        }
+
+        const authorLabel = document.getElementById("community-author").value.trim();
+        const title = document.getElementById("community-title").value.trim();
+        const body = document.getElementById("community-body").value.trim();
+        const sourceLines = document.getElementById("community-sources").value
+          .split("\n")
+          .map((line) => line.trim())
+          .filter(Boolean);
+
+        if (sourceLines.length > 8) {
+          setStatus("Please provide no more than 8 source links.");
+          return;
+        }
+
+        const sourceUrls = [];
+        for (const source of sourceLines) {
+          const safeUrl = safeHttpUrl(source);
+          if (!safeUrl) {
+            setStatus("Each source must be a valid http:// or https:// URL.");
+            return;
+          }
+          sourceUrls.push(safeUrl);
+        }
+
+        publishButton.disabled = true;
+        setStatus("Publishing your section…");
+
+        const { error } = await supabase.from("community_sections").insert({
+          page_slug: PAGE_SLUG,
+          owner_id: currentUser.id,
+          author_label: authorLabel || "Community contributor",
+          title,
+          body,
+          source_urls: sourceUrls,
+          published: true
+        });
+
+        if (error) {
+          setStatus("Could not publish your section: " + error.message);
+        } else {
+          const savedName = authorLabel || "Community contributor";
+          sectionForm.reset();
+          document.getElementById("community-author").value = savedName;
+          setStatus("Published. Your section is now visible to everyone on this page.");
+          await loadSections();
+        }
+
+        publishButton.disabled = false;
+      });
+
+      supabase.auth.onAuthStateChange((_event, session) => {
+        currentUser = session?.user || null;
+        updateAccountUI();
+        loadSections();
+      });
+
+      const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+      if (sessionError) {
+        setStatus("Could not check your sign-in: " + sessionError.message);
+      } else {
+        currentUser = sessionData.session?.user || null;
+        updateAccountUI();
+        await loadSections();
+      }
+
+      supabase
+        .channel("community-sections-" + PAGE_SLUG)
+        .on("postgres_changes", {
+          event: "*",
+          schema: "public",
+          table: "community_sections",
+          filter: "page_slug=eq." + PAGE_SLUG
+        }, () => loadSections())
+        .subscribe();
+    </script>
+
   </body>
 </html>
