@@ -974,7 +974,7 @@
         heading.textContent = section.title;
         article.append(meta, heading);
         const opts = section.article_options && typeof section.article_options === "object" ? section.article_options : {};
-        meta.textContent = ["COMMUNITY ARTICLE", opts.show_author === false ? "" : section.author_label, opts.show_date === false ? "" : date, opts.reading_time || ""].filter(Boolean).join(" · ");
+        meta.textContent = ["COMMUNITY ARTICLE", opts.show_author === false ? "" : section.author_label, opts.show_date === false ? "" : date].filter(Boolean).join(" · ");
         const accent = /^#[0-9a-f]{6}$/i.test(opts.accent || "") ? opts.accent : "";
         if (accent) { article.style.borderColor = accent; heading.style.color = accent; }
         if (opts.subtitle) { const subtitle = document.createElement("p"); subtitle.className = "lead"; subtitle.textContent = opts.subtitle; article.appendChild(subtitle); }
@@ -986,6 +986,7 @@
         if (opts.text_size === "large") article.style.fontSize = "1.12em";
         if (opts.alignment === "center") article.style.textAlign = "center";
         if (opts.layout === "compact") article.style.maxWidth = "760px";
+        if (opts.layout === "wide") article.style.maxWidth = "none";
         if (opts.layout === "magazine") { article.style.maxWidth = "820px"; article.style.fontFamily = "Georgia,serif"; }
         if (opts.background === "paper") { article.style.background = "#e9e2d4"; article.style.color = "#252525"; }
         if (opts.reading_time) { const read = document.createElement("div"); read.className = "community-meta"; read.textContent = opts.reading_time; article.appendChild(read); }
