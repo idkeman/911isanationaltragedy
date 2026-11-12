@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="A reading guide to Marxist literature, from Marx and Engels to later debates in socialist theory, political economy, and social criticism.">
+    <title>Marxist Literature — A Closer Look</title>
+    <style>
+      :root {
+        --bg: #101820;
+        --panel: #17232d;
+        --panel2: #1d2b36;
+        --ink: #f4f1eb;
+        --muted: #b8c1c8;
+        --line: #34434e;
+        --accent: #d7a76b;
+        --blue: #8eb4c5;
+        --max: 1160px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 85px;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: var(--blue);
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        color: #e0f2f8;
+      }
+
+      .wrap {
+        width: min(var(--max), calc(100% - 42px));
+        margin: auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #101820ed;
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav {
+        min-height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        font-weight: 850;
+        letter-spacing: .1em;
+        font-size: .82rem;
+        color: var(--ink);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .navlinks {
+        display: flex;
+        gap: 17px;
+        align-items: center;
+      }
+
+      .navlinks a {
+        font-size: .82rem;
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .navlinks a:hover {
+        color: var(--ink);
+      }
+
+      .menu {
+        display: none;
+        background: none;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+
+      .hero {
+        padding: 108px 0 88px;
+        background: radial-gradient(ellipse at 83% 20%, #354954 0, transparent 46%), linear-gradient(135deg, #101820, #17232d 65%, #202c35);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow,
+      .kicker {
+        color: var(--accent);
+        font-weight: 800;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        font-size: .74rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.1rem, 8vw, 6.8rem);
+        line-height: .96;
+        letter-spacing: -.065em;
+        max-width: 980px;
+        margin: 22px 0;
+      }
+
+      .hero p {
+        font-size: clamp(1.08rem, 2vw, 1.28rem);
+        color: #d0d8dd;
+        max-width: 790px;
+      }
+
+      .hero .note {
+        font-size: .9rem;
+        color: var(--muted);
+        border-left: 2px solid var(--accent);
+        padding-left: 16px;
+        margin-top: 32px;
+      }
+
+      section {
+        padding: 76px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        line-height: 1.08;
+        letter-spacing: -.045em;
+        margin: 12px 0 18px;
+      }
+
+      h3 {
+        font-size: 1.17rem;
+        line-height: 1.35;
+        margin: 0 0 9px;
+      }
+
+      .lead {
+        font-size: 1.12rem;
+        color: #d0d8dd;
+        max-width: 870px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        margin-top: 27px;
+      }
+
+      .card,
+      .source,
+      .callout {
+        padding: 22px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+
+      .card p,
+      .source p {
+        color: var(--muted);
+        margin: 7px 0 0;
+      }
+
+      .card .meta {
+        display: block;
+        color: var(--accent);
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .card .reading {
+        display: inline-block;
+        margin-top: 13px;
+        font-weight: 750;
+      }
+
+      .callout {
+        border-left: 3px solid var(--accent);
+        margin: 25px 0;
+        color: #d5dce0;
+      }
+
+      .callout strong {
+        color: var(--ink);
+      }
+
+      .path {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 18px;
+        align-items: start;
+        padding: 19px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .step {
+        color: var(--accent);
+        font-size: .8rem;
+        font-weight: 850;
+        letter-spacing: .1em;
+      }
+
+      .path p {
+        margin: 5px 0 0;
+        color: var(--muted);
+      }
+
+      .sources {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .source a {
+        font-weight: 750;
+      }
+
+      .source p {
+        font-size: .88rem;
+      }
+
+      .small {
+        font-size: .83rem;
+        color: var(--muted);
+      }
+
+      footer {
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: .86rem;
+      }
+
+      @media (max-width: 760px) {
+        .menu {
+          display: block;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          padding: 12px 0;
+        }
+
+        .navlinks {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px 0 14px;
+        }
+
+        .navlinks.open {
+          display: flex;
+        }
+
+        .grid,
+        .sources {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding: 76px 0 64px;
+        }
+
+        .path {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">A CLOSER LOOK / INDEPENDENT TOPIC</a>
+        <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
+        <nav class="navlinks" id="navlinks">
+          <a href="index.html">9/11 history page</a>
+          <a href="pearl-harbor.html">Pearl Harbor</a>
+          <a href="dinosaur-extinction.html">Dinosaur extinction</a>
+          <a href="tom-pearl.html">Tom Pearl</a>
+          <a href="jeffrey-epstein.html">Jeffrey Epstein</a>
+          <a href="#topic">Reading guide</a>
+          <a href="#pathways">Where to start</a>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="topic">
+        <div class="wrap">
+          <div class="eyebrow">Ideas · Political economy · History</div>
+          <h1>Marxist Literature</h1>
+          <p>
+            A guide to influential writing in the Marxist tradition: critiques of capitalism,
+            theories of class and history, debates about political power, and later work that
+            extended or challenged these ideas.
+          </p>
+          <p class="note">
+            This is a reading and historical reference guide, not an endorsement of every author,
+            movement, government, or political conclusion discussed in these works.
+          </p>
+        </div>
+      </section>
+
+      <section id="introduction">
+        <div class="wrap">
+          <div class="kicker">Start with the framework</div>
+          <h2>What does “Marxist literature” mean?</h2>
+          <p class="lead">
+            Marxist writing is a broad body of political, economic, historical, and cultural work
+            influenced by Karl Marx and Friedrich Engels. Common subjects include class relations,
+            ownership and production, labor, capitalism, ideology, the state, and social change.
+          </p>
+          <div class="callout">
+            <strong>Keep the categories clear.</strong>
+            Marx's own writing, later Marxist interpretations, political programs, and historical
+            accounts of governments that called themselves Marxist are not interchangeable.
+            Authors within this tradition disagree sharply with one another.
+          </div>
+          <p>
+            The selections below are grouped by theme and reading difficulty. The links lead to
+            full texts or scholarly reference material where available. Some older works use
+            terminology and assumptions that should be read in their historical context.
+          </p>
+        </div>
+      </section>
+
+      <section id="foundations">
+        <div class="wrap">
+          <div class="kicker">Primary texts</div>
+          <h2>Foundational works</h2>
+          <p class="lead">
+            These texts introduce the central arguments and vocabulary associated with Marx and Engels.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <span class="meta">1848 · Introductory</span>
+              <h3>The Communist Manifesto — Karl Marx and Friedrich Engels</h3>
+              <p>
+                A short political pamphlet outlining their account of class struggle, the rise of
+                the bourgeoisie, capitalism's global expansion, and the communist movement.
+                It is influential, polemical, and best read as a political document from its period.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/marx/works/1848/communist-manifesto/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1880 · Introductory</span>
+              <h3>Socialism: Utopian and Scientific — Friedrich Engels</h3>
+              <p>
+                A concise presentation of Engels's distinction between earlier utopian socialist
+                proposals and what he called scientific socialism, including an outline of
+                historical materialism.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/marx/works/1880/soc-utop/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1849 · Introductory</span>
+              <h3>Wage Labour and Capital — Karl Marx</h3>
+              <p>
+                A relatively short introduction to wages, labor, capital, and the relationship
+                between workers and employers. Useful before approaching Marx's longer economic work.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/marx/works/1847/wage-labour/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1867 · Advanced</span>
+              <h3>Capital, Volume I — Karl Marx</h3>
+              <p>
+                Marx's extended critique of capitalist production. It examines commodities,
+                money, labor-power, surplus value, the working day, machinery, accumulation,
+                and the historical development of capitalism.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/marx/works/1867-c1/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1871 · Intermediate</span>
+              <h3>The Civil War in France — Karl Marx</h3>
+              <p>
+                Marx's analysis of the Paris Commune of 1871 and his interpretation of its
+                political significance, institutions, and defeat.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/marx/works/1871/civil-war-france/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1875 · Intermediate</span>
+              <h3>Critique of the Gotha Programme — Karl Marx</h3>
+              <p>
+                A critique of a proposed German workers' party program, including Marx's comments
+                on labor, distribution, political transition, and the phases of communist society.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/marx/works/1875/gotha/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="later-thinkers">
+        <div class="wrap">
+          <div class="kicker">Debates and extensions</div>
+          <h2>Later Marxist writers</h2>
+          <p class="lead">
+            Later authors applied Marxist ideas to new political conditions and argued over
+            strategy, the state, reform, revolution, culture, and organization.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <span class="meta">1917 · Political theory</span>
+              <h3>The State and Revolution — Vladimir Lenin</h3>
+              <p>
+                Lenin's interpretation of Marx and Engels on the state, revolution, and the
+                transition away from class society. Read it as Lenin's argument, not as a neutral
+                summary of every Marxist position.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/lenin/works/1917/staterev/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1900 · Political debate</span>
+              <h3>Reform or Revolution — Rosa Luxemburg</h3>
+              <p>
+                Luxemburg's argument about the relationship between immediate reforms and
+                broader structural change, written in debate with revisionist social democracy.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/luxemburg/1900/reform-revolution/" target="_blank" rel="noopener">Read the text ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1929–1935 · Culture and politics</span>
+              <h3>Prison Notebooks — Antonio Gramsci</h3>
+              <p>
+                Notes written during Gramsci's imprisonment, influential for later discussions
+                of cultural hegemony, civil society, intellectuals, and political leadership.
+                The notebooks are fragmentary and are often read through edited selections.
+              </p>
+              <a class="reading" href="https://www.marxists.org/archive/gramsci/" target="_blank" rel="noopener">Explore Gramsci's archive ↗</a>
+            </article>
+
+            <article class="card">
+              <span class="meta">1930s–1940s · History and society</span>
+              <h3>Writings on race, colonialism, and class</h3>
+              <p>
+                Marxist and Marxist-influenced scholarship has also examined imperialism,
+                colonialism, racial hierarchy, and the relationship between class and race.
+                These debates are not reducible to one agreed-upon position.
+              </p>
+              <a class="reading" href="https://www.marxists.org/subject/africa/" target="_blank" rel="noopener">Explore African and anti-colonial writings ↗</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pathways">
+        <div class="wrap">
+          <div class="kicker">Suggested reading order</div>
+          <h2>Where to start</h2>
+          <p class="lead">
+            A manageable path through the material, moving from short introductions to more
+            specialized arguments.
+          </p>
+
+          <div class="path">
+            <div class="step">STEP 01</div>
+            <div>
+              <h3>Get the basic vocabulary</h3>
+              <p>Begin with <em>The Communist Manifesto</em> and Engels's <em>Socialism: Utopian and Scientific</em>.</p>
+            </div>
+          </div>
+
+          <div class="path">
+            <div class="step">STEP 02</div>
+            <div>
+              <h3>Understand the economic argument</h3>
+              <p>Read <em>Wage Labour and Capital</em> before tackling selected chapters of <em>Capital, Volume I</em>.</p>
+            </div>
+          </div>
+
+          <div class="path">
+            <div class="step">STEP 03</div>
+            <div>
+              <h3>Compare political strategies</h3>
+              <p>Read Luxemburg's <em>Reform or Revolution</em> alongside Lenin's <em>The State and Revolution</em> to see competing arguments.</p>
+            </div>
+          </div>
+
+          <div class="path">
+            <div class="step">STEP 04</div>
+            <div>
+              <h3>Explore later interpretations</h3>
+              <p>Move into Gramsci and scholarship on culture, colonialism, race, gender, and political economy.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Reading critically:</strong>
+            Identify each author's historical context, intended audience, evidence, and political
+            goals. Compare their claims with historical research and with arguments from other
+            political and economic traditions.
+          </div>
+        </div>
+      </section>
+
+      <section id="sources">
+        <div class="wrap">
+          <div class="kicker">Sources / Further reading</div>
+          <h2>Reference sources</h2>
+          <p class="lead">
+            These archives provide primary texts and scholarly context. Archive availability does
+            not mean every transcription or translation is a critical scholarly edition.
+          </p>
+          <div class="sources">
+            <div class="source">
+              <a href="https://www.marxists.org/archive/marx/works/index.htm" target="_blank" rel="noopener">Marx/Engels Archive — Marxists Internet Archive</a>
+              <p>A broad collection of primary writings by Marx and Engels, organized by author, date, and subject.</p>
+            </div>
+            <div class="source">
+              <a href="https://plato.stanford.edu/entries/marx/" target="_blank" rel="noopener">Stanford Encyclopedia of Philosophy — Karl Marx</a>
+              <p>A scholarly overview of Marx's philosophy, political economy, historical materialism, and legacy.</p>
+            </div>
+            <div class="source">
+              <a href="https://www.marxists.org/archive/lenin/works/" target="_blank" rel="noopener">Lenin Internet Archive</a>
+              <p>Primary texts by Lenin, including works on political organization, imperialism, and the state.</p>
+            </div>
+            <div class="source">
+              <a href="https://www.marxists.org/archive/luxemburg/" target="_blank" rel="noopener">Rosa Luxemburg Archive</a>
+              <p>Primary writings by Luxemburg on political economy, reform, revolution, and mass action.</p>
+            </div>
+            <div class="source">
+              <a href="https://www.marxists.org/archive/gramsci/" target="_blank" rel="noopener">Antonio Gramsci Archive</a>
+              <p>Collected writings and selections relevant to hegemony, culture, civil society, and politics.</p>
+            </div>
+          </div>
+          <p class="small" style="margin-top:24px">
+            This guide is selective rather than exhaustive. It distinguishes primary texts from
+            scholarly interpretation and does not treat Marxism as a single, unchanging doctrine.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        A CLOSER LOOK · Independent educational reading guide.
+        <span style="display:block;margin-top:6px">
+          This page is not affiliated with a political party, government, or publishing institution.
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      const menu = document.getElementById('menu');
+      const nav = document.getElementById('navlinks');
+
+      menu.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        menu.setAttribute('aria-expanded', String(open));
+      });
+
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          menu.setAttribute('aria-expanded', 'false');
+        });
+      });
+    </script>
+  </body>
+</html>
