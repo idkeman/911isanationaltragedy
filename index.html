@@ -1,105 +1,1336 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101820">
-<meta name="description" content="An expanded, evidence-led history of September 11, 2001: the attacks, the people affected, the investigations, and the consequences that followed.">
-<title>A Closer Look — History, Evidence &amp; Perspective</title>
-<style>
-:root{--bg:#101820;--panel:#17232d;--panel2:#1d2b36;--ink:#f4f1eb;--muted:#b8c1c8;--line:#34434e;--accent:#d7a76b;--blue:#8eb4c5;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}a:hover{color:#e0f2f8}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#101820ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:.1em;font-size:.82rem;color:var(--ink);text-decoration:none;white-space:nowrap}.navlinks{display:flex;gap:17px;align-items:center}.navlinks a{font-size:.82rem;color:var(--muted);text-decoration:none}.navlinks a:hover{color:var(--ink)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:8px}
-.hero{padding:108px 0 88px;background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);border-bottom:1px solid var(--line)}.eyebrow,.kicker{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem}.hero h1{font-size:clamp(3.1rem,8vw,6.8rem);line-height:.96;letter-spacing:-.065em;max-width:980px;margin:22px 0}.hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:#d0d8dd;max-width:790px}.hero .note{font-size:.9rem;color:var(--muted);border-left:2px solid var(--accent);padding-left:16px;margin-top:32px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none;font-weight:750;border:1px solid var(--accent);color:#1b2024;background:var(--accent)}.btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-section{padding:76px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;letter-spacing:-.045em;margin:12px 0 18px}h3{font-size:1.17rem;line-height:1.35;margin:0 0 9px}.lead{font-size:1.12rem;color:#d0d8dd;max-width:870px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.stat,.card,.source,.fact{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.stat strong{display:block;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;color:var(--accent)}.stat span,.muted{color:var(--muted);font-size:.91rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:27px}.card p,.source p,.fact p{color:var(--muted);margin:7px 0 0}.timeline{margin-top:30px;border-left:1px solid #65727b;padding-left:26px}.event{position:relative;padding:0 0 27px}.event:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);left:-31px;top:10px}.time{font-size:.78rem;color:var(--accent);font-weight:850;letter-spacing:.08em}.event p{margin:4px 0 0;color:var(--muted)}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}.callout{border-left:3px solid var(--accent);padding:17px 21px;background:var(--panel);margin:25px 0;color:#d5dce0}.callout strong{color:var(--ink)}.tag{display:inline-block;font-size:.72rem;color:var(--accent);border:1px solid #806a4e;border-radius:30px;padding:2px 9px;margin-bottom:10px}
-details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin:12px 0}summary{cursor:pointer;padding:17px 20px;font-weight:750;list-style:none;display:flex;justify-content:space-between;gap:15px;line-height:1.45}summary:after{content:"＋";color:var(--accent)}details[open] summary:after{content:"−"}details .answer{padding:0 20px 20px;color:var(--muted)}.answer p{margin:8px 0}.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}.source a{font-weight:750}.source p{font-size:.88rem}.small{font-size:.83rem;color:var(--muted)}.section-intro{max-width:850px}.table-wrap{overflow-x:auto;margin:22px 0}table{border-collapse:collapse;width:100%;min-width:620px;background:var(--panel);border:1px solid var(--line)}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--accent);font-size:.83rem}td{color:var(--muted);font-size:.91rem}footer{padding:34px 0;color:var(--muted);font-size:.85rem}
-@media(max-width:850px){.navlinks{gap:10px}.navlinks a{font-size:.75rem}.two-col{grid-template-columns:1fr}}
-@media(max-width:700px){.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.hero{padding:76px 0 64px}.stats,.grid,.sources{grid-template-columns:1fr}section{padding:56px 0}.wrap{width:min(var(--max),calc(100% - 30px))}}
-</style>
-</head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="#top">A CLOSER LOOK / 09·11·01</a><button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><nav class="navlinks" id="navlinks"><a href="#overview">Overview</a><a href="pearl-harbor.html">Pearl Harbor</a><a href="dinosaur-extinction.html">Dinosaur extinction</a><a href="tom-pearl.html">Tom Pearl</a><a href="jeffrey-epstein.html">Jeffrey Epstein</a><a href="#timeline">Timeline</a><a href="#plot">The plot</a><a href="#response">Response</a><a href="#buildings">Buildings</a><a href="#aftermath">Aftermath</a><a href="#questions">Questions</a><a href="#sources">Sources</a></nav></div></header>
-<main id="top">
-<div class="hero"><div class="wrap"><div class="eyebrow">History · Evidence · Perspective</div><h1>9/11 deserves<br>the full picture.</h1><p>September 11, 2001 was a coordinated terrorist attack that killed thousands, changed countless lives, and reshaped public policy. Understanding it requires more than a headline or a single image. It requires looking carefully at the people, the timeline, the investigations, and the decisions made afterward.</p><div class="actions"><a class="btn" href="#overview">Explore the history</a><a class="btn secondary" href="#questions">Examine difficult questions</a></div><p class="note">This project does not claim that 9/11 was harmless, minor, or exaggerated. The purpose is to challenge oversimplified narratives and put the event in proportion: distinguish the immediate attacks from their long-term effects, and distinguish documented facts from later political arguments.</p></div></div>
-
-<section id="overview"><div class="wrap"><div class="kicker">01 / The baseline</div><h2>What happened, in plain terms?</h2><p class="lead">On the morning of September 11, 2001, 19 members of the terrorist organization al-Qaeda hijacked four passenger aircraft in the United States. The hijackers deliberately flew three of them into major targets. The fourth crashed in Pennsylvania after passengers and crew fought back. The attacks killed 2,977 victims, not counting the 19 hijackers.</p><div class="stats"><div class="stat"><strong>2,977</strong><span>Victims killed in the attacks, excluding the hijackers</span></div><div class="stat"><strong>4</strong><span>Commercial passenger aircraft hijacked</span></div><div class="stat"><strong>19</strong><span>Al-Qaeda hijackers involved in the operation</span></div></div>
-<div class="media-resources" aria-label="9/11 images and videos"><h3>Visual archive: photographs, footage, and first-person accounts</h3><p class="muted">Explore original photographs, museum collections, archival records, and recorded testimony. Some collections contain distressing material.</p><div class="grid"><article class="card"><span class="tag">Photographs</span><h3>Smithsonian: September 11 photographs</h3><p>More than 2,400 photographic objects documenting the World Trade Center, Pentagon, Flight 93, and the aftermath.</p><p><a href="https://americanhistory.si.edu/collections/object-groups/september-11/photographs" target="_blank" rel="noopener">Open the photograph collection ↗</a></p></article><article class="card"><span class="tag">Archival images</span><h3>National Archives: Remembering 9/11</h3><p>Government photographs, records, maps, and images from the attacks and their aftermath.</p><p><a href="https://www.archives.gov/news/topics/9-11-anniversary" target="_blank" rel="noopener">View the National Archives collection ↗</a></p></article><article class="card"><span class="tag">Images + video</span><h3>9/11 Memorial Museum: Resources</h3><p>Interactive timelines, digital exhibitions, oral histories, audio, video, and first-person accounts.</p><p><a href="https://www.911memorial.org/learn/resources" target="_blank" rel="noopener">Explore museum media resources ↗</a></p></article><article class="card"><span class="tag">Video history</span><h3>Naudet brothers’ footage</h3><p>Learn about the video camera that captured rare footage of the first plane striking the North Tower and firefighters’ experiences that day.</p><p><a href="https://www.911memorial.org/connect/blog/video-camera-captured-critical-moments-911" target="_blank" rel="noopener">Read the museum’s video feature ↗</a></p></article></div></div>
-<div class="grid"><article class="card"><span class="tag">New York</span><h3>World Trade Center</h3><p>Two aircraft struck the North and South Towers in Lower Manhattan. Both towers later collapsed. The surrounding complex and nearby neighborhood suffered extensive destruction, fires, debris, and disruption.</p></article><article class="card"><span class="tag">Virginia</span><h3>The Pentagon</h3><p>A third aircraft struck the Pentagon in Arlington, Virginia, killing people aboard the plane and inside the building. The impact damaged part of the building, and a section later collapsed.</p></article><article class="card"><span class="tag">Pennsylvania</span><h3>Flight 93</h3><p>Passengers and crew learned that the aircraft had been hijacked and attempted to regain control. The plane crashed in a field near Shanksville before reaching the hijackers' intended target.</p></article><article class="card"><span class="tag">A global crime</span><h3>People from many countries</h3><p>The victims were not one uniform group. They included office workers, airline passengers and crew, firefighters, police officers, emergency medical personnel, visitors, and people from many national backgrounds.</p></article></div>
-<div class="callout"><strong>Important distinction:</strong> The figure 2,977 is the immediate victim death toll for the attacks. It is not a count of every later death, illness, injury, bereavement, or economic consequence associated with 9/11. Those are separate categories and should not be casually combined.</div></div></section>
-
-<section id="timeline"><div class="wrap"><div class="kicker">04 / The morning</div><h2>A detailed timeline of September 11.</h2><p class="lead">All times below are Eastern Daylight Time. Exact minute references can differ slightly between sources because the timeline was reconstructed from flight, telephone, radio, and witness records. The sequence is well established.</p><div class="timeline">
-<div class="event"><div class="time">7:59 A.M.</div><h3>American Airlines Flight 11 departs Boston</h3><p>Flight 11 leaves Logan International Airport for Los Angeles with 11 crew members and 81 passengers, in addition to five hijackers.</p></div>
-<div class="event"><div class="time">8:14 A.M.</div><h3>United Airlines Flight 175 departs Boston</h3><p>Flight 175 leaves Boston for Los Angeles with nine crew members and 56 passengers, in addition to five hijackers.</p></div>
-<div class="event"><div class="time">8:20 A.M.</div><h3>American Airlines Flight 77 departs Washington Dulles</h3><p>Flight 77 leaves for Los Angeles with six crew members and 58 passengers, in addition to five hijackers.</p></div>
-<div class="event"><div class="time">8:42 A.M.</div><h3>United Airlines Flight 93 departs Newark</h3><p>Flight 93 leaves for San Francisco after a delay. It carries seven crew members and 37 passengers, in addition to four hijackers.</p></div>
-<div class="event"><div class="time">8:46 A.M.</div><h3>Flight 11 strikes the North Tower</h3><p>The aircraft hits the World Trade Center's North Tower. Emergency calls begin, and firefighters, police officers, and other responders head toward the site.</p></div>
-<div class="event"><div class="time">9:03 A.M.</div><h3>Flight 175 strikes the South Tower</h3><p>A second aircraft hits the South Tower. The two impacts establish that the first crash was not an isolated aviation accident.</p></div>
-<div class="event"><div class="time">9:37 A.M.</div><h3>Flight 77 strikes the Pentagon</h3><p>The aircraft hits the western side of the Pentagon. The attack extends beyond New York and confirms a coordinated operation against multiple targets.</p></div>
-<div class="event"><div class="time">9:59 A.M.</div><h3>The South Tower collapses</h3><p>The South Tower, which was hit second, collapses first. People nearby face falling debris, a massive dust cloud, and dangerous conditions across Lower Manhattan.</p></div>
-<div class="event"><div class="time">10:03 A.M.</div><h3>Flight 93 crashes in Pennsylvania</h3><p>Passengers and crew resist the hijackers. The aircraft crashes near Shanksville, killing everyone aboard but preventing it from reaching its intended target.</p></div>
-<div class="event"><div class="time">10:28 A.M.</div><h3>The North Tower collapses</h3><p>The North Tower collapses, devastating the immediate area and creating another enormous debris and dust field.</p></div>
-<div class="event"><div class="time">5:20 P.M.</div><h3>World Trade Center 7 collapses</h3><p>WTC 7, a 47-story building that was not struck by an aircraft, collapses after fires burned for hours. NIST later investigated this building separately from the two towers.</p></div>
-</div><div class="callout"><strong>Why the timeline matters:</strong> The attacks were not one single explosion or one moment. They were a sequence of hijackings, impacts, emergency calls, evacuations, rescue operations, structural failures, and decisions made under rapidly changing information.</div></div></section>
-
-<section id="plot"><div class="wrap"><div class="kicker">05 / Who planned it?</div><h2>The organization and the plot.</h2><p class="lead">The 9/11 attacks were planned by al-Qaeda, a transnational terrorist organization led by Osama bin Laden. Understanding the perpetrators' goals does not excuse them; it explains the historical context in which the operation developed.</p><div class="two-col"><div><h3>Al-Qaeda before 2001</h3><p class="muted">Al-Qaeda emerged from militant networks formed during the Soviet-Afghan War and developed into an organization focused on attacking what its leadership viewed as its enemies. By the 1990s, bin Laden and his associates had publicly declared hostility toward the United States and had been linked to earlier attacks, including the 1998 bombings of U.S. embassies in Kenya and Tanzania.</p><p class="muted">The 9/11 Commission traced the organization's development, leadership, financing, recruitment, and planning. The plot was not improvised overnight: it involved years of preparation, training, travel, coordination, and exploitation of weaknesses in aviation security.</p></div><div class="card"><h3>What the hijackers exploited</h3><ul class="muted"><li>Airport screening systems designed around earlier threat assumptions.</li><li>Cockpit doors and crew procedures not designed for suicide hijackings.</li><li>Assumptions that hijackers wanted hostages or negotiation rather than using planes as weapons.</li><li>Gaps in intelligence sharing and coordination between agencies.</li><li>Air-defense procedures built for different scenarios, especially conventional military threats and hijacked aircraft used as bargaining tools.</li></ul></div></div>
-<h3 style="margin-top:28px">Why did they choose these targets?</h3><p class="muted">The World Trade Center represented U.S. financial and commercial power. The Pentagon represented the U.S. military. The intended target of Flight 93 is commonly understood to have been another major federal or political site in Washington, D.C.; the hijackers did not reach it. The Commission's account explains the planning and target selection, while also documenting the ideological motives of al-Qaeda's leadership.</p>
-<h3 style="margin-top:25px">Was the operation financially enormous?</h3><p class="muted">The attack was operationally complex, but the Commission estimated that the plot itself did not require an extraordinary budget compared with the scale of its consequences. Its financing came through a network of al-Qaeda resources and transfers. This is a useful example of how a relatively limited direct expenditure can produce a huge human and economic impact when vulnerabilities are exploited.</p>
-</div></section>
-
-<section id="response"><div class="wrap"><div class="kicker">06 / People and response</div><h2>The human response was part of the story.</h2><p class="lead">The attacks were an unprecedented emergency for the people caught in them and for the institutions trying to respond. The response included extraordinary acts of courage, but also serious coordination and communication problems.</p><div class="grid"><article class="card"><h3>Firefighters and emergency medical workers</h3><p>Firefighters, paramedics, and other responders entered dangerous environments to evacuate people, treat injuries, search buildings, and attempt rescues. Many responders died in the attacks. Others later developed health problems associated with exposure during rescue, recovery, and cleanup.</p></article><article class="card"><h3>Police and public safety personnel</h3><p>Police officers helped evacuate buildings, secure streets, direct civilians, and coordinate emergency activity. The scale of the disaster strained command structures, radio systems, and the ability to maintain a shared picture of events.</p></article><article class="card"><h3>Passengers and flight crews</h3><p>Flight crews faced a threat that existing procedures had not prepared them to handle. On Flight 93, passengers and crew made a collective decision to resist after learning enough about the other hijackings to understand the likely fate of their aircraft.</p></article><article class="card"><h3>Ordinary civilians</h3><p>Office workers, bystanders, nearby residents, transit workers, and people across the city helped strangers, guided evacuations, offered shelter, donated supplies, and supported recovery efforts. The response was not limited to official agencies.</p></article></div>
-<h3 style="margin-top:32px">What did the official investigation find about the response?</h3><p class="muted">The 9/11 Commission concluded that FAA and NORAD were not prepared for the specific scenario of multiple domestic passenger aircraft being used as suicide weapons. Communication between agencies and senior leadership was poor, and existing protocols did not fit the unfolding situation. The Commission also praised the initiative of many lower-level personnel who improvised under extreme pressure, including FAA controllers who helped ground aircraft nationwide.</p><p class="muted">In New York, the Commission documented command-and-control and communication problems among emergency organizations. Those findings are not a judgment on the bravery or commitment of individual responders. They describe institutional systems that were overwhelmed and not designed for an event of this scale and type.</p>
-<div class="callout"><strong>Two facts can be true at once:</strong> responders and civilians showed remarkable courage, and emergency systems had serious weaknesses. Recognizing the second does not diminish the first.</div></div></section>
-
-<section id="buildings"><div class="wrap"><div class="kicker">07 / Engineering and evidence</div><h2>Why did the buildings collapse?</h2><p class="lead">The collapses are among the most studied structural failures in modern history. The National Institute of Standards and Technology (NIST) conducted extensive investigations into the Twin Towers and World Trade Center 7. The three buildings did not fail in exactly the same way.</p>
-<div class="card"><span class="tag">WTC 1 and WTC 2</span><h3>The Twin Towers: impact damage plus fire</h3><p class="muted">NIST concluded that the aircraft severed and damaged structural columns, damaged floor systems, and dislodged fire-resistive insulation from steel components. The impacts also spread burning jet fuel and ignited fires across multiple floors. As fires continued, unprotected or less-protected structural elements heated, weakened, and deformed. Sagging floors pulled inward on perimeter columns until the columns bowed and collapse began.</p><p class="muted">The towers did not collapse at the instant of impact. They remained standing for roughly 56 minutes after the South Tower was hit and 102 minutes after the North Tower was hit. That interval is important: the buildings initially resisted the damage, but the combination of structural damage, lost fireproofing, and sustained multi-floor fires eventually overwhelmed them.</p></div>
-<div class="grid"><article class="card"><h3>What NIST says about the “pancake theory”</h3><p>NIST did not identify a progressive floor-by-floor “pancaking” failure as the mechanism that initiated the Twin Towers' collapses. Its analysis identified inward bowing and failure of perimeter columns at the impact and fire floors as the initiating event. Once global collapse began, the enormous moving mass above the failure zone overwhelmed the structure below.</p></article><article class="card"><h3>What about controlled demolition?</h3><p>NIST reported no corroborating evidence for explosives or controlled demolition in the Twin Towers. It found that collapse initiation occurred at the impact and fire floors and that the observed progression was consistent with its structural analysis. NIST also stated that it did not test the steel for explosive or thermite residues; the investigation's conclusion was based on the totality of structural, photographic, video, witness, and analytical evidence.</p></article></div>
-<div class="card" style="margin-top:15px"><span class="tag">World Trade Center 7</span><h3>Why did WTC 7 collapse without being hit by a plane?</h3><p class="muted">WTC 7 was a 47-story building north of the main complex. Debris from the collapse of WTC 1 damaged its southwest side and started fires on multiple floors. The fires burned for hours, while the building's water supply to some sprinkler systems was impaired after water mains were damaged. NIST concluded that heat caused floor beams and girders to expand, damaging connections around a critical interior column (Column 79). Floor failures left that column unsupported; its buckling initiated a sequence of internal failures that progressed through the building and led to global collapse.</p><p class="muted">WTC 7's collapse mechanism was different from that of the Twin Towers. It was not struck by an aircraft, and NIST identified fire-induced structural failure as the initiating process. NIST found no evidence supporting a blast event inside the building.</p></div>
-<h3 style="margin-top:30px">What investigations can—and cannot—tell us</h3><p class="muted">Engineering investigations reconstruct events from incomplete physical evidence, photographs, videos, interviews, material tests, building plans, and computer models. NIST described uncertainties in the as-built conditions, aircraft damage, fireproofing condition, fire spread, and material response. Its conclusions are not a claim that every second or every fragment of debris is known with perfect certainty. They are the agency's evidence-based explanations for how collapse initiated.</p><p class="muted">A careful reader should distinguish between a question that identifies a genuine uncertainty and a claim that leaps from uncertainty to an unsupported alternative explanation. The existence of uncertainty in a complex investigation is not, by itself, evidence of a conspiracy.</p></div></section>
-
-<section id="aftermath"><div class="wrap"><div class="kicker">08 / The years afterward</div><h2>The aftermath was enormous—and it was not one thing.</h2><p class="lead">The consequences of 9/11 unfolded over years. Some were direct and measurable; others were political, social, or personal. A balanced account should neither minimize them nor treat every later development as an inevitable or justified result of the attacks.</p><div class="grid">
-<article class="card"><h3>Public health and long-term illness</h3><p>Dust, smoke, debris, and other exposures affected responders and survivors around the World Trade Center, Pentagon, and Shanksville sites. The WTC Health Program provides monitoring and treatment for certified conditions among eligible responders and survivors. Its June 2025 statistics listed 136,862 members and 89,953 members with at least one certified condition. These are program membership and certification figures—not a count of everyone exposed, and not a count of deaths.</p></article>
-<article class="card"><h3>Afghanistan and the war on terror</h3><p>The United States invaded Afghanistan in October 2001, targeting al-Qaeda and the Taliban government that had provided the group a safe haven. The conflict lasted two decades and ended with the U.S. withdrawal in 2021. Its costs, goals, outcomes, and long-term consequences are separate subjects that deserve scrutiny rather than automatic approval or blanket dismissal.</p></article>
-<article class="card"><h3>Iraq: a separate decision</h3><p>The 2003 invasion of Iraq was not the same military operation as the initial campaign against al-Qaeda in Afghanistan. The Iraq War was justified by the U.S. government using claims about weapons of mass destruction and security threats; the prewar claims and the decision to invade have been heavily scrutinized. Saddam Hussein's government was not responsible for carrying out the 9/11 attacks. Keeping these events distinct is essential to an accurate account.</p></article>
-<article class="card"><h3>Security and surveillance</h3><p>After 9/11, the United States expanded aviation security, intelligence coordination, border controls, and surveillance authorities. Some changes addressed documented vulnerabilities. Others raised questions about privacy, due process, discrimination, oversight, and the proper limits of government power. Each policy should be evaluated on its own evidence and results.</p></article>
-<article class="card"><h3>Economic disruption</h3><p>The attacks caused immediate destruction of property, business interruption, travel disruption, insurance losses, and costs associated with rescue, recovery, rebuilding, and security. Lower Manhattan's economy and daily life were deeply affected. Nationally, the attacks contributed to uncertainty and a sharp disruption in air travel, but economic changes after 2001 also had other causes and should not all be attributed to 9/11.</p></article>
-<article class="card"><h3>Building codes and emergency planning</h3><p>Investigations prompted changes and recommendations involving fire resistance, evacuation, structural design, emergency communications, and responder safety. The purpose of studying the failures was not only to explain what happened, but to reduce the risk of similar losses in future disasters.</p></article>
-<article class="card"><h3>Culture, memory, and public life</h3><p>9/11 reshaped public ceremonies, news coverage, popular culture, travel expectations, and how many Americans thought about national security. It also affected Muslim, Arab, and South Asian communities, who faced backlash, harassment, discrimination, and suspicion despite not being responsible for the attacks.</p></article>
-<article class="card"><h3>Memorialization and recovery</h3><p>The rebuilding of the World Trade Center site, the National September 11 Memorial & Museum, and memorials in Shanksville and at the Pentagon created spaces to remember victims and document the event. Recovery was physical, civic, and deeply personal; it did not end when the debris was cleared.</p></article>
-</div>
-<div class="callout"><strong>Keep the categories separate:</strong> the direct attack, the wars that followed, later security laws, the health effects of exposure, and the broader cultural changes are connected historically—but they are not interchangeable. A good argument does not use one category as proof of another.</div>
-<h3 style="margin-top:30px">A snapshot of the WTC Health Program</h3><p class="muted">As of June 2025, the CDC's annual program statistics reported 136,862 total members and 89,953 members with at least one certified condition. The program covers categories that include respiratory and digestive disorders, cancers, mental-health conditions, acute traumatic injuries, and certain musculoskeletal conditions for responders. Certification requires the program to determine that the condition meets its criteria and is related to qualifying 9/11 exposure.</p><p class="small">Source: CDC / NIOSH, 2025 WTC Health Program annual newsletter. Program figures change over time; the date is included so readers do not mistake this snapshot for a live count.</p></div></section>
-
-<section id="questions"><div class="wrap"><div class="kicker">09 / Claims and questions</div><h2>Common claims deserve careful answers.</h2><p class="lead">These topics are often discussed in oversimplified ways. Expand each answer for the evidence, the relevant distinction, and what should not be inferred from it.</p>
-<details><summary>“9/11 was not as bad as people say.”</summary><div class="answer"><p>That statement depends on what “as bad” means. The immediate death toll was 2,977 victims, including civilians and first responders. Four aircraft were hijacked, three major targets were struck, two skyscrapers collapsed, and WTC 7 later collapsed after fires. Thousands more experienced injury, bereavement, displacement, or exposure-related health effects.</p><p>It is reasonable to challenge exaggerated claims, inaccurate retellings, or the use of 9/11 to justify unrelated policies. It is not accurate to describe the attacks themselves as minor. The stronger argument is that the historical record is more complex than the slogans used to discuss it.</p></div></details>
-<details><summary>“The Twin Towers collapsed simply because planes hit them.”</summary><div class="answer"><p>That leaves out the central engineering explanation. NIST identified a combination of aircraft impact damage, dislodged fireproofing, and sustained multi-floor fires. The towers remained standing for a significant period after impact. The fires heated and weakened structural components, and the resulting deformation led to collapse initiation.</p><p>Sources: <a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation" target="_blank" rel="noopener">NIST WTC Towers FAQ</a> and <a href="https://www.nist.gov/world-trade-center-investigation/about-investigation" target="_blank" rel="noopener">NIST investigation overview</a>.</p></div></details>
-<details><summary>“WTC 7 proves the towers were demolished.”</summary><div class="answer"><p>WTC 7 was a different building with a different failure sequence. It was not struck by an aircraft. NIST concluded that debris from WTC 1 started fires on multiple floors; the loss of water supply impaired sprinklers on lower floors; prolonged uncontrolled fires caused thermal expansion and connection failures; and Column 79's buckling initiated a progressive collapse.</p><p>That explanation is debated in public discussions, but the existence of a separate building collapse does not establish that explosives brought down the Twin Towers. NIST's WTC 7 investigation found no evidence of a blast event. Read the <a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation" target="_blank" rel="noopener">NIST WTC 7 FAQ</a> directly.</p></div></details>
-<details><summary>“The government knew exactly what was going to happen.”</summary><div class="answer"><p>The 9/11 Commission documented intelligence warnings about al-Qaeda and missed opportunities to disrupt the plot. It also described failures to connect information across agencies, weaknesses in domestic intelligence, and an aviation-security system that was not prepared for suicide hijackings using commercial aircraft.</p><p>That record supports serious criticism of preparedness and information-sharing. It does not, by itself, establish that officials had precise foreknowledge of the date, targets, and method or deliberately allowed the attacks to happen. Those are much stronger claims and require specific evidence.</p></div></details>
-<details><summary>“The attacks justify everything the United States did afterward.”</summary><div class="answer"><p>No single event automatically validates every later policy. The invasion of Afghanistan, the invasion of Iraq, surveillance programs, detention practices, immigration measures, and aviation-security changes each had different legal bases, goals, evidence, costs, and outcomes. Some were direct responses to the attacks; others were decisions made by political leaders in the years that followed.</p><p>It is possible to condemn al-Qaeda's attacks while questioning whether particular wars or policies were necessary, effective, lawful, or proportionate.</p></div></details>
-<details><summary>“If you question the official response, you are disrespecting victims.”</summary><div class="answer"><p>Remembering victims and evaluating government decisions are not competing obligations. People can honor those killed, support survivors and responders, accept well-supported findings, and still debate policy. Respect does not require suspending critical thinking.</p></div></details>
-<details><summary>“The death toll is the only meaningful number.”</summary><div class="answer"><p>The immediate death toll is essential, but it does not capture the full human cost. The event also caused physical injuries, psychological trauma, long-term illnesses, loss of livelihoods, family disruption, and lasting effects on responders and communities. Conversely, a later health-program membership figure should not be added to the immediate death toll as if every member were a fatality. Different statistics measure different things.</p></div></details>
-<details><summary>“The attacks changed everything about America.”</summary><div class="answer"><p>They changed important parts of American public life, security policy, foreign policy, and collective memory. But they did not create every trend that followed. Economic conditions, political polarization, technology, demographic change, and other world events also shaped the decades after 2001. Historical analysis should avoid attributing every later development to a single cause.</p></div></details>
-<details><summary>“A lack of perfect certainty means the investigations are worthless.”</summary><div class="answer"><p>Large-scale disasters rarely leave a complete, undisturbed record. Investigators work with surviving physical evidence, plans, photographs, video, witness accounts, tests, and models. Good investigations identify uncertainties and explain how evidence supports their conclusions. Uncertainty should invite careful scrutiny—not automatically invalidate the entire body of evidence.</p></div></details>
-<div class="callout"><strong>The central point:</strong> 9/11 can be both a devastating terrorist attack and an event whose aftermath deserves debate. Neither fact cancels the other. Historical accuracy means refusing both minimization and exaggeration.</div></div></section>
-
-<section id="method"><div class="wrap"><div class="kicker">10 / How to read history</div><h2>Separate evidence from interpretation.</h2><div class="grid"><article class="fact"><h3>Documented fact</h3><p>A claim supported by primary records, official investigations, contemporaneous evidence, or multiple independent sources. Example: four aircraft were hijacked on September 11.</p></article><article class="fact"><h3>Expert conclusion</h3><p>An explanation reached by specialists after analyzing evidence. Example: NIST's findings about the mechanisms that initiated the building collapses.</p></article><article class="fact"><h3>Policy judgment</h3><p>An evaluation of whether a government response was necessary, lawful, effective, or proportionate. This involves evidence, values, and competing interpretations.</p></article><article class="fact"><h3>Unsupported assertion</h3><p>A claim that leaps beyond available evidence, relies on selective details, or treats unanswered questions as proof of a preferred explanation.</p></article></div><p class="lead" style="margin-top:28px">When evaluating a claim, ask: Who is making it? What evidence is offered? Is the source close to the event? Does the claim distinguish fact from inference? Does it acknowledge evidence that complicates its position? Are its statistics clearly defined and dated?</p></div></section>
-
-<section id="sources"><div class="wrap"><div class="kicker">11 / Read the record</div><h2>Primary and authoritative sources.</h2><p class="lead">The links below are a starting point for reading the underlying record rather than relying on summaries or social-media posts. The site draws most heavily on the 9/11 Commission, NIST, CDC/NIOSH, and memorial institutions.</p><div class="sources">
-
-<div class="source"><a href="https://www.9-11commission.gov/report/" target="_blank" rel="noopener">The 9/11 Commission Report</a><p>Independent bipartisan commission's account of the plot, attacks, preparedness, response, and recommendations.</p></div>
-<div class="source"><a href="https://www.9-11commission.gov/report/911Report_Exec.htm" target="_blank" rel="noopener">9/11 Commission — Executive Summary</a><p>Concise findings on intelligence, aviation security, air defense, emergency response, and institutional failures.</p></div>
-<div class="source"><a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation" target="_blank" rel="noopener">NIST — WTC Towers Investigation FAQ</a><p>Engineering conclusions on aircraft impacts, fireproofing, fires, and collapse initiation.</p></div>
-<div class="source"><a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation" target="_blank" rel="noopener">NIST — WTC 7 Investigation FAQ</a><p>Findings on the 47-story building's fires, structural failures, and collapse sequence.</p></div>
-<div class="source"><a href="https://www.nist.gov/world-trade-center-investigation/about-investigation" target="_blank" rel="noopener">NIST — Investigation Overview</a><p>How the towers investigation was conducted, including evidence, modeling, and uncertainties.</p></div>
-<div class="source"><a href="https://www.cdc.gov/wtc/newsletter2025.html" target="_blank" rel="noopener">CDC — 2025 WTC Health Program Annual Newsletter</a><p>Program statistics as of June 2025, including membership and certified-condition figures.</p></div>
-<div class="source"><a href="https://www.cdc.gov/wtc/conditions.html" target="_blank" rel="noopener">CDC — Covered Conditions</a><p>Explains which WTC-related health conditions may be certified for monitoring and treatment.</p></div>
-<div class="source"><a href="https://www.cdc.gov/wtc/exhibition/world-trade-center-health-program.html" target="_blank" rel="noopener">CDC — World Trade Center Health Program</a><p>Program purpose, eligibility context, responder and survivor information, and member stories.</p></div>
-<div class="source"><a href="https://www.911memorial.org/public-programs-faqs" target="_blank" rel="noopener">National September 11 Memorial & Museum</a><p>Victim information, memorial context, and historical background.</p></div>
-<div class="source"><a href="https://www.nyc.gov/site/911health/about/historical-context.page" target="_blank" rel="noopener">NYC 9/11 Health — Historical Context</a><p>Exposure, rescue and recovery, and the continuing health impact in New York.</p></div>
-</div><p class="small" style="margin-top:24px">Statistics are presented with their definitions and dates wherever possible. A figure describing program membership or certified conditions is not the same as a death toll. Historical and policy interpretations should be checked against the underlying reports.</p></div></section>
-</main>
-<footer><div class="wrap">A CLOSER LOOK · An independent educational history project built around evidence, context, and respect for the people affected.<span style="display:block;margin-top:6px">This page is not an official memorial, government publication, or substitute for the complete source reports.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="An expanded, evidence-led history of September 11, 2001: the attacks, the people affected, the investigations, and the consequences that followed.">
+    <title>
+      A Closer Look — History, Evidence &amp; Perspective
+    </title>
+    <style>
+      :root {
+        --bg:#101820;
+        --panel:#17232d;
+        --panel2:#1d2b36;
+        --ink:#f4f1eb;
+        --muted:#b8c1c8;
+        --line:#34434e;
+        --accent:#d7a76b;
+        --blue:#8eb4c5;
+        --max:1160px
+      }
+      * {
+        box-sizing:border-box
+      }
+      html {
+        scroll-behavior:smooth;
+        scroll-padding-top:85px
+      }
+      body {
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+      }
+      a {
+        color:var(--blue);
+        text-underline-offset:3px
+      }
+      a:hover {
+        color:#e0f2f8
+      }
+      .wrap {
+        width:min(var(--max),calc(100% - 42px));
+        margin:auto
+      }
+      header {
+        position:sticky;
+        top:0;
+        z-index:20;
+        background:#101820ed;
+        border-bottom:1px solid var(--line);
+        backdrop-filter:blur(12px)
+      }
+      .nav {
+        min-height:68px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px
+      }
+      .brand {
+        font-weight:850;
+        letter-spacing:.1em;
+        font-size:.82rem;
+        color:var(--ink);
+        text-decoration:none;
+        white-space:nowrap
+      }
+      .navlinks {
+        display:flex;
+        gap:17px;
+        align-items:center
+      }
+      .navlinks a {
+        font-size:.82rem;
+        color:var(--muted);
+        text-decoration:none
+      }
+      .navlinks a:hover {
+        color:var(--ink)
+      }
+      .menu {
+        display:none;
+        background:none;
+        border:1px solid var(--line);
+        color:var(--ink);
+        padding:8px 12px;
+        border-radius:8px
+      }
+      .hero {
+        padding:108px 0 88px;
+        background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);
+        border-bottom:1px solid var(--line)
+      }
+      .eyebrow,.kicker {
+        color:var(--accent);
+        font-weight:800;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        font-size:.74rem
+      }
+      .hero h1 {
+        font-size:clamp(3.1rem,8vw,6.8rem);
+        line-height:.96;
+        letter-spacing:-.065em;
+        max-width:980px;
+        margin:22px 0
+      }
+      .hero p {
+        font-size:clamp(1.08rem,2vw,1.28rem);
+        color:#d0d8dd;
+        max-width:790px
+      }
+      .hero .note {
+        font-size:.9rem;
+        color:var(--muted);
+        border-left:2px solid var(--accent);
+        padding-left:16px;
+        margin-top:32px
+      }
+      .actions {
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+        margin-top:28px
+      }
+      .btn {
+        display:inline-block;
+        padding:11px 17px;
+        border-radius:7px;
+        text-decoration:none;
+        font-weight:750;
+        border:1px solid var(--accent);
+        color:#1b2024;
+        background:var(--accent)
+      }
+      .btn.secondary {
+        background:transparent;
+        color:var(--ink);
+        border-color:var(--line)
+      }
+      section {
+        padding:76px 0;
+        border-bottom:1px solid var(--line)
+      }
+      h2 {
+        font-size:clamp(2rem,4vw,3.25rem);
+        line-height:1.08;
+        letter-spacing:-.045em;
+        margin:12px 0 18px
+      }
+      h3 {
+        font-size:1.17rem;
+        line-height:1.35;
+        margin:0 0 9px
+      }
+      .lead {
+        font-size:1.12rem;
+        color:#d0d8dd;
+        max-width:870px
+      }
+      .stats {
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        margin-top:32px
+      }
+      .stat,.card,.source,.fact {
+        padding:22px;
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:10px
+      }
+      .stat strong {
+        display:block;
+        font-size:clamp(2rem,4vw,3rem);
+        letter-spacing:-.05em;
+        color:var(--accent)
+      }
+      .stat span,.muted {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      .grid {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:15px;
+        margin-top:27px
+      }
+      .card p,.source p,.fact p {
+        color:var(--muted);
+        margin:7px 0 0
+      }
+      .timeline {
+        margin-top:30px;
+        border-left:1px solid #65727b;
+        padding-left:26px
+      }
+      .event {
+        position:relative;
+        padding:0 0 27px
+      }
+      .event:before {
+        content:"";
+        position:absolute;
+        width:9px;
+        height:9px;
+        border-radius:50%;
+        background:var(--accent);
+        left:-31px;
+        top:10px
+      }
+      .time {
+        font-size:.78rem;
+        color:var(--accent);
+        font-weight:850;
+        letter-spacing:.08em
+      }
+      .event p {
+        margin:4px 0 0;
+        color:var(--muted)
+      }
+      .two-col {
+        display:grid;
+        grid-template-columns:1.1fr .9fr;
+        gap:30px;
+        align-items:start
+      }
+      .callout {
+        border-left:3px solid var(--accent);
+        padding:17px 21px;
+        background:var(--panel);
+        margin:25px 0;
+        color:#d5dce0
+      }
+      .callout strong {
+        color:var(--ink)
+      }
+      .tag {
+        display:inline-block;
+        font-size:.72rem;
+        color:var(--accent);
+        border:1px solid #806a4e;
+        border-radius:30px;
+        padding:2px 9px;
+        margin-bottom:10px
+      }
+      details {
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:9px;
+        margin:12px 0
+      }
+      summary {
+        cursor:pointer;
+        padding:17px 20px;
+        font-weight:750;
+        list-style:none;
+        display:flex;
+        justify-content:space-between;
+        gap:15px;
+        line-height:1.45
+      }
+      summary:after {
+        content:"＋";
+        color:var(--accent)
+      }
+      details[open] summary:after {
+        content:"−"
+      }
+      details .answer {
+        padding:0 20px 20px;
+        color:var(--muted)
+      }
+      .answer p {
+        margin:8px 0
+      }
+      .sources {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+        margin-top:26px
+      }
+      .source a {
+        font-weight:750
+      }
+      .source p {
+        font-size:.88rem
+      }
+      .small {
+        font-size:.83rem;
+        color:var(--muted)
+      }
+      .section-intro {
+        max-width:850px
+      }
+      .table-wrap {
+        overflow-x:auto;
+        margin:22px 0
+      }
+      table {
+        border-collapse:collapse;
+        width:100%;
+        min-width:620px;
+        background:var(--panel);
+        border:1px solid var(--line)
+      }
+      th,td {
+        text-align:left;
+        padding:13px 15px;
+        border-bottom:1px solid var(--line);
+        vertical-align:top
+      }
+      th {
+        color:var(--accent);
+        font-size:.83rem
+      }
+      td {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      footer {
+        padding:34px 0;
+        color:var(--muted);
+        font-size:.85rem
+      }
+      @media(max-width:850px) {
+        .navlinks {
+          gap:10px
+        }
+        .navlinks a {
+          font-size:.75rem
+        }
+        .two-col {
+          grid-template-columns:1fr
+        }
+      }
+      @media(max-width:700px) {
+        .navlinks {
+          display:none;
+          position:absolute;
+          top:68px;
+          left:0;
+          right:0;
+          background:var(--bg);
+          padding:18px 22px;
+          border-bottom:1px solid var(--line);
+          flex-direction:column;
+          align-items:flex-start
+        }
+        .navlinks.open {
+          display:flex
+        }
+        .menu {
+          display:block
+        }
+        .hero {
+          padding:76px 0 64px
+        }
+        .stats,.grid,.sources {
+          grid-template-columns:1fr
+        }
+        section {
+          padding:56px 0
+        }
+        .wrap {
+          width:min(var(--max),calc(100% - 30px))
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top">
+          A CLOSER LOOK / 09·11·01
+        </a>
+        <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">
+          Menu
+        </button>
+        <nav class="navlinks" id="navlinks">
+          <a href="#overview">
+            Overview
+          </a>
+          <a href="pearl-harbor.html">
+            Pearl Harbor
+          </a>
+          <a href="dinosaur-extinction.html">
+            Dinosaur extinction
+          </a>
+          <a href="tom-pearl.html">
+            Tom Pearl
+          </a>
+          <a href="jeffrey-epstein.html">
+            Jeffrey Epstein
+          </a>
+          <a href="#timeline">
+            Timeline
+          </a>
+          <a href="#plot">
+            The plot
+          </a>
+          <a href="#response">
+            Response
+          </a>
+          <a href="#buildings">
+            Buildings
+          </a>
+          <a href="#aftermath">
+            Aftermath
+          </a>
+          <a href="#questions">
+            Questions
+          </a>
+          <a href="#sources">
+            Sources
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="top">
+      <div class="hero">
+        <div class="wrap">
+          <div class="eyebrow">
+            History · Evidence · Perspective
+          </div>
+          <h1>
+            9/11 deserves
+            <br>
+            the full picture.
+          </h1>
+          <p>
+            September 11, 2001 was a coordinated terrorist attack that killed thousands, changed countless lives, and reshaped public policy. Understanding it requires more than a headline or a single image. It requires looking carefully at the people, the timeline, the investigations, and the decisions made afterward.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#overview">
+              Explore the history
+            </a>
+            <a class="btn secondary" href="#questions">
+              Examine difficult questions
+            </a>
+          </div>
+          <p class="note">
+            This project does not claim that 9/11 was harmless, minor, or exaggerated. The purpose is to challenge oversimplified narratives and put the event in proportion: distinguish the immediate attacks from their long-term effects, and distinguish documented facts from later political arguments.
+          </p>
+        </div>
+      </div>
+      <section id="overview">
+        <div class="wrap">
+          <div class="kicker">
+            01 / The baseline
+          </div>
+          <h2>
+            What happened, in plain terms?
+          </h2>
+          <p class="lead">
+            On the morning of September 11, 2001, 19 members of the terrorist organization al-Qaeda hijacked four passenger aircraft in the United States. The hijackers deliberately flew three of them into major targets. The fourth crashed in Pennsylvania after passengers and crew fought back. The attacks killed 2,977 victims, not counting the 19 hijackers.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong>
+                2,977
+              </strong>
+              <span>
+                Victims killed in the attacks, excluding the hijackers
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                4
+              </strong>
+              <span>
+                Commercial passenger aircraft hijacked
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                19
+              </strong>
+              <span>
+                Al-Qaeda hijackers involved in the operation
+              </span>
+            </div>
+          </div>
+          <div class="media-resources" aria-label="9/11 images and videos">
+            <h3>
+              Visual archive: photographs, footage, and first-person accounts
+            </h3>
+            <p class="muted">
+              Explore original photographs, museum collections, archival records, and recorded testimony. Some collections contain distressing material.
+            </p>
+            <div class="grid">
+              <article class="card">
+                <span class="tag">
+                  Photographs
+                </span>
+                <h3>
+                  Smithsonian: September 11 photographs
+                </h3>
+                <p>
+                  More than 2,400 photographic objects documenting the World Trade Center, Pentagon, Flight 93, and the aftermath.
+                </p>
+                <p>
+                  <a href="https://americanhistory.si.edu/collections/object-groups/september-11/photographs" target="_blank" rel="noopener">
+                    Open the photograph collection ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Archival images
+                </span>
+                <h3>
+                  National Archives: Remembering 9/11
+                </h3>
+                <p>
+                  Government photographs, records, maps, and images from the attacks and their aftermath.
+                </p>
+                <p>
+                  <a href="https://www.archives.gov/news/topics/9-11-anniversary" target="_blank" rel="noopener">
+                    View the National Archives collection ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Images + video
+                </span>
+                <h3>
+                  9/11 Memorial Museum: Resources
+                </h3>
+                <p>
+                  Interactive timelines, digital exhibitions, oral histories, audio, video, and first-person accounts.
+                </p>
+                <p>
+                  <a href="https://www.911memorial.org/learn/resources" target="_blank" rel="noopener">
+                    Explore museum media resources ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Video history
+                </span>
+                <h3>
+                  Naudet brothers’ footage
+                </h3>
+                <p>
+                  Learn about the video camera that captured rare footage of the first plane striking the North Tower and firefighters’ experiences that day.
+                </p>
+                <p>
+                  <a href="https://www.911memorial.org/connect/blog/video-camera-captured-critical-moments-911" target="_blank" rel="noopener">
+                    Read the museum’s video feature ↗
+                  </a>
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <span class="tag">
+                New York
+              </span>
+              <h3>
+                World Trade Center
+              </h3>
+              <p>
+                Two aircraft struck the North and South Towers in Lower Manhattan. Both towers later collapsed. The surrounding complex and nearby neighborhood suffered extensive destruction, fires, debris, and disruption.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag">
+                Virginia
+              </span>
+              <h3>
+                The Pentagon
+              </h3>
+              <p>
+                A third aircraft struck the Pentagon in Arlington, Virginia, killing people aboard the plane and inside the building. The impact damaged part of the building, and a section later collapsed.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag">
+                Pennsylvania
+              </span>
+              <h3>
+                Flight 93
+              </h3>
+              <p>
+                Passengers and crew learned that the aircraft had been hijacked and attempted to regain control. The plane crashed in a field near Shanksville before reaching the hijackers' intended target.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag">
+                A global crime
+              </span>
+              <h3>
+                People from many countries
+              </h3>
+              <p>
+                The victims were not one uniform group. They included office workers, airline passengers and crew, firefighters, police officers, emergency medical personnel, visitors, and people from many national backgrounds.
+              </p>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>
+              Important distinction:
+            </strong>
+            The figure 2,977 is the immediate victim death toll for the attacks. It is not a count of every later death, illness, injury, bereavement, or economic consequence associated with 9/11. Those are separate categories and should not be casually combined.
+          </div>
+        </div>
+      </section>
+      <section id="timeline">
+        <div class="wrap">
+          <div class="kicker">
+            04 / The morning
+          </div>
+          <h2>
+            A detailed timeline of September 11.
+          </h2>
+          <p class="lead">
+            All times below are Eastern Daylight Time. Exact minute references can differ slightly between sources because the timeline was reconstructed from flight, telephone, radio, and witness records. The sequence is well established.
+          </p>
+          <div class="timeline">
+            <div class="event">
+              <div class="time">
+                7:59 A.M.
+              </div>
+              <h3>
+                American Airlines Flight 11 departs Boston
+              </h3>
+              <p>
+                Flight 11 leaves Logan International Airport for Los Angeles with 11 crew members and 81 passengers, in addition to five hijackers.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                8:14 A.M.
+              </div>
+              <h3>
+                United Airlines Flight 175 departs Boston
+              </h3>
+              <p>
+                Flight 175 leaves Boston for Los Angeles with nine crew members and 56 passengers, in addition to five hijackers.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                8:20 A.M.
+              </div>
+              <h3>
+                American Airlines Flight 77 departs Washington Dulles
+              </h3>
+              <p>
+                Flight 77 leaves for Los Angeles with six crew members and 58 passengers, in addition to five hijackers.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                8:42 A.M.
+              </div>
+              <h3>
+                United Airlines Flight 93 departs Newark
+              </h3>
+              <p>
+                Flight 93 leaves for San Francisco after a delay. It carries seven crew members and 37 passengers, in addition to four hijackers.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                8:46 A.M.
+              </div>
+              <h3>
+                Flight 11 strikes the North Tower
+              </h3>
+              <p>
+                The aircraft hits the World Trade Center's North Tower. Emergency calls begin, and firefighters, police officers, and other responders head toward the site.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                9:03 A.M.
+              </div>
+              <h3>
+                Flight 175 strikes the South Tower
+              </h3>
+              <p>
+                A second aircraft hits the South Tower. The two impacts establish that the first crash was not an isolated aviation accident.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                9:37 A.M.
+              </div>
+              <h3>
+                Flight 77 strikes the Pentagon
+              </h3>
+              <p>
+                The aircraft hits the western side of the Pentagon. The attack extends beyond New York and confirms a coordinated operation against multiple targets.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                9:59 A.M.
+              </div>
+              <h3>
+                The South Tower collapses
+              </h3>
+              <p>
+                The South Tower, which was hit second, collapses first. People nearby face falling debris, a massive dust cloud, and dangerous conditions across Lower Manhattan.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                10:03 A.M.
+              </div>
+              <h3>
+                Flight 93 crashes in Pennsylvania
+              </h3>
+              <p>
+                Passengers and crew resist the hijackers. The aircraft crashes near Shanksville, killing everyone aboard but preventing it from reaching its intended target.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                10:28 A.M.
+              </div>
+              <h3>
+                The North Tower collapses
+              </h3>
+              <p>
+                The North Tower collapses, devastating the immediate area and creating another enormous debris and dust field.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                5:20 P.M.
+              </div>
+              <h3>
+                World Trade Center 7 collapses
+              </h3>
+              <p>
+                WTC 7, a 47-story building that was not struck by an aircraft, collapses after fires burned for hours. NIST later investigated this building separately from the two towers.
+              </p>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>
+              Why the timeline matters:
+            </strong>
+            The attacks were not one single explosion or one moment. They were a sequence of hijackings, impacts, emergency calls, evacuations, rescue operations, structural failures, and decisions made under rapidly changing information.
+          </div>
+        </div>
+      </section>
+      <section id="plot">
+        <div class="wrap">
+          <div class="kicker">
+            05 / Who planned it?
+          </div>
+          <h2>
+            The organization and the plot.
+          </h2>
+          <p class="lead">
+            The 9/11 attacks were planned by al-Qaeda, a transnational terrorist organization led by Osama bin Laden. Understanding the perpetrators' goals does not excuse them; it explains the historical context in which the operation developed.
+          </p>
+          <div class="two-col">
+            <div>
+              <h3>
+                Al-Qaeda before 2001
+              </h3>
+              <p class="muted">
+                Al-Qaeda emerged from militant networks formed during the Soviet-Afghan War and developed into an organization focused on attacking what its leadership viewed as its enemies. By the 1990s, bin Laden and his associates had publicly declared hostility toward the United States and had been linked to earlier attacks, including the 1998 bombings of U.S. embassies in Kenya and Tanzania.
+              </p>
+              <p class="muted">
+                The 9/11 Commission traced the organization's development, leadership, financing, recruitment, and planning. The plot was not improvised overnight: it involved years of preparation, training, travel, coordination, and exploitation of weaknesses in aviation security.
+              </p>
+            </div>
+            <div class="card">
+              <h3>
+                What the hijackers exploited
+              </h3>
+              <ul class="muted">
+                <li>
+                  Airport screening systems designed around earlier threat assumptions.
+                </li>
+                <li>
+                  Cockpit doors and crew procedures not designed for suicide hijackings.
+                </li>
+                <li>
+                  Assumptions that hijackers wanted hostages or negotiation rather than using planes as weapons.
+                </li>
+                <li>
+                  Gaps in intelligence sharing and coordination between agencies.
+                </li>
+                <li>
+                  Air-defense procedures built for different scenarios, especially conventional military threats and hijacked aircraft used as bargaining tools.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h3 style="margin-top:28px">
+            Why did they choose these targets?
+          </h3>
+          <p class="muted">
+            The World Trade Center represented U.S. financial and commercial power. The Pentagon represented the U.S. military. The intended target of Flight 93 is commonly understood to have been another major federal or political site in Washington, D.C.; the hijackers did not reach it. The Commission's account explains the planning and target selection, while also documenting the ideological motives of al-Qaeda's leadership.
+          </p>
+          <h3 style="margin-top:25px">
+            Was the operation financially enormous?
+          </h3>
+          <p class="muted">
+            The attack was operationally complex, but the Commission estimated that the plot itself did not require an extraordinary budget compared with the scale of its consequences. Its financing came through a network of al-Qaeda resources and transfers. This is a useful example of how a relatively limited direct expenditure can produce a huge human and economic impact when vulnerabilities are exploited.
+          </p>
+        </div>
+      </section>
+      <section id="response">
+        <div class="wrap">
+          <div class="kicker">
+            06 / People and response
+          </div>
+          <h2>
+            The human response was part of the story.
+          </h2>
+          <p class="lead">
+            The attacks were an unprecedented emergency for the people caught in them and for the institutions trying to respond. The response included extraordinary acts of courage, but also serious coordination and communication problems.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Firefighters and emergency medical workers
+              </h3>
+              <p>
+                Firefighters, paramedics, and other responders entered dangerous environments to evacuate people, treat injuries, search buildings, and attempt rescues. Many responders died in the attacks. Others later developed health problems associated with exposure during rescue, recovery, and cleanup.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Police and public safety personnel
+              </h3>
+              <p>
+                Police officers helped evacuate buildings, secure streets, direct civilians, and coordinate emergency activity. The scale of the disaster strained command structures, radio systems, and the ability to maintain a shared picture of events.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Passengers and flight crews
+              </h3>
+              <p>
+                Flight crews faced a threat that existing procedures had not prepared them to handle. On Flight 93, passengers and crew made a collective decision to resist after learning enough about the other hijackings to understand the likely fate of their aircraft.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Ordinary civilians
+              </h3>
+              <p>
+                Office workers, bystanders, nearby residents, transit workers, and people across the city helped strangers, guided evacuations, offered shelter, donated supplies, and supported recovery efforts. The response was not limited to official agencies.
+              </p>
+            </article>
+          </div>
+          <h3 style="margin-top:32px">
+            What did the official investigation find about the response?
+          </h3>
+          <p class="muted">
+            The 9/11 Commission concluded that FAA and NORAD were not prepared for the specific scenario of multiple domestic passenger aircraft being used as suicide weapons. Communication between agencies and senior leadership was poor, and existing protocols did not fit the unfolding situation. The Commission also praised the initiative of many lower-level personnel who improvised under extreme pressure, including FAA controllers who helped ground aircraft nationwide.
+          </p>
+          <p class="muted">
+            In New York, the Commission documented command-and-control and communication problems among emergency organizations. Those findings are not a judgment on the bravery or commitment of individual responders. They describe institutional systems that were overwhelmed and not designed for an event of this scale and type.
+          </p>
+          <div class="callout">
+            <strong>
+              Two facts can be true at once:
+            </strong>
+            responders and civilians showed remarkable courage, and emergency systems had serious weaknesses. Recognizing the second does not diminish the first.
+          </div>
+        </div>
+      </section>
+      <section id="buildings">
+        <div class="wrap">
+          <div class="kicker">
+            07 / Engineering and evidence
+          </div>
+          <h2>
+            Why did the buildings collapse?
+          </h2>
+          <p class="lead">
+            The collapses are among the most studied structural failures in modern history. The National Institute of Standards and Technology (NIST) conducted extensive investigations into the Twin Towers and World Trade Center 7. The three buildings did not fail in exactly the same way.
+          </p>
+          <div class="card">
+            <span class="tag">
+              WTC 1 and WTC 2
+            </span>
+            <h3>
+              The Twin Towers: impact damage plus fire
+            </h3>
+            <p class="muted">
+              NIST concluded that the aircraft severed and damaged structural columns, damaged floor systems, and dislodged fire-resistive insulation from steel components. The impacts also spread burning jet fuel and ignited fires across multiple floors. As fires continued, unprotected or less-protected structural elements heated, weakened, and deformed. Sagging floors pulled inward on perimeter columns until the columns bowed and collapse began.
+            </p>
+            <p class="muted">
+              The towers did not collapse at the instant of impact. They remained standing for roughly 56 minutes after the South Tower was hit and 102 minutes after the North Tower was hit. That interval is important: the buildings initially resisted the damage, but the combination of structural damage, lost fireproofing, and sustained multi-floor fires eventually overwhelmed them.
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                What NIST says about the “pancake theory”
+              </h3>
+              <p>
+                NIST did not identify a progressive floor-by-floor “pancaking” failure as the mechanism that initiated the Twin Towers' collapses. Its analysis identified inward bowing and failure of perimeter columns at the impact and fire floors as the initiating event. Once global collapse began, the enormous moving mass above the failure zone overwhelmed the structure below.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                What about controlled demolition?
+              </h3>
+              <p>
+                NIST reported no corroborating evidence for explosives or controlled demolition in the Twin Towers. It found that collapse initiation occurred at the impact and fire floors and that the observed progression was consistent with its structural analysis. NIST also stated that it did not test the steel for explosive or thermite residues; the investigation's conclusion was based on the totality of structural, photographic, video, witness, and analytical evidence.
+              </p>
+            </article>
+          </div>
+          <div class="card" style="margin-top:15px">
+            <span class="tag">
+              World Trade Center 7
+            </span>
+            <h3>
+              Why did WTC 7 collapse without being hit by a plane?
+            </h3>
+            <p class="muted">
+              WTC 7 was a 47-story building north of the main complex. Debris from the collapse of WTC 1 damaged its southwest side and started fires on multiple floors. The fires burned for hours, while the building's water supply to some sprinkler systems was impaired after water mains were damaged. NIST concluded that heat caused floor beams and girders to expand, damaging connections around a critical interior column (Column 79). Floor failures left that column unsupported; its buckling initiated a sequence of internal failures that progressed through the building and led to global collapse.
+            </p>
+            <p class="muted">
+              WTC 7's collapse mechanism was different from that of the Twin Towers. It was not struck by an aircraft, and NIST identified fire-induced structural failure as the initiating process. NIST found no evidence supporting a blast event inside the building.
+            </p>
+          </div>
+          <h3 style="margin-top:30px">
+            What investigations can—and cannot—tell us
+          </h3>
+          <p class="muted">
+            Engineering investigations reconstruct events from incomplete physical evidence, photographs, videos, interviews, material tests, building plans, and computer models. NIST described uncertainties in the as-built conditions, aircraft damage, fireproofing condition, fire spread, and material response. Its conclusions are not a claim that every second or every fragment of debris is known with perfect certainty. They are the agency's evidence-based explanations for how collapse initiated.
+          </p>
+          <p class="muted">
+            A careful reader should distinguish between a question that identifies a genuine uncertainty and a claim that leaps from uncertainty to an unsupported alternative explanation. The existence of uncertainty in a complex investigation is not, by itself, evidence of a conspiracy.
+          </p>
+        </div>
+      </section>
+      <section id="aftermath">
+        <div class="wrap">
+          <div class="kicker">
+            08 / The years afterward
+          </div>
+          <h2>
+            The aftermath was enormous—and it was not one thing.
+          </h2>
+          <p class="lead">
+            The consequences of 9/11 unfolded over years. Some were direct and measurable; others were political, social, or personal. A balanced account should neither minimize them nor treat every later development as an inevitable or justified result of the attacks.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Public health and long-term illness
+              </h3>
+              <p>
+                Dust, smoke, debris, and other exposures affected responders and survivors around the World Trade Center, Pentagon, and Shanksville sites. The WTC Health Program provides monitoring and treatment for certified conditions among eligible responders and survivors. Its June 2025 statistics listed 136,862 members and 89,953 members with at least one certified condition. These are program membership and certification figures—not a count of everyone exposed, and not a count of deaths.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Afghanistan and the war on terror
+              </h3>
+              <p>
+                The United States invaded Afghanistan in October 2001, targeting al-Qaeda and the Taliban government that had provided the group a safe haven. The conflict lasted two decades and ended with the U.S. withdrawal in 2021. Its costs, goals, outcomes, and long-term consequences are separate subjects that deserve scrutiny rather than automatic approval or blanket dismissal.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Iraq: a separate decision
+              </h3>
+              <p>
+                The 2003 invasion of Iraq was not the same military operation as the initial campaign against al-Qaeda in Afghanistan. The Iraq War was justified by the U.S. government using claims about weapons of mass destruction and security threats; the prewar claims and the decision to invade have been heavily scrutinized. Saddam Hussein's government was not responsible for carrying out the 9/11 attacks. Keeping these events distinct is essential to an accurate account.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Security and surveillance
+              </h3>
+              <p>
+                After 9/11, the United States expanded aviation security, intelligence coordination, border controls, and surveillance authorities. Some changes addressed documented vulnerabilities. Others raised questions about privacy, due process, discrimination, oversight, and the proper limits of government power. Each policy should be evaluated on its own evidence and results.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Economic disruption
+              </h3>
+              <p>
+                The attacks caused immediate destruction of property, business interruption, travel disruption, insurance losses, and costs associated with rescue, recovery, rebuilding, and security. Lower Manhattan's economy and daily life were deeply affected. Nationally, the attacks contributed to uncertainty and a sharp disruption in air travel, but economic changes after 2001 also had other causes and should not all be attributed to 9/11.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Building codes and emergency planning
+              </h3>
+              <p>
+                Investigations prompted changes and recommendations involving fire resistance, evacuation, structural design, emergency communications, and responder safety. The purpose of studying the failures was not only to explain what happened, but to reduce the risk of similar losses in future disasters.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Culture, memory, and public life
+              </h3>
+              <p>
+                9/11 reshaped public ceremonies, news coverage, popular culture, travel expectations, and how many Americans thought about national security. It also affected Muslim, Arab, and South Asian communities, who faced backlash, harassment, discrimination, and suspicion despite not being responsible for the attacks.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Memorialization and recovery
+              </h3>
+              <p>
+                The rebuilding of the World Trade Center site, the National September 11 Memorial & Museum, and memorials in Shanksville and at the Pentagon created spaces to remember victims and document the event. Recovery was physical, civic, and deeply personal; it did not end when the debris was cleared.
+              </p>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>
+              Keep the categories separate:
+            </strong>
+            the direct attack, the wars that followed, later security laws, the health effects of exposure, and the broader cultural changes are connected historically—but they are not interchangeable. A good argument does not use one category as proof of another.
+          </div>
+          <h3 style="margin-top:30px">
+            A snapshot of the WTC Health Program
+          </h3>
+          <p class="muted">
+            As of June 2025, the CDC's annual program statistics reported 136,862 total members and 89,953 members with at least one certified condition. The program covers categories that include respiratory and digestive disorders, cancers, mental-health conditions, acute traumatic injuries, and certain musculoskeletal conditions for responders. Certification requires the program to determine that the condition meets its criteria and is related to qualifying 9/11 exposure.
+          </p>
+          <p class="small">
+            Source: CDC / NIOSH, 2025 WTC Health Program annual newsletter. Program figures change over time; the date is included so readers do not mistake this snapshot for a live count.
+          </p>
+        </div>
+      </section>
+      <section id="questions">
+        <div class="wrap">
+          <div class="kicker">
+            09 / Claims and questions
+          </div>
+          <h2>
+            Common claims deserve careful answers.
+          </h2>
+          <p class="lead">
+            These topics are often discussed in oversimplified ways. Expand each answer for the evidence, the relevant distinction, and what should not be inferred from it.
+          </p>
+          <details>
+            <summary>
+              “9/11 was not as bad as people say.”
+            </summary>
+            <div class="answer">
+              <p>
+                That statement depends on what “as bad” means. The immediate death toll was 2,977 victims, including civilians and first responders. Four aircraft were hijacked, three major targets were struck, two skyscrapers collapsed, and WTC 7 later collapsed after fires. Thousands more experienced injury, bereavement, displacement, or exposure-related health effects.
+              </p>
+              <p>
+                It is reasonable to challenge exaggerated claims, inaccurate retellings, or the use of 9/11 to justify unrelated policies. It is not accurate to describe the attacks themselves as minor. The stronger argument is that the historical record is more complex than the slogans used to discuss it.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The Twin Towers collapsed simply because planes hit them.”
+            </summary>
+            <div class="answer">
+              <p>
+                That leaves out the central engineering explanation. NIST identified a combination of aircraft impact damage, dislodged fireproofing, and sustained multi-floor fires. The towers remained standing for a significant period after impact. The fires heated and weakened structural components, and the resulting deformation led to collapse initiation.
+              </p>
+              <p>
+                Sources:
+                <a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation" target="_blank" rel="noopener">
+                  NIST WTC Towers FAQ
+                </a>
+                and
+                <a href="https://www.nist.gov/world-trade-center-investigation/about-investigation" target="_blank" rel="noopener">
+                  NIST investigation overview
+                </a>
+                .
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “WTC 7 proves the towers were demolished.”
+            </summary>
+            <div class="answer">
+              <p>
+                WTC 7 was a different building with a different failure sequence. It was not struck by an aircraft. NIST concluded that debris from WTC 1 started fires on multiple floors; the loss of water supply impaired sprinklers on lower floors; prolonged uncontrolled fires caused thermal expansion and connection failures; and Column 79's buckling initiated a progressive collapse.
+              </p>
+              <p>
+                That explanation is debated in public discussions, but the existence of a separate building collapse does not establish that explosives brought down the Twin Towers. NIST's WTC 7 investigation found no evidence of a blast event. Read the
+                <a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation" target="_blank" rel="noopener">
+                  NIST WTC 7 FAQ
+                </a>
+                directly.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The government knew exactly what was going to happen.”
+            </summary>
+            <div class="answer">
+              <p>
+                The 9/11 Commission documented intelligence warnings about al-Qaeda and missed opportunities to disrupt the plot. It also described failures to connect information across agencies, weaknesses in domestic intelligence, and an aviation-security system that was not prepared for suicide hijackings using commercial aircraft.
+              </p>
+              <p>
+                That record supports serious criticism of preparedness and information-sharing. It does not, by itself, establish that officials had precise foreknowledge of the date, targets, and method or deliberately allowed the attacks to happen. Those are much stronger claims and require specific evidence.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The attacks justify everything the United States did afterward.”
+            </summary>
+            <div class="answer">
+              <p>
+                No single event automatically validates every later policy. The invasion of Afghanistan, the invasion of Iraq, surveillance programs, detention practices, immigration measures, and aviation-security changes each had different legal bases, goals, evidence, costs, and outcomes. Some were direct responses to the attacks; others were decisions made by political leaders in the years that followed.
+              </p>
+              <p>
+                It is possible to condemn al-Qaeda's attacks while questioning whether particular wars or policies were necessary, effective, lawful, or proportionate.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “If you question the official response, you are disrespecting victims.”
+            </summary>
+            <div class="answer">
+              <p>
+                Remembering victims and evaluating government decisions are not competing obligations. People can honor those killed, support survivors and responders, accept well-supported findings, and still debate policy. Respect does not require suspending critical thinking.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The death toll is the only meaningful number.”
+            </summary>
+            <div class="answer">
+              <p>
+                The immediate death toll is essential, but it does not capture the full human cost. The event also caused physical injuries, psychological trauma, long-term illnesses, loss of livelihoods, family disruption, and lasting effects on responders and communities. Conversely, a later health-program membership figure should not be added to the immediate death toll as if every member were a fatality. Different statistics measure different things.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The attacks changed everything about America.”
+            </summary>
+            <div class="answer">
+              <p>
+                They changed important parts of American public life, security policy, foreign policy, and collective memory. But they did not create every trend that followed. Economic conditions, political polarization, technology, demographic change, and other world events also shaped the decades after 2001. Historical analysis should avoid attributing every later development to a single cause.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “A lack of perfect certainty means the investigations are worthless.”
+            </summary>
+            <div class="answer">
+              <p>
+                Large-scale disasters rarely leave a complete, undisturbed record. Investigators work with surviving physical evidence, plans, photographs, video, witness accounts, tests, and models. Good investigations identify uncertainties and explain how evidence supports their conclusions. Uncertainty should invite careful scrutiny—not automatically invalidate the entire body of evidence.
+              </p>
+            </div>
+          </details>
+          <div class="callout">
+            <strong>
+              The central point:
+            </strong>
+            9/11 can be both a devastating terrorist attack and an event whose aftermath deserves debate. Neither fact cancels the other. Historical accuracy means refusing both minimization and exaggeration.
+          </div>
+        </div>
+      </section>
+      <section id="method">
+        <div class="wrap">
+          <div class="kicker">
+            10 / How to read history
+          </div>
+          <h2>
+            Separate evidence from interpretation.
+          </h2>
+          <div class="grid">
+            <article class="fact">
+              <h3>
+                Documented fact
+              </h3>
+              <p>
+                A claim supported by primary records, official investigations, contemporaneous evidence, or multiple independent sources. Example: four aircraft were hijacked on September 11.
+              </p>
+            </article>
+            <article class="fact">
+              <h3>
+                Expert conclusion
+              </h3>
+              <p>
+                An explanation reached by specialists after analyzing evidence. Example: NIST's findings about the mechanisms that initiated the building collapses.
+              </p>
+            </article>
+            <article class="fact">
+              <h3>
+                Policy judgment
+              </h3>
+              <p>
+                An evaluation of whether a government response was necessary, lawful, effective, or proportionate. This involves evidence, values, and competing interpretations.
+              </p>
+            </article>
+            <article class="fact">
+              <h3>
+                Unsupported assertion
+              </h3>
+              <p>
+                A claim that leaps beyond available evidence, relies on selective details, or treats unanswered questions as proof of a preferred explanation.
+              </p>
+            </article>
+          </div>
+          <p class="lead" style="margin-top:28px">
+            When evaluating a claim, ask: Who is making it? What evidence is offered? Is the source close to the event? Does the claim distinguish fact from inference? Does it acknowledge evidence that complicates its position? Are its statistics clearly defined and dated?
+          </p>
+        </div>
+      </section>
+      <section id="sources">
+        <div class="wrap">
+          <div class="kicker">
+            11 / Read the record
+          </div>
+          <h2>
+            Primary and authoritative sources.
+          </h2>
+          <p class="lead">
+            The links below are a starting point for reading the underlying record rather than relying on summaries or social-media posts. The site draws most heavily on the 9/11 Commission, NIST, CDC/NIOSH, and memorial institutions.
+          </p>
+          <div class="sources">
+            <div class="source">
+              <a href="https://www.9-11commission.gov/report/" target="_blank" rel="noopener">
+                The 9/11 Commission Report
+              </a>
+              <p>
+                Independent bipartisan commission's account of the plot, attacks, preparedness, response, and recommendations.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.9-11commission.gov/report/911Report_Exec.htm" target="_blank" rel="noopener">
+                9/11 Commission — Executive Summary
+              </a>
+              <p>
+                Concise findings on intelligence, aviation security, air defense, emergency response, and institutional failures.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation" target="_blank" rel="noopener">
+                NIST — WTC Towers Investigation FAQ
+              </a>
+              <p>
+                Engineering conclusions on aircraft impacts, fireproofing, fires, and collapse initiation.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation" target="_blank" rel="noopener">
+                NIST — WTC 7 Investigation FAQ
+              </a>
+              <p>
+                Findings on the 47-story building's fires, structural failures, and collapse sequence.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nist.gov/world-trade-center-investigation/about-investigation" target="_blank" rel="noopener">
+                NIST — Investigation Overview
+              </a>
+              <p>
+                How the towers investigation was conducted, including evidence, modeling, and uncertainties.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.cdc.gov/wtc/newsletter2025.html" target="_blank" rel="noopener">
+                CDC — 2025 WTC Health Program Annual Newsletter
+              </a>
+              <p>
+                Program statistics as of June 2025, including membership and certified-condition figures.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.cdc.gov/wtc/conditions.html" target="_blank" rel="noopener">
+                CDC — Covered Conditions
+              </a>
+              <p>
+                Explains which WTC-related health conditions may be certified for monitoring and treatment.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.cdc.gov/wtc/exhibition/world-trade-center-health-program.html" target="_blank" rel="noopener">
+                CDC — World Trade Center Health Program
+              </a>
+              <p>
+                Program purpose, eligibility context, responder and survivor information, and member stories.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.911memorial.org/public-programs-faqs" target="_blank" rel="noopener">
+                National September 11 Memorial & Museum
+              </a>
+              <p>
+                Victim information, memorial context, and historical background.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nyc.gov/site/911health/about/historical-context.page" target="_blank" rel="noopener">
+                NYC 9/11 Health — Historical Context
+              </a>
+              <p>
+                Exposure, rescue and recovery, and the continuing health impact in New York.
+              </p>
+            </div>
+          </div>
+          <p class="small" style="margin-top:24px">
+            Statistics are presented with their definitions and dates wherever possible. A figure describing program membership or certified conditions is not the same as a death toll. Historical and policy interpretations should be checked against the underlying reports.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        A CLOSER LOOK · An independent educational history project built around evidence, context, and respect for the people affected.
+        <span style="display:block;margin-top:6px">
+          This page is not an official memorial, government publication, or substitute for the complete source reports.
+        </span>
+      </div>
+    </footer>
+    <script>
+      const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
-</script>
-</body></html>
+    </script>
+  </body>
+</html>
