@@ -1432,7 +1432,7 @@
       supabase.auth.onAuthStateChange((_event, session) => {
         currentUser = session?.user || null;
         updateAccountUI();
-        loadSections();
+        queueMicrotask(() => loadSections());
       });
 
       const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
