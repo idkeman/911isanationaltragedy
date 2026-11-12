@@ -573,6 +573,9 @@
         }
       }
 
+    
+      #community-editor{display:none!important}
+      .community-create-link{display:inline-flex;margin:12px 0;padding:10px 15px;border:1px solid var(--accent);border-radius:7px;text-decoration:none;font-weight:700}
     </style>
   </head>
   <body>
@@ -597,6 +600,7 @@
           <a href="#sources">
             Sources
           </a>
+                  <a href="create-article.html">Create article</a>
                   <a href="#community-contributions">Community sections</a>
         </nav>
       </div>
@@ -1168,6 +1172,7 @@
           <div class="community-status" id="community-status" role="status" aria-live="polite">Loading community contributions…</div>
         </div>
 
+        <p><a class="community-create-link" href="create-article.html">Open the full article creator →</a></p>
         <div class="community-panel" id="community-editor" hidden>
           <h3>Publish a new section</h3>
           <form id="community-section-form" class="community-form-grid">
@@ -1272,6 +1277,20 @@
         const heading = document.createElement("h3");
         heading.textContent = section.title;
         article.append(meta, heading);
+        const opts = section.article_options && typeof section.article_options === "object" ? section.article_options : {};
+        const accent = /^#[0-9a-f]{6}$/i.test(opts.accent || "") ? opts.accent : "";
+        if (accent) { article.style.borderColor = accent; heading.style.color = accent; }
+        if (opts.subtitle) { const subtitle = document.createElement("p"); subtitle.className = "lead"; subtitle.textContent = opts.subtitle; article.appendChild(subtitle); }
+        if (opts.category) { const category = document.createElement("div"); category.className = "community-meta"; category.textContent = opts.category; article.appendChild(category); }
+        if (opts.cover_image) { const imageUrl = safeHttpUrl(opts.cover_image); if (imageUrl) { const image = document.createElement("img"); image.src = imageUrl; image.alt = "Article cover"; image.loading = "lazy"; image.style.cssText = "width:100%;max-height:320px;object-fit:cover;border-radius:8px;margin:12px 0"; image.style.objectPosition = ["top","center","bottom"].includes(opts.image_position) ? opts.image_position : "center"; article.appendChild(image); } }
+        if (opts.quote) { const quote = document.createElement("blockquote"); quote.textContent = opts.quote; quote.style.cssText = "border-left:3px solid " + (accent || "var(--accent)") + ";padding:10px 16px;margin:16px 0;background:var(--panel2)"; article.appendChild(quote); }
+        if (opts.callout) { const callout = document.createElement("div"); callout.textContent = opts.callout; callout.style.cssText = "padding:12px 16px;margin:16px 0;border-left:3px solid " + (accent || "var(--accent)") + ";background:var(--panel2)"; article.appendChild(callout); }
+        if (opts.font === "serif") article.style.fontFamily = "Georgia,serif";
+        if (opts.text_size === "large") article.style.fontSize = "1.12em";
+        if (opts.alignment === "center") article.style.textAlign = "center";
+        if (opts.layout === "compact") article.style.maxWidth = "760px";
+        if (opts.background === "paper") { article.style.background = "#e9e2d4"; article.style.color = "#252525"; }
+        if (opts.reading_time) { const read = document.createElement("div"); read.className = "community-meta"; read.textContent = opts.reading_time; article.appendChild(read); }
 
         String(section.body).split("\n\n").forEach((paragraphText) => {
           if (!paragraphText.trim()) return;
@@ -1286,7 +1305,7 @@
           const sourceBox = document.createElement("div");
           sourceBox.className = "community-sources";
           const label = document.createElement("strong");
-          label.textContent = "Sources";
+          label.textContent = opts.sources_label || "Sources";
           sourceBox.appendChild(label);
 
           validSources.forEach((url) => {
@@ -1300,6 +1319,7 @@
           article.appendChild(sourceBox);
         }
 
+        if (opts.video_url) { const videoUrl = safeHttpUrl(opts.video_url); if (videoUrl) { const videoLink = document.createElement("a"); videoLink.href = videoUrl; videoLink.target = "_blank"; videoLink.rel = "noopener noreferrer"; videoLink.textContent = "Watch related video"; videoLink.style.display = "block"; videoLink.style.marginTop = "12px"; article.appendChild(videoLink); } }
         if (currentUser && section.owner_id === currentUser.id) {
           const removeButton = document.createElement("button");
           removeButton.type = "button";
@@ -1331,7 +1351,7 @@
       async function loadSections() {
         const { data, error } = await supabase
           .from("community_sections")
-          .select("id, page_slug, owner_id, author_label, title, body, source_urls, created_at")
+          .select("id, page_slug, owner_id, author_label, title, body, source_urls, article_options, created_at")
           .eq("page_slug", PAGE_SLUG)
           .eq("published", true)
           .order("created_at", { ascending: false });
