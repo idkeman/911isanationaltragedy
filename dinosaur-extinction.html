@@ -1,60 +1,1008 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101820"><meta name="description" content="The end-Cretaceous mass extinction around 66 million years ago, the Chicxulub impact, environmental disruption, and the survival of birds."><title>Dinosaur extinction — A Closer Look</title>
-<style>
-:root{--bg:#101820;--panel:#17232d;--panel2:#1d2b36;--ink:#f4f1eb;--muted:#b8c1c8;--line:#34434e;--accent:#d7a76b;--blue:#8eb4c5;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}a:hover{color:#e0f2f8}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#101820ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:.1em;font-size:.82rem;color:var(--ink);text-decoration:none;white-space:nowrap}.navlinks{display:flex;gap:17px;align-items:center}.navlinks a{font-size:.82rem;color:var(--muted);text-decoration:none}.navlinks a:hover{color:var(--ink)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:8px}
-.hero{padding:108px 0 88px;background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);border-bottom:1px solid var(--line)}.eyebrow,.kicker{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem}.hero h1{font-size:clamp(3.1rem,8vw,6.8rem);line-height:.96;letter-spacing:-.065em;max-width:980px;margin:22px 0}.hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:#d0d8dd;max-width:790px}.hero .note{font-size:.9rem;color:var(--muted);border-left:2px solid var(--accent);padding-left:16px;margin-top:32px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none;font-weight:750;border:1px solid var(--accent);color:#1b2024;background:var(--accent)}.btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-section{padding:76px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;letter-spacing:-.045em;margin:12px 0 18px}h3{font-size:1.17rem;line-height:1.35;margin:0 0 9px}.lead{font-size:1.12rem;color:#d0d8dd;max-width:870px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.stat,.card,.source,.fact{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.stat strong{display:block;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;color:var(--accent)}.stat span,.muted{color:var(--muted);font-size:.91rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:27px}.card p,.source p,.fact p{color:var(--muted);margin:7px 0 0}.timeline{margin-top:30px;border-left:1px solid #65727b;padding-left:26px}.event{position:relative;padding:0 0 27px}.event:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);left:-31px;top:10px}.time{font-size:.78rem;color:var(--accent);font-weight:850;letter-spacing:.08em}.event p{margin:4px 0 0;color:var(--muted)}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}.callout{border-left:3px solid var(--accent);padding:17px 21px;background:var(--panel);margin:25px 0;color:#d5dce0}.callout strong{color:var(--ink)}.tag{display:inline-block;font-size:.72rem;color:var(--accent);border:1px solid #806a4e;border-radius:30px;padding:2px 9px;margin-bottom:10px}
-details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin:12px 0}summary{cursor:pointer;padding:17px 20px;font-weight:750;list-style:none;display:flex;justify-content:space-between;gap:15px;line-height:1.45}summary:after{content:"＋";color:var(--accent)}details[open] summary:after{content:"−"}details .answer{padding:0 20px 20px;color:var(--muted)}.answer p{margin:8px 0}.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}.source a{font-weight:750}.source p{font-size:.88rem}.small{font-size:.83rem;color:var(--muted)}.section-intro{max-width:850px}.table-wrap{overflow-x:auto;margin:22px 0}table{border-collapse:collapse;width:100%;min-width:620px;background:var(--panel);border:1px solid var(--line)}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--accent);font-size:.83rem}td{color:var(--muted);font-size:.91rem}footer{padding:34px 0;color:var(--muted);font-size:.85rem}
-@media(max-width:850px){.navlinks{gap:10px}.navlinks a{font-size:.75rem}.two-col{grid-template-columns:1fr}}
-@media(max-width:700px){.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.hero{padding:76px 0 64px}.stats,.grid,.sources{grid-template-columns:1fr}section{padding:56px 0}.wrap{width:min(var(--max),calc(100% - 30px))}}
-
-.page-head{padding:54px 0 36px;background:linear-gradient(135deg,#101820,#1d2b36);border-bottom:1px solid var(--line)}
-.page-head h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0}
-.page-head p{max-width:850px;color:#d0d8dd;font-size:1.08rem}
-.back{display:inline-block;margin-bottom:22px;color:var(--blue);font-weight:750;text-decoration:none}
-main>section{padding-top:50px}
-@media(max-width:700px){.page-head{padding:36px 0 28px}}
-</style></head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="index.html">A CLOSER LOOK / INDEPENDENT TOPIC</a><button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><nav class="navlinks" id="navlinks"><a href="index.html">9/11 history page</a><a href="#topic">This topic</a><a href="#sources">Sources</a></nav></div></header>
-<div class="page-head"><div class="wrap"><a class="back" href="index.html">← Back to the main history hub</a><div class="eyebrow">Independent history topic · Evidence · Context</div><h1>Dinosaur extinction</h1><p>The end-Cretaceous mass extinction around 66 million years ago, the Chicxulub impact, environmental disruption, and the survival of birds.</p></div></div>
-<main id="topic"><section id="dinosaurs"><div class="wrap"><div class="kicker">03 / Deep time</div><h2>The end of the dinosaurs: a world-changing mass extinction.</h2>
-<p class="lead">About 66 million years ago, Earth experienced one of the most consequential biological crises in its history. A large asteroid struck near what is now the Yucatán Peninsula in Mexico. The impact formed the Chicxulub crater and triggered environmental changes that drove the extinction of non-avian dinosaurs and many other groups of organisms. This was not simply the end of a few famous animals: it was a global ecological upheaval that reshaped life on land and in the oceans.</p>
-<div class="stats"><div class="stat"><strong>~66 million</strong><span>Years ago, at the Cretaceous–Paleogene boundary</span></div><div class="stat"><strong>~76%</strong><span>Of species estimated to have disappeared in the K–Pg extinction</span></div><div class="stat"><strong>~180 km</strong><span>Approximate diameter of the Chicxulub impact structure</span></div></div>
-<div class="media-resources" aria-label="Dinosaur extinction images and videos"><h3>Visual archive: impact imagery, crater maps, and science videos</h3><p class="muted">These resources use satellite data, scientific illustrations, museum exhibits, and animations to show the Chicxulub impact and the extinction evidence.</p><div class="grid"><article class="card"><span class="tag">NASA image</span><h3>Chicxulub crater from space</h3><p>NASA/JPL shaded-relief imagery of the Yucatán Peninsula showing the subtle surface expression of the buried impact crater.</p><p><a href="https://science.nasa.gov/resource/shaded-relief-with-height-as-color-yucatan-peninsula-mexico/" target="_blank" rel="noopener">View and download the NASA image ↗</a></p></article><article class="card"><span class="tag">Scientific animation</span><h3>How the Chicxulub crater formed</h3><p>Impact-cratering animations and simulations from the Lunar and Planetary Institute, showing crater formation and the impact process.</p><p><a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/" target="_blank" rel="noopener">Explore crater animations ↗</a></p></article><article class="card"><span class="tag">Museum video</span><h3>Smithsonian: The mass extinction</h3><p>A short science video explaining how the asteroid impact triggered tsunamis, shockwaves, and wider environmental disruption.</p><p><a href="https://www.smithsonianmag.com/videos/smg-004-how-did-dinosaurs-die/" target="_blank" rel="noopener">Watch the Smithsonian video ↗</a></p></article><article class="card"><span class="tag">Museum exhibit</span><h3>Smithsonian: Mass extinction of dinosaurs</h3><p>Illustrations, fossil evidence, teaching materials, and explanations of the end-Cretaceous extinction.</p><p><a href="https://naturalhistory.si.edu/education/teaching-resources/paleontology/mass-extinction-large-dinosaurs-and-more" target="_blank" rel="noopener">Explore the Smithsonian resources ↗</a></p></article><article class="card"><span class="tag">Impact illustrations</span><h3>Lunar and Planetary Institute: K–T boundary cartoons</h3><p>Educational illustrations depicting the proposed environmental effects of a Chicxulub-sized impact on Earth's ecosystems.</p><p><a href="https://www.lpi.usra.edu/science/KTcartoons/" target="_blank" rel="noopener">View the impact illustrations ↗</a></p></article></div></div>
-<div class="callout"><strong>Important distinction:</strong> Non-avian dinosaurs went extinct, but birds survived. Birds are the surviving dinosaur lineage. The event was not an instant disappearance of every dinosaur, nor did every kind of life die.</div>
-<h3>What was Earth like before the impact?</h3><p class="muted">During the Late Cretaceous, dinosaurs occupied a wide range of ecological roles on land. Tyrannosaurs and other large predators hunted or scavenged; hadrosaurs and ceratopsians were among the major herbivores in some regions; armored ankylosaurs and many smaller dinosaurs occupied other niches. Flowering plants had diversified, continents were arranged differently from today, and high sea levels created broad shallow seas in some regions. Marine ecosystems included ammonites, large marine reptiles, fish, plankton, and many other organisms.</p>
-<p class="muted">Dinosaurs were not one uniform group. They included animals with very different sizes, diets, habitats, and life histories. Nor were they the only organisms affected. The K–Pg event also eliminated pterosaurs, ammonites, many marine reptiles, and numerous plankton and other species. The impact disrupted food webs across land and sea.</p>
-<div class="grid"><article class="card"><h3>Life on land</h3><p>Non-avian dinosaurs included large herbivores, predators, and smaller species. Mammals were also present, but most were relatively small compared with the largest dinosaurs and occupied different ecological roles.</p></article><article class="card"><h3>Life in the oceans</h3><p>Ammonites, mosasaurs, plesiosaurs, and many plankton groups were part of complex marine ecosystems. The extinction changed ocean food webs as well as terrestrial ones.</p></article><article class="card"><h3>A changing environment</h3><p>Sea levels, climate, habitats, and volcanic activity were changing during the Late Cretaceous. These background conditions matter when evaluating how ecosystems responded to a sudden global catastrophe.</p></article><article class="card"><h3>Not all dinosaurs were the same</h3><p>Birds are living dinosaurs. The extinction eliminated all known non-avian dinosaur groups, while a limited number of avian lineages survived and later diversified into the birds alive today.</p></article></div>
-<h3>The asteroid and the Chicxulub crater</h3><p class="muted">The impact site lies beneath the Yucatán Peninsula and the adjacent Gulf of Mexico. The buried Chicxulub structure is roughly 180 kilometers across. Geological evidence links it to the K–Pg boundary: a thin layer found around the world contains unusually high concentrations of iridium and other impact-related material. Researchers have also identified shocked quartz, impact glass and spherules, and a crater whose age matches the extinction boundary. Together, these independent lines of evidence make the impact explanation exceptionally strong.</p>
-<p class="muted">The impactor is commonly described as an asteroid roughly 10 kilometers across, although estimates vary. It struck at enormous speed and released an extraordinary amount of energy. The collision excavated rock, generated intense heat and pressure, and sent material high into the atmosphere. The precise local sequence depended on the geology at the impact site, including carbonate and sulfur-rich rocks that contributed material capable of affecting the atmosphere.</p>
-<div class="callout"><strong>Why scientists are confident:</strong> The case does not rest on a single fossil or one dramatic crater. It combines a globally recognizable boundary layer, impact minerals and ejecta, a matching crater, precise dating, and a sudden pattern of extinction in the fossil record.</div>
-<h3>How could one impact cause a global extinction?</h3><p class="muted">The immediate devastation near the impact site would have been extreme, but the global extinction mechanism involved the atmosphere and food webs. Dust, soot, and sulfur-bearing aerosols thrown into the atmosphere reduced the sunlight reaching Earth's surface. The resulting darkness and cooling disrupted photosynthesis on land and in the oceans. Wildfires, acid rain, severe temperature swings, and other effects likely contributed in different places and at different times.</p>
-<p class="muted">When sunlight was reduced, plants and photosynthetic plankton—the base of many food webs—were hit hard. Herbivores lost food, and predators then lost prey. Marine food chains were also disrupted. The severity was not identical everywhere: organisms with different diets, habitats, body sizes, reproductive strategies, or access to shelter and food had different chances of surviving the crisis.</p>
-<div class="grid"><article class="card"><h3>Impact winter</h3><p>Fine particles and aerosols in the atmosphere reduced sunlight and cooled the surface. The duration and intensity varied by model and by the type of material injected into the atmosphere.</p></article><article class="card"><h3>Food-web collapse</h3><p>Reduced photosynthesis undermined food supplies. The loss of plants and plankton cascaded through herbivores, predators, and marine consumers.</p></article><article class="card"><h3>Heat, fires, and tsunamis</h3><p>The impact generated intense local heating and seismic effects, while the ocean impact produced enormous waves. Evidence for fires and other short-term effects is found in boundary deposits, although their regional intensity varied.</p></article><article class="card"><h3>Uneven survival</h3><p>Some small animals, freshwater organisms, burrowing species, and animals able to use varied food sources survived. Survival was not simply a matter of being strong or weak; ecological circumstances mattered.</p></article></div>
-<h3>A timeline of the extinction</h3><p class="muted">The event happened over geological time, not within a human-style historical timeline. The dates below describe the sequence as reconstructed from rocks, fossils, and impact evidence.</p>
-<div class="timeline"><div class="event"><div class="time">LATE CRETACEOUS · MILLIONS OF YEARS BEFORE</div><h3>Earth's ecosystems continue to change</h3><p>Climate, sea level, habitats, and volcanic activity shift. Dinosaurs remain diverse in many regions, although the fossil record shows changes in the composition of some communities.</p></div><div class="event"><div class="time">ABOUT 66.04 MILLION YEARS AGO</div><h3>Chicxulub impact</h3><p>A large asteroid strikes near the present-day Yucatán Peninsula, excavating the crater and injecting vast quantities of debris and gases into the atmosphere.</p></div><div class="event"><div class="time">HOURS TO DAYS AFTER IMPACT</div><h3>Immediate regional destruction</h3><p>Near the impact zone, extreme heat, ejecta, seismic effects, and ocean disturbances devastate environments. Material from the impact spreads far beyond the crater.</p></div><div class="event"><div class="time">FOLLOWING MONTHS TO YEARS</div><h3>Global environmental disruption</h3><p>Atmospheric dust and aerosols reduce sunlight and disrupt climate and photosynthesis. Food webs on land and in the oceans experience severe stress and collapse in many places.</p></div><div class="event"><div class="time">K–PG BOUNDARY</div><h3>Mass extinction recorded in rocks</h3><p>Non-avian dinosaurs and many other groups disappear from the fossil record at the boundary between the Cretaceous and Paleogene periods.</p></div><div class="event"><div class="time">EARLY PALEOGENE</div><h3>Survivors and recovery</h3><p>Surviving organisms repopulate disrupted ecosystems. Mammals diversify over subsequent millions of years, while surviving bird lineages also expand into new ecological roles.</p></div></div>
-<h3>Was the asteroid the only factor?</h3><p class="muted">The Chicxulub impact is widely accepted as the primary trigger of the abrupt K–Pg extinction. However, it occurred during a period of major volcanic activity in India, especially the Deccan Traps eruptions. Those eruptions released large quantities of gases over an extended interval and contributed to climate and environmental change. Researchers continue to study how much volcanism affected ecosystems before and after the impact, and whether it made some communities more vulnerable.</p>
-<p class="muted">The fossil record is incomplete and uneven. It is difficult to determine whether a particular species disappeared just before or just after the boundary when the relevant rock layers are separated by thousands or tens of thousands of years. Some studies identify longer-term changes in particular dinosaur groups or regions; other analyses find little evidence for a global collapse in dinosaur diversity immediately before the impact. The strongest overall evidence points to an abrupt extinction event associated with Chicxulub, against a background of environmental change.</p>
-<div class="callout"><strong>A careful conclusion:</strong> “Asteroid versus volcano” is too simple. The impact best explains the sudden global extinction pattern. Deccan volcanism and longer-term ecological changes may have influenced the conditions in which the impact occurred and the recovery that followed. The relative contribution of those background factors remains an active research topic.</div>
-<h3>Why did some animals survive?</h3><p class="muted">Survival depended on ecological position and biological traits, not on a simple ranking of which animals were toughest. Small body size could mean lower food requirements. Burrowing or aquatic habitats may have provided some protection from immediate surface conditions. Flexible diets, seeds, detritus, insects, and other food sources may have helped certain lineages endure when photosynthesis-based food webs were disrupted. These are broad patterns, not universal rules: many small animals also went extinct.</p>
-<p class="muted">Birds survived, but that does not mean modern birds are unchanged Cretaceous survivors. The surviving avian lineages were a small fraction of the diversity that existed before the extinction. Their descendants diversified over millions of years. Crocodilians, turtles, amphibians, fish, mammals, and many other groups also survived, though their communities were altered.</p>
-<h3>What changed after the extinction?</h3><div class="grid"><article class="card"><h3>Mammals diversified</h3><p>The extinction removed many dominant terrestrial animals and opened ecological opportunities. Mammals diversified substantially during the Paleogene, eventually producing a wide range of body sizes and ecological roles.</p></article><article class="card"><h3>Birds continued the dinosaur story</h3><p>Birds are the surviving branch of theropod dinosaurs. The extinction removed non-avian dinosaurs while birds continued and diversified into new ecological roles.</p></article><article class="card"><h3>Marine ecosystems reorganized</h3><p>Ammonites and several large marine reptile groups disappeared. Plankton communities changed, and marine food webs recovered and reorganized over time.</p></article><article class="card"><h3>Recovery took time</h3><p>Life did not instantly return to its previous state. Ecosystems rebuilt over thousands to millions of years, with new communities and evolutionary opportunities emerging gradually.</p></article></div>
-<h3>Common claims and what the evidence says</h3>
-<details><summary>“The asteroid killed every dinosaur.”</summary><div class="answer"><p>Not exactly. All known non-avian dinosaurs disappeared, but birds survived. Birds are dinosaurs in the evolutionary and scientific classification sense: they descend from theropod dinosaurs. The accurate statement is that the K–Pg extinction eliminated non-avian dinosaurs while a small number of avian lineages survived.</p></div></details>
-<details><summary>“The dinosaurs all died on the same day.”</summary><div class="answer"><p>The impact happened at a particular moment, but the extinction unfolded through a chain of environmental disruptions and food-web effects. Some organisms near the impact zone died immediately; many populations elsewhere were affected over subsequent months, years, and longer intervals. The fossil record captures a geological boundary, not a single synchronized moment for every species.</p></div></details>
-<details><summary>“The asteroid theory is just a guess.”</summary><div class="answer"><p>The impact explanation is supported by multiple independent forms of evidence: the Chicxulub crater, the global iridium-rich boundary layer, shocked minerals, impact ejecta, precise dating, and the pattern of extinction. Scientific debate focuses more on details of the environmental effects and the role of other factors than on whether a major impact occurred.</p></div></details>
-<details><summary>“Volcanoes, not the asteroid, caused the extinction.”</summary><div class="answer"><p>Deccan Traps volcanism was substantial and likely affected climate and ecosystems. But the close timing of Chicxulub with the abrupt extinction boundary, plus the global impact evidence and extinction pattern, make the asteroid the best-supported primary trigger. Volcanism may have contributed to background stress and recovery conditions.</p></div></details>
-<details><summary>“Dinosaurs were already dying out, so the impact barely mattered.”</summary><div class="answer"><p>Some studies find declines or ecological restructuring in certain dinosaur groups and regions before the boundary. Other research finds little evidence for a global, long-term decline and shows major dinosaur groups persisting close to the impact. The fossil record is incomplete, but the abrupt disappearance at the K–Pg boundary strongly supports a major external shock.</p></div></details>
-<details><summary>“Humans could have lived alongside non-avian dinosaurs.”</summary><div class="answer"><p>There is no credible fossil evidence that humans and non-avian dinosaurs coexisted. Non-avian dinosaurs disappeared about 66 million years ago. The earliest known members of the human lineage appeared vastly later, and modern humans are separated from the extinction by tens of millions of years.</p></div></details>
-<details><summary>“The impact made Earth completely lifeless.”</summary><div class="answer"><p>No. The extinction was devastating, but many organisms survived. The oceans, freshwater environments, and land ecosystems retained lineages that later repopulated and diversified. The event changed the course of evolution; it did not sterilize the planet.</p></div></details>
-<details><summary>“The extinction was bad only for dinosaurs.”</summary><div class="answer"><p>The K–Pg event was a mass extinction affecting many groups, including ammonites, pterosaurs, marine reptiles, and numerous microscopic organisms. Its consequences reached across terrestrial and marine food webs. Dinosaurs are the best-known victims, not the only ones.</p></div></details>
-<div class="callout"><strong>The central point:</strong> The end of the non-avian dinosaurs was a real, global mass extinction, not a simple story of one rock hitting Earth and every animal instantly vanishing. The impact's environmental aftermath, the ecosystems it disrupted, the organisms that survived, and the role of volcanic activity together explain why this event changed the history of life.</div></div></section>
-<section id="sources"><div class="wrap"><div class="kicker">Sources / Read the record</div><h2>Sources and further reading.</h2><p class="lead">This page has a dedicated bibliography focused only on this historical subject. The sources below are not shared with the September 11 page.</p><div class="sources"><div class="source"><a href="https://www.nps.gov/subjects/fossils/extinction-events.htm" target="_blank" rel="noopener">National Park Service — Extinction Events</a><p>Overview of the end-Cretaceous extinction, affected groups, and the K–Pg boundary.</p></div><div class="source"><a href="https://home.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm" target="_blank" rel="noopener">National Park Service — Mass Extinctions Through Geologic Time</a><p>Context for the scale of the K–Pg extinction and the Chicxulub impact.</p></div><div class="source"><a href="https://www.nature.com/articles/s41586-022-04446-1" target="_blank" rel="noopener">Nature — The Mesozoic terminated in boreal spring</a><p>Peer-reviewed research using fossil fish evidence to investigate the season of the Chicxulub impact.</p></div><div class="source"><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12128" target="_blank" rel="noopener">Biological Reviews — The extinction of the dinosaurs</a><p>Review of the evidence on timing, impact, volcanism, dinosaur diversity, and fossil-record limitations.</p></div><div class="source"><a href="https://www.lpi.usra.edu/science/kring/Kring_2016_ChicxulubCrater_LPIBCoverStory.pdf" target="_blank" rel="noopener">Lunar and Planetary Institute — Chicxulub Crater, Twenty-Five Years Later</a><p>Research overview of the impact structure and its relationship to the end-Cretaceous extinction.</p></div><div class="source"><a href="https://science.nasa.gov/resource/shaded-relief-with-height-as-color-yucatan-peninsula-mexico/" target="_blank" rel="noopener">NASA — Shaded relief of the Yucatán Peninsula</a><p>Satellite and elevation imagery showing the subtle surface expression of the buried Chicxulub structure.</p></div><div class="source"><a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/" target="_blank" rel="noopener">Lunar and Planetary Institute — Chicxulub discovery and animations</a><p>Scientific explanations and animations of crater formation and the impact process.</p></div><div class="source"><a href="https://www.smithsonianmag.com/videos/smg-004-how-did-dinosaurs-die/" target="_blank" rel="noopener">Smithsonian Magazine — How did dinosaurs die?</a><p>Educational video explaining the asteroid impact and environmental consequences.</p></div><div class="source"><a href="https://naturalhistory.si.edu/education/teaching-resources/paleontology/mass-extinction-large-dinosaurs-and-more" target="_blank" rel="noopener">Smithsonian National Museum of Natural History — Mass extinction</a><p>Museum educational materials and fossil evidence for the end-Cretaceous extinction.</p></div><div class="source"><a href="https://www.lpi.usra.edu/science/KTcartoons/" target="_blank" rel="noopener">Lunar and Planetary Institute — K–T boundary cartoons</a><p>Illustrations of proposed environmental effects of the Chicxulub-scale impact.</p></div></div></div></section>
-</main>
-<footer><div class="wrap">A CLOSER LOOK · Independent educational history page. Not an official government or institutional publication.</div></footer>
-<script>const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));</script>
-</body></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="The end-Cretaceous mass extinction around 66 million years ago, the Chicxulub impact, environmental disruption, and the survival of birds.">
+    <title>
+      Dinosaur extinction — A Closer Look
+    </title>
+    <style>
+      :root {
+        --bg:#101820;
+        --panel:#17232d;
+        --panel2:#1d2b36;
+        --ink:#f4f1eb;
+        --muted:#b8c1c8;
+        --line:#34434e;
+        --accent:#d7a76b;
+        --blue:#8eb4c5;
+        --max:1160px
+      }
+      * {
+        box-sizing:border-box
+      }
+      html {
+        scroll-behavior:smooth;
+        scroll-padding-top:85px
+      }
+      body {
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+      }
+      a {
+        color:var(--blue);
+        text-underline-offset:3px
+      }
+      a:hover {
+        color:#e0f2f8
+      }
+      .wrap {
+        width:min(var(--max),calc(100% - 42px));
+        margin:auto
+      }
+      header {
+        position:sticky;
+        top:0;
+        z-index:20;
+        background:#101820ed;
+        border-bottom:1px solid var(--line);
+        backdrop-filter:blur(12px)
+      }
+      .nav {
+        min-height:68px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px
+      }
+      .brand {
+        font-weight:850;
+        letter-spacing:.1em;
+        font-size:.82rem;
+        color:var(--ink);
+        text-decoration:none;
+        white-space:nowrap
+      }
+      .navlinks {
+        display:flex;
+        gap:17px;
+        align-items:center
+      }
+      .navlinks a {
+        font-size:.82rem;
+        color:var(--muted);
+        text-decoration:none
+      }
+      .navlinks a:hover {
+        color:var(--ink)
+      }
+      .menu {
+        display:none;
+        background:none;
+        border:1px solid var(--line);
+        color:var(--ink);
+        padding:8px 12px;
+        border-radius:8px
+      }
+      .hero {
+        padding:108px 0 88px;
+        background:radial-gradient(ellipse at 83% 20%,#354954 0,transparent 46%),linear-gradient(135deg,#101820,#17232d 65%,#202c35);
+        border-bottom:1px solid var(--line)
+      }
+      .eyebrow,.kicker {
+        color:var(--accent);
+        font-weight:800;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        font-size:.74rem
+      }
+      .hero h1 {
+        font-size:clamp(3.1rem,8vw,6.8rem);
+        line-height:.96;
+        letter-spacing:-.065em;
+        max-width:980px;
+        margin:22px 0
+      }
+      .hero p {
+        font-size:clamp(1.08rem,2vw,1.28rem);
+        color:#d0d8dd;
+        max-width:790px
+      }
+      .hero .note {
+        font-size:.9rem;
+        color:var(--muted);
+        border-left:2px solid var(--accent);
+        padding-left:16px;
+        margin-top:32px
+      }
+      .actions {
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+        margin-top:28px
+      }
+      .btn {
+        display:inline-block;
+        padding:11px 17px;
+        border-radius:7px;
+        text-decoration:none;
+        font-weight:750;
+        border:1px solid var(--accent);
+        color:#1b2024;
+        background:var(--accent)
+      }
+      .btn.secondary {
+        background:transparent;
+        color:var(--ink);
+        border-color:var(--line)
+      }
+      section {
+        padding:76px 0;
+        border-bottom:1px solid var(--line)
+      }
+      h2 {
+        font-size:clamp(2rem,4vw,3.25rem);
+        line-height:1.08;
+        letter-spacing:-.045em;
+        margin:12px 0 18px
+      }
+      h3 {
+        font-size:1.17rem;
+        line-height:1.35;
+        margin:0 0 9px
+      }
+      .lead {
+        font-size:1.12rem;
+        color:#d0d8dd;
+        max-width:870px
+      }
+      .stats {
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        margin-top:32px
+      }
+      .stat,.card,.source,.fact {
+        padding:22px;
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:10px
+      }
+      .stat strong {
+        display:block;
+        font-size:clamp(2rem,4vw,3rem);
+        letter-spacing:-.05em;
+        color:var(--accent)
+      }
+      .stat span,.muted {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      .grid {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:15px;
+        margin-top:27px
+      }
+      .card p,.source p,.fact p {
+        color:var(--muted);
+        margin:7px 0 0
+      }
+      .timeline {
+        margin-top:30px;
+        border-left:1px solid #65727b;
+        padding-left:26px
+      }
+      .event {
+        position:relative;
+        padding:0 0 27px
+      }
+      .event:before {
+        content:"";
+        position:absolute;
+        width:9px;
+        height:9px;
+        border-radius:50%;
+        background:var(--accent);
+        left:-31px;
+        top:10px
+      }
+      .time {
+        font-size:.78rem;
+        color:var(--accent);
+        font-weight:850;
+        letter-spacing:.08em
+      }
+      .event p {
+        margin:4px 0 0;
+        color:var(--muted)
+      }
+      .two-col {
+        display:grid;
+        grid-template-columns:1.1fr .9fr;
+        gap:30px;
+        align-items:start
+      }
+      .callout {
+        border-left:3px solid var(--accent);
+        padding:17px 21px;
+        background:var(--panel);
+        margin:25px 0;
+        color:#d5dce0
+      }
+      .callout strong {
+        color:var(--ink)
+      }
+      .tag {
+        display:inline-block;
+        font-size:.72rem;
+        color:var(--accent);
+        border:1px solid #806a4e;
+        border-radius:30px;
+        padding:2px 9px;
+        margin-bottom:10px
+      }
+      details {
+        background:var(--panel);
+        border:1px solid var(--line);
+        border-radius:9px;
+        margin:12px 0
+      }
+      summary {
+        cursor:pointer;
+        padding:17px 20px;
+        font-weight:750;
+        list-style:none;
+        display:flex;
+        justify-content:space-between;
+        gap:15px;
+        line-height:1.45
+      }
+      summary:after {
+        content:"＋";
+        color:var(--accent)
+      }
+      details[open] summary:after {
+        content:"−"
+      }
+      details .answer {
+        padding:0 20px 20px;
+        color:var(--muted)
+      }
+      .answer p {
+        margin:8px 0
+      }
+      .sources {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+        margin-top:26px
+      }
+      .source a {
+        font-weight:750
+      }
+      .source p {
+        font-size:.88rem
+      }
+      .small {
+        font-size:.83rem;
+        color:var(--muted)
+      }
+      .section-intro {
+        max-width:850px
+      }
+      .table-wrap {
+        overflow-x:auto;
+        margin:22px 0
+      }
+      table {
+        border-collapse:collapse;
+        width:100%;
+        min-width:620px;
+        background:var(--panel);
+        border:1px solid var(--line)
+      }
+      th,td {
+        text-align:left;
+        padding:13px 15px;
+        border-bottom:1px solid var(--line);
+        vertical-align:top
+      }
+      th {
+        color:var(--accent);
+        font-size:.83rem
+      }
+      td {
+        color:var(--muted);
+        font-size:.91rem
+      }
+      footer {
+        padding:34px 0;
+        color:var(--muted);
+        font-size:.85rem
+      }
+      @media(max-width:850px) {
+        .navlinks {
+          gap:10px
+        }
+        .navlinks a {
+          font-size:.75rem
+        }
+        .two-col {
+          grid-template-columns:1fr
+        }
+      }
+      @media(max-width:700px) {
+        .navlinks {
+          display:none;
+          position:absolute;
+          top:68px;
+          left:0;
+          right:0;
+          background:var(--bg);
+          padding:18px 22px;
+          border-bottom:1px solid var(--line);
+          flex-direction:column;
+          align-items:flex-start
+        }
+        .navlinks.open {
+          display:flex
+        }
+        .menu {
+          display:block
+        }
+        .hero {
+          padding:76px 0 64px
+        }
+        .stats,.grid,.sources {
+          grid-template-columns:1fr
+        }
+        section {
+          padding:56px 0
+        }
+        .wrap {
+          width:min(var(--max),calc(100% - 30px))
+        }
+      }
+      .page-head {
+        padding:54px 0 36px;
+        background:linear-gradient(135deg,#101820,#1d2b36);
+        border-bottom:1px solid var(--line)
+      }
+      .page-head h1 {
+        font-size:clamp(2.5rem,6vw,4.5rem);
+        line-height:1.02;
+        letter-spacing:-.055em;
+        margin:12px 0
+      }
+      .page-head p {
+        max-width:850px;
+        color:#d0d8dd;
+        font-size:1.08rem
+      }
+      .back {
+        display:inline-block;
+        margin-bottom:22px;
+        color:var(--blue);
+        font-weight:750;
+        text-decoration:none
+      }
+      main>section {
+        padding-top:50px
+      }
+      @media(max-width:700px) {
+        .page-head {
+          padding:36px 0 28px
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          A CLOSER LOOK / INDEPENDENT TOPIC
+        </a>
+        <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">
+          Menu
+        </button>
+        <nav class="navlinks" id="navlinks">
+          <a href="index.html">
+            9/11 history page
+          </a>
+          <a href="#topic">
+            This topic
+          </a>
+          <a href="#sources">
+            Sources
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div class="page-head">
+      <div class="wrap">
+        <a class="back" href="index.html">
+          ← Back to the main history hub
+        </a>
+        <div class="eyebrow">
+          Independent history topic · Evidence · Context
+        </div>
+        <h1>
+          Dinosaur extinction
+        </h1>
+        <p>
+          The end-Cretaceous mass extinction around 66 million years ago, the Chicxulub impact, environmental disruption, and the survival of birds.
+        </p>
+      </div>
+    </div>
+    <main id="topic">
+      <section id="dinosaurs">
+        <div class="wrap">
+          <div class="kicker">
+            03 / Deep time
+          </div>
+          <h2>
+            The end of the dinosaurs: a world-changing mass extinction.
+          </h2>
+          <p class="lead">
+            About 66 million years ago, Earth experienced one of the most consequential biological crises in its history. A large asteroid struck near what is now the Yucatán Peninsula in Mexico. The impact formed the Chicxulub crater and triggered environmental changes that drove the extinction of non-avian dinosaurs and many other groups of organisms. This was not simply the end of a few famous animals: it was a global ecological upheaval that reshaped life on land and in the oceans.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong>
+                ~66 million
+              </strong>
+              <span>
+                Years ago, at the Cretaceous–Paleogene boundary
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                ~76%
+              </strong>
+              <span>
+                Of species estimated to have disappeared in the K–Pg extinction
+              </span>
+            </div>
+            <div class="stat">
+              <strong>
+                ~180 km
+              </strong>
+              <span>
+                Approximate diameter of the Chicxulub impact structure
+              </span>
+            </div>
+          </div>
+          <div class="media-resources" aria-label="Dinosaur extinction images and videos">
+            <h3>
+              Visual archive: impact imagery, crater maps, and science videos
+            </h3>
+            <p class="muted">
+              These resources use satellite data, scientific illustrations, museum exhibits, and animations to show the Chicxulub impact and the extinction evidence.
+            </p>
+            <div class="grid">
+              <article class="card">
+                <span class="tag">
+                  NASA image
+                </span>
+                <h3>
+                  Chicxulub crater from space
+                </h3>
+                <p>
+                  NASA/JPL shaded-relief imagery of the Yucatán Peninsula showing the subtle surface expression of the buried impact crater.
+                </p>
+                <p>
+                  <a href="https://science.nasa.gov/resource/shaded-relief-with-height-as-color-yucatan-peninsula-mexico/" target="_blank" rel="noopener">
+                    View and download the NASA image ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Scientific animation
+                </span>
+                <h3>
+                  How the Chicxulub crater formed
+                </h3>
+                <p>
+                  Impact-cratering animations and simulations from the Lunar and Planetary Institute, showing crater formation and the impact process.
+                </p>
+                <p>
+                  <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/" target="_blank" rel="noopener">
+                    Explore crater animations ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Museum video
+                </span>
+                <h3>
+                  Smithsonian: The mass extinction
+                </h3>
+                <p>
+                  A short science video explaining how the asteroid impact triggered tsunamis, shockwaves, and wider environmental disruption.
+                </p>
+                <p>
+                  <a href="https://www.smithsonianmag.com/videos/smg-004-how-did-dinosaurs-die/" target="_blank" rel="noopener">
+                    Watch the Smithsonian video ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Museum exhibit
+                </span>
+                <h3>
+                  Smithsonian: Mass extinction of dinosaurs
+                </h3>
+                <p>
+                  Illustrations, fossil evidence, teaching materials, and explanations of the end-Cretaceous extinction.
+                </p>
+                <p>
+                  <a href="https://naturalhistory.si.edu/education/teaching-resources/paleontology/mass-extinction-large-dinosaurs-and-more" target="_blank" rel="noopener">
+                    Explore the Smithsonian resources ↗
+                  </a>
+                </p>
+              </article>
+              <article class="card">
+                <span class="tag">
+                  Impact illustrations
+                </span>
+                <h3>
+                  Lunar and Planetary Institute: K–T boundary cartoons
+                </h3>
+                <p>
+                  Educational illustrations depicting the proposed environmental effects of a Chicxulub-sized impact on Earth's ecosystems.
+                </p>
+                <p>
+                  <a href="https://www.lpi.usra.edu/science/KTcartoons/" target="_blank" rel="noopener">
+                    View the impact illustrations ↗
+                  </a>
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>
+              Important distinction:
+            </strong>
+            Non-avian dinosaurs went extinct, but birds survived. Birds are the surviving dinosaur lineage. The event was not an instant disappearance of every dinosaur, nor did every kind of life die.
+          </div>
+          <h3>
+            What was Earth like before the impact?
+          </h3>
+          <p class="muted">
+            During the Late Cretaceous, dinosaurs occupied a wide range of ecological roles on land. Tyrannosaurs and other large predators hunted or scavenged; hadrosaurs and ceratopsians were among the major herbivores in some regions; armored ankylosaurs and many smaller dinosaurs occupied other niches. Flowering plants had diversified, continents were arranged differently from today, and high sea levels created broad shallow seas in some regions. Marine ecosystems included ammonites, large marine reptiles, fish, plankton, and many other organisms.
+          </p>
+          <p class="muted">
+            Dinosaurs were not one uniform group. They included animals with very different sizes, diets, habitats, and life histories. Nor were they the only organisms affected. The K–Pg event also eliminated pterosaurs, ammonites, many marine reptiles, and numerous plankton and other species. The impact disrupted food webs across land and sea.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Life on land
+              </h3>
+              <p>
+                Non-avian dinosaurs included large herbivores, predators, and smaller species. Mammals were also present, but most were relatively small compared with the largest dinosaurs and occupied different ecological roles.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Life in the oceans
+              </h3>
+              <p>
+                Ammonites, mosasaurs, plesiosaurs, and many plankton groups were part of complex marine ecosystems. The extinction changed ocean food webs as well as terrestrial ones.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                A changing environment
+              </h3>
+              <p>
+                Sea levels, climate, habitats, and volcanic activity were changing during the Late Cretaceous. These background conditions matter when evaluating how ecosystems responded to a sudden global catastrophe.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Not all dinosaurs were the same
+              </h3>
+              <p>
+                Birds are living dinosaurs. The extinction eliminated all known non-avian dinosaur groups, while a limited number of avian lineages survived and later diversified into the birds alive today.
+              </p>
+            </article>
+          </div>
+          <h3>
+            The asteroid and the Chicxulub crater
+          </h3>
+          <p class="muted">
+            The impact site lies beneath the Yucatán Peninsula and the adjacent Gulf of Mexico. The buried Chicxulub structure is roughly 180 kilometers across. Geological evidence links it to the K–Pg boundary: a thin layer found around the world contains unusually high concentrations of iridium and other impact-related material. Researchers have also identified shocked quartz, impact glass and spherules, and a crater whose age matches the extinction boundary. Together, these independent lines of evidence make the impact explanation exceptionally strong.
+          </p>
+          <p class="muted">
+            The impactor is commonly described as an asteroid roughly 10 kilometers across, although estimates vary. It struck at enormous speed and released an extraordinary amount of energy. The collision excavated rock, generated intense heat and pressure, and sent material high into the atmosphere. The precise local sequence depended on the geology at the impact site, including carbonate and sulfur-rich rocks that contributed material capable of affecting the atmosphere.
+          </p>
+          <div class="callout">
+            <strong>
+              Why scientists are confident:
+            </strong>
+            The case does not rest on a single fossil or one dramatic crater. It combines a globally recognizable boundary layer, impact minerals and ejecta, a matching crater, precise dating, and a sudden pattern of extinction in the fossil record.
+          </div>
+          <h3>
+            How could one impact cause a global extinction?
+          </h3>
+          <p class="muted">
+            The immediate devastation near the impact site would have been extreme, but the global extinction mechanism involved the atmosphere and food webs. Dust, soot, and sulfur-bearing aerosols thrown into the atmosphere reduced the sunlight reaching Earth's surface. The resulting darkness and cooling disrupted photosynthesis on land and in the oceans. Wildfires, acid rain, severe temperature swings, and other effects likely contributed in different places and at different times.
+          </p>
+          <p class="muted">
+            When sunlight was reduced, plants and photosynthetic plankton—the base of many food webs—were hit hard. Herbivores lost food, and predators then lost prey. Marine food chains were also disrupted. The severity was not identical everywhere: organisms with different diets, habitats, body sizes, reproductive strategies, or access to shelter and food had different chances of surviving the crisis.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Impact winter
+              </h3>
+              <p>
+                Fine particles and aerosols in the atmosphere reduced sunlight and cooled the surface. The duration and intensity varied by model and by the type of material injected into the atmosphere.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Food-web collapse
+              </h3>
+              <p>
+                Reduced photosynthesis undermined food supplies. The loss of plants and plankton cascaded through herbivores, predators, and marine consumers.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Heat, fires, and tsunamis
+              </h3>
+              <p>
+                The impact generated intense local heating and seismic effects, while the ocean impact produced enormous waves. Evidence for fires and other short-term effects is found in boundary deposits, although their regional intensity varied.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Uneven survival
+              </h3>
+              <p>
+                Some small animals, freshwater organisms, burrowing species, and animals able to use varied food sources survived. Survival was not simply a matter of being strong or weak; ecological circumstances mattered.
+              </p>
+            </article>
+          </div>
+          <h3>
+            A timeline of the extinction
+          </h3>
+          <p class="muted">
+            The event happened over geological time, not within a human-style historical timeline. The dates below describe the sequence as reconstructed from rocks, fossils, and impact evidence.
+          </p>
+          <div class="timeline">
+            <div class="event">
+              <div class="time">
+                LATE CRETACEOUS · MILLIONS OF YEARS BEFORE
+              </div>
+              <h3>
+                Earth's ecosystems continue to change
+              </h3>
+              <p>
+                Climate, sea level, habitats, and volcanic activity shift. Dinosaurs remain diverse in many regions, although the fossil record shows changes in the composition of some communities.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                ABOUT 66.04 MILLION YEARS AGO
+              </div>
+              <h3>
+                Chicxulub impact
+              </h3>
+              <p>
+                A large asteroid strikes near the present-day Yucatán Peninsula, excavating the crater and injecting vast quantities of debris and gases into the atmosphere.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                HOURS TO DAYS AFTER IMPACT
+              </div>
+              <h3>
+                Immediate regional destruction
+              </h3>
+              <p>
+                Near the impact zone, extreme heat, ejecta, seismic effects, and ocean disturbances devastate environments. Material from the impact spreads far beyond the crater.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                FOLLOWING MONTHS TO YEARS
+              </div>
+              <h3>
+                Global environmental disruption
+              </h3>
+              <p>
+                Atmospheric dust and aerosols reduce sunlight and disrupt climate and photosynthesis. Food webs on land and in the oceans experience severe stress and collapse in many places.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                K–PG BOUNDARY
+              </div>
+              <h3>
+                Mass extinction recorded in rocks
+              </h3>
+              <p>
+                Non-avian dinosaurs and many other groups disappear from the fossil record at the boundary between the Cretaceous and Paleogene periods.
+              </p>
+            </div>
+            <div class="event">
+              <div class="time">
+                EARLY PALEOGENE
+              </div>
+              <h3>
+                Survivors and recovery
+              </h3>
+              <p>
+                Surviving organisms repopulate disrupted ecosystems. Mammals diversify over subsequent millions of years, while surviving bird lineages also expand into new ecological roles.
+              </p>
+            </div>
+          </div>
+          <h3>
+            Was the asteroid the only factor?
+          </h3>
+          <p class="muted">
+            The Chicxulub impact is widely accepted as the primary trigger of the abrupt K–Pg extinction. However, it occurred during a period of major volcanic activity in India, especially the Deccan Traps eruptions. Those eruptions released large quantities of gases over an extended interval and contributed to climate and environmental change. Researchers continue to study how much volcanism affected ecosystems before and after the impact, and whether it made some communities more vulnerable.
+          </p>
+          <p class="muted">
+            The fossil record is incomplete and uneven. It is difficult to determine whether a particular species disappeared just before or just after the boundary when the relevant rock layers are separated by thousands or tens of thousands of years. Some studies identify longer-term changes in particular dinosaur groups or regions; other analyses find little evidence for a global collapse in dinosaur diversity immediately before the impact. The strongest overall evidence points to an abrupt extinction event associated with Chicxulub, against a background of environmental change.
+          </p>
+          <div class="callout">
+            <strong>
+              A careful conclusion:
+            </strong>
+            “Asteroid versus volcano” is too simple. The impact best explains the sudden global extinction pattern. Deccan volcanism and longer-term ecological changes may have influenced the conditions in which the impact occurred and the recovery that followed. The relative contribution of those background factors remains an active research topic.
+          </div>
+          <h3>
+            Why did some animals survive?
+          </h3>
+          <p class="muted">
+            Survival depended on ecological position and biological traits, not on a simple ranking of which animals were toughest. Small body size could mean lower food requirements. Burrowing or aquatic habitats may have provided some protection from immediate surface conditions. Flexible diets, seeds, detritus, insects, and other food sources may have helped certain lineages endure when photosynthesis-based food webs were disrupted. These are broad patterns, not universal rules: many small animals also went extinct.
+          </p>
+          <p class="muted">
+            Birds survived, but that does not mean modern birds are unchanged Cretaceous survivors. The surviving avian lineages were a small fraction of the diversity that existed before the extinction. Their descendants diversified over millions of years. Crocodilians, turtles, amphibians, fish, mammals, and many other groups also survived, though their communities were altered.
+          </p>
+          <h3>
+            What changed after the extinction?
+          </h3>
+          <div class="grid">
+            <article class="card">
+              <h3>
+                Mammals diversified
+              </h3>
+              <p>
+                The extinction removed many dominant terrestrial animals and opened ecological opportunities. Mammals diversified substantially during the Paleogene, eventually producing a wide range of body sizes and ecological roles.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Birds continued the dinosaur story
+              </h3>
+              <p>
+                Birds are the surviving branch of theropod dinosaurs. The extinction removed non-avian dinosaurs while birds continued and diversified into new ecological roles.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Marine ecosystems reorganized
+              </h3>
+              <p>
+                Ammonites and several large marine reptile groups disappeared. Plankton communities changed, and marine food webs recovered and reorganized over time.
+              </p>
+            </article>
+            <article class="card">
+              <h3>
+                Recovery took time
+              </h3>
+              <p>
+                Life did not instantly return to its previous state. Ecosystems rebuilt over thousands to millions of years, with new communities and evolutionary opportunities emerging gradually.
+              </p>
+            </article>
+          </div>
+          <h3>
+            Common claims and what the evidence says
+          </h3>
+          <details>
+            <summary>
+              “The asteroid killed every dinosaur.”
+            </summary>
+            <div class="answer">
+              <p>
+                Not exactly. All known non-avian dinosaurs disappeared, but birds survived. Birds are dinosaurs in the evolutionary and scientific classification sense: they descend from theropod dinosaurs. The accurate statement is that the K–Pg extinction eliminated non-avian dinosaurs while a small number of avian lineages survived.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The dinosaurs all died on the same day.”
+            </summary>
+            <div class="answer">
+              <p>
+                The impact happened at a particular moment, but the extinction unfolded through a chain of environmental disruptions and food-web effects. Some organisms near the impact zone died immediately; many populations elsewhere were affected over subsequent months, years, and longer intervals. The fossil record captures a geological boundary, not a single synchronized moment for every species.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The asteroid theory is just a guess.”
+            </summary>
+            <div class="answer">
+              <p>
+                The impact explanation is supported by multiple independent forms of evidence: the Chicxulub crater, the global iridium-rich boundary layer, shocked minerals, impact ejecta, precise dating, and the pattern of extinction. Scientific debate focuses more on details of the environmental effects and the role of other factors than on whether a major impact occurred.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “Volcanoes, not the asteroid, caused the extinction.”
+            </summary>
+            <div class="answer">
+              <p>
+                Deccan Traps volcanism was substantial and likely affected climate and ecosystems. But the close timing of Chicxulub with the abrupt extinction boundary, plus the global impact evidence and extinction pattern, make the asteroid the best-supported primary trigger. Volcanism may have contributed to background stress and recovery conditions.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “Dinosaurs were already dying out, so the impact barely mattered.”
+            </summary>
+            <div class="answer">
+              <p>
+                Some studies find declines or ecological restructuring in certain dinosaur groups and regions before the boundary. Other research finds little evidence for a global, long-term decline and shows major dinosaur groups persisting close to the impact. The fossil record is incomplete, but the abrupt disappearance at the K–Pg boundary strongly supports a major external shock.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “Humans could have lived alongside non-avian dinosaurs.”
+            </summary>
+            <div class="answer">
+              <p>
+                There is no credible fossil evidence that humans and non-avian dinosaurs coexisted. Non-avian dinosaurs disappeared about 66 million years ago. The earliest known members of the human lineage appeared vastly later, and modern humans are separated from the extinction by tens of millions of years.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The impact made Earth completely lifeless.”
+            </summary>
+            <div class="answer">
+              <p>
+                No. The extinction was devastating, but many organisms survived. The oceans, freshwater environments, and land ecosystems retained lineages that later repopulated and diversified. The event changed the course of evolution; it did not sterilize the planet.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              “The extinction was bad only for dinosaurs.”
+            </summary>
+            <div class="answer">
+              <p>
+                The K–Pg event was a mass extinction affecting many groups, including ammonites, pterosaurs, marine reptiles, and numerous microscopic organisms. Its consequences reached across terrestrial and marine food webs. Dinosaurs are the best-known victims, not the only ones.
+              </p>
+            </div>
+          </details>
+          <div class="callout">
+            <strong>
+              The central point:
+            </strong>
+            The end of the non-avian dinosaurs was a real, global mass extinction, not a simple story of one rock hitting Earth and every animal instantly vanishing. The impact's environmental aftermath, the ecosystems it disrupted, the organisms that survived, and the role of volcanic activity together explain why this event changed the history of life.
+          </div>
+        </div>
+      </section>
+      <section id="sources">
+        <div class="wrap">
+          <div class="kicker">
+            Sources / Read the record
+          </div>
+          <h2>
+            Sources and further reading.
+          </h2>
+          <p class="lead">
+            This page has a dedicated bibliography focused only on this historical subject. The sources below are not shared with the September 11 page.
+          </p>
+          <div class="sources">
+            <div class="source">
+              <a href="https://www.nps.gov/subjects/fossils/extinction-events.htm" target="_blank" rel="noopener">
+                National Park Service — Extinction Events
+              </a>
+              <p>
+                Overview of the end-Cretaceous extinction, affected groups, and the K–Pg boundary.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://home.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm" target="_blank" rel="noopener">
+                National Park Service — Mass Extinctions Through Geologic Time
+              </a>
+              <p>
+                Context for the scale of the K–Pg extinction and the Chicxulub impact.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.nature.com/articles/s41586-022-04446-1" target="_blank" rel="noopener">
+                Nature — The Mesozoic terminated in boreal spring
+              </a>
+              <p>
+                Peer-reviewed research using fossil fish evidence to investigate the season of the Chicxulub impact.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12128" target="_blank" rel="noopener">
+                Biological Reviews — The extinction of the dinosaurs
+              </a>
+              <p>
+                Review of the evidence on timing, impact, volcanism, dinosaur diversity, and fossil-record limitations.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.lpi.usra.edu/science/kring/Kring_2016_ChicxulubCrater_LPIBCoverStory.pdf" target="_blank" rel="noopener">
+                Lunar and Planetary Institute — Chicxulub Crater, Twenty-Five Years Later
+              </a>
+              <p>
+                Research overview of the impact structure and its relationship to the end-Cretaceous extinction.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://science.nasa.gov/resource/shaded-relief-with-height-as-color-yucatan-peninsula-mexico/" target="_blank" rel="noopener">
+                NASA — Shaded relief of the Yucatán Peninsula
+              </a>
+              <p>
+                Satellite and elevation imagery showing the subtle surface expression of the buried Chicxulub structure.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/" target="_blank" rel="noopener">
+                Lunar and Planetary Institute — Chicxulub discovery and animations
+              </a>
+              <p>
+                Scientific explanations and animations of crater formation and the impact process.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.smithsonianmag.com/videos/smg-004-how-did-dinosaurs-die/" target="_blank" rel="noopener">
+                Smithsonian Magazine — How did dinosaurs die?
+              </a>
+              <p>
+                Educational video explaining the asteroid impact and environmental consequences.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://naturalhistory.si.edu/education/teaching-resources/paleontology/mass-extinction-large-dinosaurs-and-more" target="_blank" rel="noopener">
+                Smithsonian National Museum of Natural History — Mass extinction
+              </a>
+              <p>
+                Museum educational materials and fossil evidence for the end-Cretaceous extinction.
+              </p>
+            </div>
+            <div class="source">
+              <a href="https://www.lpi.usra.edu/science/KTcartoons/" target="_blank" rel="noopener">
+                Lunar and Planetary Institute — K–T boundary cartoons
+              </a>
+              <p>
+                Illustrations of proposed environmental effects of the Chicxulub-scale impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        A CLOSER LOOK · Independent educational history page. Not an official government or institutional publication.
+      </div>
+    </footer>
+    <script>
+      const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+    </script>
+  </body>
+</html>
